@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
-const PARTNERS = ["Dove", "Palmolive", "Clorox", "Gillette", "Pepsi", "Comfort", "Sensodyne", "Shell", "Surf Excel", "Careem", "Daraz", "Colgate"];
+const PARTNERS = ["Lahore Garrison University", "Ramay Clinic", "Aroma Hair Salon", "Moon Banquet Hall"];
 
 const FEATURED = [
   "rose-petal-pop-up-tissues-ultra-soft",
