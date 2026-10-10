@@ -42,7 +42,7 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} aria-hidden />
-      <div role="dialog" aria-modal="true" aria-label={`Quick view: ${product.name}`} className="relative bg-white rounded-3xl shadow-2xl w-full max-w-3xl my-auto max-h-[92vh] overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
+      <div role="dialog" aria-modal="true" aria-label={`Quick view: ${product.name}`} className="relative bg-white rounded-3xl shadow-2xl w-full max-w-5xl my-auto max-h-[92vh] overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
         <button
           onClick={onClose}
           aria-label="Close quick view"
@@ -51,8 +51,8 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <div className="grid md:grid-cols-2">
-          <div className="relative bg-gray-50 min-h-[280px]">
-            <Image src={product.image} alt={product.name} width={700} height={700} className="w-full h-full object-contain bg-[#f6f5f1] md:rounded-l-3xl p-4" />
+          <div className="relative bg-gray-50 min-h-[400px] md:min-h-[520px]">
+            <Image src={product.image} alt={product.name} width={1000} height={1000} className="w-full h-full object-contain bg-[#f6f5f1] md:rounded-l-3xl p-2" />
           </div>
           <div className="p-6 sm:p-8">
             <p className="text-xs uppercase tracking-wide text-gray-500">{product.category} &middot; {product.brand}</p>
