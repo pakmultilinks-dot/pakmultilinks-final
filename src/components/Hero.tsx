@@ -11,7 +11,7 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
-    image: "/images/hero-main-banner.jpg",
+    image: "/images/hero-clean-workspace.jpg",
   },
   {
     eyebrow: "Your Hygiene Partner",
@@ -19,23 +19,7 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
-    image: "/images/hero-banner.png",
-  },
-  {
-    eyebrow: "Tissue & Paper Wholesale",
-    title: "Facial Tissues, Toilet Rolls & Napkins in Bulk",
-    subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
-    primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
-    secondaryCta: { label: "Get a Quote", href: "/request-quote" },
-    image: "/images/banner-hygiene-solutions.jpg",
-  },
-  {
-    eyebrow: "Bulk Deals & Value Packs",
-    title: "Wholesale Deals on Trusted Brands",
-    subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
-    primaryCta: { label: "View Deals", href: "/shop" },
-    secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
-    image: "/images/banner-workspace.jpg",
+    image: "/images/hero-main-banner.jpg",
   },
 ];
 
@@ -86,11 +70,10 @@ export default function Hero() {
                 className="w-full h-auto"
                 priority={i === 0}
               />
-              {/* Text positioned on left - only for first slide (clean banner) */}
-              {i === 0 && (
-                <div className="absolute inset-0 flex items-center pt-16">
-                  <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
-                    <div key={animKey} className="max-w-lg">
+              {/* Text positioned on left empty area */}
+              <div className="absolute inset-0 flex items-center pt-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+                  <div key={`${i}-${animKey}`} className="max-w-lg">
                       <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold" style={{ animationDelay: "0ms" }}>
                         {s.eyebrow}
                       </p>
@@ -118,7 +101,7 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         ))}
