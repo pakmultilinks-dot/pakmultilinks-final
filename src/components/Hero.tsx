@@ -10,7 +10,6 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
-    image: "/images/hero-clean-1.jpg",
     accent: "from-[#0b3a24] via-[#114b2f] to-[#0d4229]",
   },
   {
@@ -19,7 +18,6 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
-    image: "/images/hero-clean-2.jpg",
     accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
   },
   {
@@ -28,7 +26,6 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
     primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
-    image: "/images/hero-clean-3.jpg",
     accent: "from-[#0c3d26] via-[#125233] to-[#0e4028]",
   },
   {
@@ -37,7 +34,6 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
     primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
-    image: "/images/hero-clean-4.jpg",
     accent: "from-[#0b3a24] via-[#0e4a2d] to-[#0c3822]",
   },
 ];
@@ -77,15 +73,13 @@ export default function Hero() {
         {SLIDES.map((s, i) => (
           <div
             key={s.title}
-            className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-br ${s.accent} ${i === idx ? "opacity-100" : "opacity-0"}`}
             aria-hidden={i !== idx}
           >
-            <img
-              src={s.image}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24]/95 via-[#0b3a24]/60 to-transparent" />
+            <div className="absolute inset-0 opacity-[0.07]">
+              <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-white blur-3xl" />
+              <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-300 blur-3xl" />
+            </div>
           </div>
         ))}
 
@@ -103,7 +97,7 @@ export default function Hero() {
             <div className="hero-anim mt-8 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
               <Link
                 href={slide.primaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#114b2f] hover:bg-[#0d4229] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
               >
                 {slide.primaryCta.label}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -112,7 +106,6 @@ export default function Hero() {
                 href={slide.secondaryCta.href}
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/30 backdrop-blur transition-all"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
                 {slide.secondaryCta.label}
               </Link>
             </div>
