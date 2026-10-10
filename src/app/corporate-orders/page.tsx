@@ -93,7 +93,7 @@ export default function CorporateOrders() {
       <section className="bg-[#f7faf8] border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-2xl sm:text-3xl font-bold text-center">Who we supply</h2>
-          <p className="text-center text-gray-600 mt-2">Trusted by businesses across Lahore</p>
+          <p className="text-center text-gray-600 mt-2">Supplying workplaces across Lahore</p>
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
             {SECTORS.map((s) => (
               <div key={s.name} className="group bg-white rounded-2xl border border-gray-100 px-6 py-6 text-center shadow-sm hover:shadow-md hover:border-[#114b2f]/20 transition-all">

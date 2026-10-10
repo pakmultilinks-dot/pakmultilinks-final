@@ -88,7 +88,7 @@ export default function ContactPage() {
       <div className="mt-8 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <figure className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm">
           <div className="rounded-xl overflow-hidden">
-            <Image src="/images/card-zohair.jpg" alt="Zohair Ahmed - Founder and Sales Head, Pak Multilinks Hygiene. Phone +92 300 6917 385, +92 312 1091 848. Email zohair.shah8@gmail.com. Shop No LG-9, Rehman Tower Main Market Gulberg II, Lahore." width={1600} height={912} className="w-full h-auto" />
+            <Image src="/images/card-zohair.jpg" alt="Zohair Ahmed - Founder and Sales Head" width={1600} height={912} className="w-full h-auto" />
           </div>
           <figcaption className="mt-4 text-center">
             <p className="font-bold">Zohair Ahmed</p>
@@ -97,7 +97,7 @@ export default function ContactPage() {
         </figure>
         <figure className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm">
           <div className="rounded-xl overflow-hidden">
-            <Image src="/images/card-bilal.jpg" alt="M. Bilal Shah - BDO, Pak Multilinks Hygiene. Phone 0325 8166829. Email bilalshah2237463@gmail.com. Shop No LG-9, Rehman Tower Main Market Gulberg II, Lahore." width={1600} height={900} className="w-full h-auto" />
+            <Image src="/images/card-bilal.jpg" alt="M. Bilal Shah - BDO" width={1600} height={900} className="w-full h-auto" />
           </div>
           <figcaption className="mt-4 text-center">
             <p className="font-bold">M. Bilal Shah</p>

@@ -41,14 +41,16 @@ const SLIDES = [
 export default function Hero() {
   const [idx, setIdx] = useState(0);
   const [animKey, setAnimKey] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
     const t = setInterval(() => {
       setIdx((i) => (i + 1) % SLIDES.length);
       setAnimKey((k) => k + 1);
     }, 6000);
     return () => clearInterval(t);
-  }, []);
+  }, [paused]);
 
   const goTo = (i: number) => {
     setIdx(i);
@@ -58,7 +60,15 @@ export default function Hero() {
   const slide = SLIDES[idx];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0b3a24]" aria-label="Featured">
+    <section
+      className="relative w-full overflow-hidden bg-[#0b3a24]"
+      aria-label="Featured"
+      aria-roledescription="carousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
       <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
         {SLIDES.map((s, i) => (
           <div
@@ -123,7 +133,7 @@ export default function Hero() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </button>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center">
         {SLIDES.map((_, i) => (
           <button
             key={i}
@@ -132,6 +142,21 @@ export default function Hero() {
             className={`h-2 rounded-full transition-all cursor-pointer ${i === idx ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"}`}
           />
         ))}
+        <button
+          aria-label={paused ? "Play slideshow" : "Pause slideshow"}
+          onClick={(e) => { e.stopPropagation(); setPaused(!paused); }}
+          className="ml-2 bg-white/20 hover:bg-white/30 text-white rounded-full p-1.5 backdrop-blur"
+        >
+          {paused ? (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          ) : (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          )}
+        </button>
+      </div>
+
+      <div aria-live="polite" className="sr-only">
+        Slide {idx + 1} of {SLIDES.length}: {slide.title}
       </div>
 
       <h1 className="sr-only">Pak Multilinks Hygiene - Wholesale Tissue and Hygiene Supplies Lahore</h1>

@@ -20,7 +20,7 @@ export default function AccountPage() {
           <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-green-400 blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 py-14 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">My Account</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">Business Account</h1>
           <p className="mt-3 text-white/75 max-w-xl mx-auto">Business accounts get faster re-orders and saved quotations.</p>
         </div>
       </section>

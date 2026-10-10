@@ -157,7 +157,7 @@ export default function Header() {
             <nav className="px-2 pb-6">
               {[
                 ["Home", "/"], ["Shop", "/shop"], ["Corporate Orders", "/corporate-orders"],
-                ["About Us", "/about"], ["Contact", "/contact"], ["My Account", "/account"],
+                ["About Us", "/about"], ["Contact", "/contact"], ["Business Account", "/account"],
               ].map(([label, href]) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium border-b border-gray-100 hover:text-[#114b2f]">{label}</Link>
               ))}
