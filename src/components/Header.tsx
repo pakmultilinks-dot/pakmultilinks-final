@@ -79,7 +79,7 @@ export default function Header() {
           </button>
 
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={220} height={60} className="h-10 sm:h-12 w-auto" priority />
+            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={320} height={90} className="h-14 sm:h-16 w-auto" priority />
           </Link>
 
           {/* Search */}
@@ -175,7 +175,7 @@ export default function Header() {
           <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
           <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-xl overflow-y-auto">
             <div className="p-4 flex items-center justify-between border-b">
-              <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={160} height={44} className="h-9 w-auto" />
+              <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={220} height={60} className="h-12 w-auto" />
               <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="p-2">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
               </button>

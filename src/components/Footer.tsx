@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="bg-[#0b3a24] text-white mt-16">
       <div className="max-w-7xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-4">
         <div>
-          <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={200} height={56} className="h-11 w-auto rounded" />
+          <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={280} height={78} className="h-16 w-auto rounded" />
           <p className="mt-4 text-sm text-white/80 leading-relaxed">
             Your hygiene partner. Wholesale tissue, hygiene and cleaning supplies by the carton, delivered across Lahore and Pakistan.
           </p>
