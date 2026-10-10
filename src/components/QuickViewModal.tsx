@@ -52,8 +52,8 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
             <div className="mt-4 space-y-1.5 text-sm text-gray-600">
               <p><span className="font-semibold text-gray-900">SKU:</span> PM-{product.slug.slice(0, 8).toUpperCase()}</p>
               <p><span className="font-semibold text-gray-900">MOQ:</span> {product.moq}</p>
-              <p><span className="font-semibold text-gray-900">Packing:</span> Carton packing confirmed on request</p>
-              <p><span className="font-semibold text-gray-900">Availability:</span> <span className="text-amber-600 font-medium">Available on request</span></p>
+              <p><span className="font-semibold text-gray-900">Packing:</span> Carton packing for wholesale orders</p>
+              <p><span className="font-semibold text-gray-900">Availability:</span> <span className="text-green-600 font-medium">In stock</span></p>
             </div>
             <p className="mt-4 text-sm text-gray-600 leading-relaxed">
               Wholesale {product.category.toLowerCase()} supplied by the carton. Share your quantities and we will confirm packing and final pricing before fulfilment.

@@ -30,13 +30,12 @@ export default function ProductDetail({ product, related }: { product: Product; 
       <div className="grid md:grid-cols-2 gap-10">
         <div className="relative rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
           <Image src={product.image} alt={product.name} width={800} height={800} className="w-full h-auto object-cover" priority />
-          <span className="absolute top-3 left-3 bg-amber-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full">Available on request</span>
         </div>
         <div>
           <p className="text-xs uppercase tracking-wide text-gray-500">{product.category} &middot; {product.brand}</p>
           <h1 className="text-2xl sm:text-3xl font-bold mt-2">{product.name}</h1>
           <p className="mt-3 text-3xl font-bold text-[#114b2f]">{formatPrice(product)}</p>
-          <p className="mt-2 text-sm text-gray-600">MOQ: {product.moq} &middot; Carton packing confirmed on request</p>
+          <p className="mt-2 text-sm text-gray-600">MOQ: {product.moq}</p>
 
           <div className="mt-6 flex items-center gap-3">
             <span className="text-sm font-medium">Cartons:</span>
@@ -68,7 +67,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
 
           <div className="mt-8 border-t pt-6 space-y-3 text-sm text-gray-600">
             <p><span className="font-semibold text-gray-900">Supply:</span> Wholesale cartons, delivered across Lahore &amp; Pakistan</p>
-            <p><span className="font-semibold text-gray-900">Packing:</span> Confirmed on request before fulfilment</p>
+            <p><span className="font-semibold text-gray-900">Packing:</span> Carton packing for wholesale orders</p>
             <p><span className="font-semibold text-gray-900">Pricing:</span> Final quotation shared after reviewing quantities</p>
           </div>
         </div>

@@ -8,7 +8,7 @@ import QuickViewModal from "@/components/QuickViewModal";
 import type { Product } from "@/data/products";
 
 export function formatPrice(p: Product): string {
-  return p.price != null ? `Rs ${p.price.toLocaleString("en-PK")}` : "Price on request";
+  return "";
 }
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -29,9 +29,6 @@ export default function ProductCard({ product }: { product: Product }) {
               className="w-full h-full object-contain bg-[#f6f5f1] p-3 transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
-          <span className="absolute top-2 left-2 bg-amber-500 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full pointer-events-none">
-            Available on request
-          </span>
           <button
             onClick={() => setQuickView(true)}
             aria-label={`Quick view ${product.name}`}
@@ -55,7 +52,6 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.name}
           </Link>
           <p className="mt-1 text-[11px] sm:text-xs text-gray-500">MOQ: {product.moq}</p>
-          <p className="mt-2 text-base sm:text-lg font-bold text-[#114b2f]">{formatPrice(product)}</p>
           <div className="mt-3 flex flex-col sm:flex-row gap-2 pt-1">
             <button
               onClick={() => { add(product); setDrawerOpen(true); }}

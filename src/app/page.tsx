@@ -154,9 +154,9 @@ export default function Home() {
 
       </Reveal>
       <Reveal>
-{/* Price list */}
+{/* Product list */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center">Wholesale Price List</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center">Our Products</h2>
         <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
         <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="overflow-x-auto">
@@ -166,7 +166,6 @@ export default function Home() {
                   <th className="text-left px-5 py-4 font-semibold">Product</th>
                   <th className="text-left px-5 py-4 font-semibold hidden sm:table-cell">Category</th>
                   <th className="text-center px-5 py-4 font-semibold">MOQ</th>
-                  <th className="text-right px-5 py-4 font-semibold">Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -180,16 +179,13 @@ export default function Home() {
                     </td>
                     <td className="px-5 py-3.5 text-gray-600 hidden sm:table-cell">{p.category}</td>
                     <td className="px-5 py-3.5 text-center text-gray-600">{p.moq}</td>
-                    <td className="px-5 py-3.5 text-right font-bold text-[#114b2f] whitespace-nowrap">
-                      {p.price != null ? `Rs ${p.price.toLocaleString("en-PK")}` : "On request"}
-                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <div className="px-5 py-4 bg-[#f7faf8] border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products. Full list available on request.</p>
+            <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products.</p>
             <div className="flex gap-3">
               <Link href="/shop" className="text-sm font-semibold text-[#114b2f] hover:underline">View all products</Link>
               <Link href="/request-quote" className="text-sm font-semibold bg-[#114b2f] text-white px-5 py-2 rounded-full hover:bg-[#0b3a24]">Get bulk quote</Link>
