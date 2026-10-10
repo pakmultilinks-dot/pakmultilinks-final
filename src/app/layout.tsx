@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { CartProvider } from "@/context/CartContext";
 import { WishlistProvider } from "@/context/WishlistContext";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
-import MobileBottomBar from "@/components/MobileBottomBar";
+import StoreChrome from "@/components/StoreChrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,11 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CartProvider>
           <WishlistProvider>
-          <Header />
-          <main className="min-h-[60vh] pb-16 lg:pb-0">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <MobileBottomBar />
+            <StoreChrome>{children}</StoreChrome>
           </WishlistProvider>
         </CartProvider>
       </body>

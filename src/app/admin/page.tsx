@@ -6,16 +6,33 @@ import { useRouter } from "next/navigation";
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple password check - in production, use proper auth
-    if (password === "pakmultilinks2024") {
-      localStorage.setItem("admin_auth", "true");
-      router.push("/admin/dashboard");
-    } else {
-      setError("Invalid password");
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        localStorage.setItem("admin_auth", "true");
+        router.push("/admin/dashboard");
+      } else {
+        setError(data.error || "Invalid password");
+      }
+    } catch {
+      setError("Login failed. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -35,13 +52,15 @@ export default function AdminLogin() {
             className="mt-2 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]"
             placeholder="Enter admin password"
             required
+            disabled={loading}
           />
           {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
           <button
             type="submit"
-            className="mt-6 w-full py-3 bg-[#114b2f] text-white font-semibold rounded-lg hover:bg-[#0b3a24] transition-colors"
+            disabled={loading}
+            className="mt-6 w-full py-3 bg-[#114b2f] text-white font-semibold rounded-lg hover:bg-[#0b3a24] transition-colors disabled:opacity-50"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
       </div>
