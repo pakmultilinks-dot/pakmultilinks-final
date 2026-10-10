@@ -79,7 +79,7 @@ export default function Header() {
           </button>
 
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={320} height={90} className="h-14 sm:h-16 w-auto" priority />
+            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={400} height={112} className="h-16 sm:h-20 w-auto" priority />
           </Link>
 
           {/* Search */}
