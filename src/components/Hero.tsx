@@ -88,7 +88,7 @@ export default function Hero() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24]/90 via-[#0b3a24]/70 to-[#0b3a24]/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24] via-[#0b3a24]/95 to-[#0b3a24]/85" />
           </div>
         ))}
       </div>
