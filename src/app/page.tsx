@@ -32,7 +32,7 @@ export default function Home() {
           {[
             ["Supplied by the carton", "Bulk packing for businesses of every size."],
             ["Business orders welcome", "Send quantities, get a quotation within a day."],
-            ["A person to talk to", "Call or WhatsApp Zohair Ahmed directly."],
+            ["A person to talk to", "Call or WhatsApp Zoher Ahmed directly."],
           ].map(([t, d]) => (
             <div key={t} className="px-4">
               <p className="font-bold text-[#114b2f]">{t}</p>

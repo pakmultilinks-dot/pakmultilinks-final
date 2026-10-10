@@ -669,6 +669,366 @@ export const PRODUCTS: Product[] = [
     "moq": "1 carton",
     "price": null,
     "inStock": true
+  },
+  {
+    "name": "Surf Excel Detergent Powder 1kg",
+    "slug": "surf-excel-detergent-powder-1kg",
+    "image": "/products/surf-excel-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Surf Excel",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Ariel Detergent Powder 1kg",
+    "slug": "ariel-detergent-powder-1kg",
+    "image": "/products/ariel-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Ariel",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Sufi Super Detergent Powder 1kg",
+    "slug": "sufi-super-detergent-powder-1kg",
+    "image": "/products/sufi-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Sufi",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Harpic Bathroom Cleaner Floral 500ml",
+    "slug": "harpic-bathroom-cleaner-floral-500ml",
+    "image": "/products/harpic-bathroom-cleaner-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Harpic",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Vim Dishwash Bar Lemon 300g",
+    "slug": "vim-dishwash-bar-lemon-300g",
+    "image": "/products/vim-dishwash-bar-300g.jpg",
+    "category": "Cleaning Products",
+    "brand": "Vim",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dettol Multi Surface Cleaner Aqua 975ml",
+    "slug": "dettol-multi-surface-cleaner-aqua-975ml",
+    "image": "/products/dettol-multi-surface-cleaner-975ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Dettol",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Domex Multi Purpose Cleaner 500ml",
+    "slug": "domex-multi-purpose-cleaner-500ml",
+    "image": "/products/domex-multi-purpose-cleaner-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Domex",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Robin Bleach 1.5L",
+    "slug": "robin-bleach-1-5l",
+    "image": "/products/robin-bleach-1-5l.jpg",
+    "category": "Cleaning Products",
+    "brand": "Robin",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Colin Glass and Household Cleaner 500ml",
+    "slug": "colin-glass-and-household-cleaner-500ml",
+    "image": "/products/colin-glass-cleaner-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Colin",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Harpic Flushmatic In-Cistern Toilet Cleaner",
+    "slug": "harpic-flushmatic-in-cistern-toilet-cleaner",
+    "image": "/products/harpic-flushmatic.jpg",
+    "category": "Cleaning Products",
+    "brand": "Harpic",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Mortein 2-in-1 Insect Killer Spray 600ml",
+    "slug": "mortein-2-in-1-insect-killer-spray-600ml",
+    "image": "/products/mortein-insect-killer-600ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Mortein",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Kingtox Mosquito Coil 10 Pack",
+    "slug": "kingtox-mosquito-coil-10-pack",
+    "image": "/products/kingtox-mosquito-coil.jpg",
+    "category": "Cleaning Products",
+    "brand": "Kingtox",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Lifebuoy Total 10 Soap 145g",
+    "slug": "lifebuoy-total-10-soap-145g",
+    "image": "/products/lifebuoy-soap-145g.jpg",
+    "category": "Personal Care",
+    "brand": "Lifebuoy",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Lux Soft Touch Soap 150g",
+    "slug": "lux-soft-touch-soap-150g",
+    "image": "/products/lux-soap-150g.jpg",
+    "category": "Personal Care",
+    "brand": "Lux",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Safeguard Lemon Fresh Soap 130g",
+    "slug": "safeguard-lemon-fresh-soap-130g",
+    "image": "/products/safeguard-soap-130g.jpg",
+    "category": "Personal Care",
+    "brand": "Safeguard",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dettol Original Soap 125g",
+    "slug": "dettol-original-soap-125g",
+    "image": "/products/dettol-soap-125g.jpg",
+    "category": "Personal Care",
+    "brand": "Dettol",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Capri Moisturising Soap 120g",
+    "slug": "capri-moisturising-soap-120g",
+    "image": "/products/capri-soap-120g.jpg",
+    "category": "Personal Care",
+    "brand": "Capri",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Colgate Maximum Cavity Protection Toothpaste 160g",
+    "slug": "colgate-maximum-cavity-protection-toothpaste-160g",
+    "image": "/products/colgate-toothpaste-160g.jpg",
+    "category": "Personal Care",
+    "brand": "Colgate",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Closeup Red Hot Toothpaste 150g",
+    "slug": "closeup-red-hot-toothpaste-150g",
+    "image": "/products/closeup-toothpaste-150g.jpg",
+    "category": "Personal Care",
+    "brand": "Closeup",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Pepsodent Germi Check Toothpaste 200g",
+    "slug": "pepsodent-germi-check-toothpaste-200g",
+    "image": "/products/pepsodent-toothpaste-200g.jpg",
+    "category": "Personal Care",
+    "brand": "Pepsodent",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Head and Shoulders Anti Dandruff Shampoo 340ml",
+    "slug": "head-and-shoulders-anti-dandruff-shampoo-340ml",
+    "image": "/products/head-and-shoulders-shampoo-340ml.jpg",
+    "category": "Personal Care",
+    "brand": "Head & Shoulders",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Sunsilk Black Shine Shampoo 350ml",
+    "slug": "sunsilk-black-shine-shampoo-350ml",
+    "image": "/products/sunsilk-shampoo-350ml.jpg",
+    "category": "Personal Care",
+    "brand": "Sunsilk",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Pantene Pro-V Shampoo 340ml",
+    "slug": "pantene-pro-v-shampoo-340ml",
+    "image": "/products/pantene-shampoo-340ml.jpg",
+    "category": "Personal Care",
+    "brand": "Pantene",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Clear Anti Dandruff Shampoo 350ml",
+    "slug": "clear-anti-dandruff-shampoo-350ml",
+    "image": "/products/clear-shampoo-350ml.jpg",
+    "category": "Personal Care",
+    "brand": "Clear",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Lifebuoy Total 10 Handwash 200ml",
+    "slug": "lifebuoy-total-10-handwash-200ml",
+    "image": "/products/lifebuoy-handwash-200ml.jpg",
+    "category": "Personal Care",
+    "brand": "Lifebuoy",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dettol Original Liquid Handwash 200ml",
+    "slug": "dettol-original-liquid-handwash-200ml",
+    "image": "/products/dettol-handwash-200ml.jpg",
+    "category": "Personal Care",
+    "brand": "Dettol",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Plastic Bucket with Lid 20L",
+    "slug": "plastic-bucket-with-lid-20l",
+    "image": "/products/plastic-bucket-20l.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dustpan and Brush Set",
+    "slug": "dustpan-and-brush-set",
+    "image": "/products/dustpan-brush-set.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Trigger Spray Bottle 500ml",
+    "slug": "trigger-spray-bottle-500ml",
+    "image": "/products/spray-bottle-500ml.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Household Rubber Gloves Pair",
+    "slug": "household-rubber-gloves-pair",
+    "image": "/products/household-rubber-gloves.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Yellow Duster Cloths 25 Pack",
+    "slug": "yellow-duster-cloths-25-pack",
+    "image": "/products/yellow-duster-cloths.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Paper Drinking Straws 50 Pack",
+    "slug": "paper-drinking-straws-50-pack",
+    "image": "/products/paper-straws-100-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Wooden Coffee Stirrers Bulk Pack",
+    "slug": "wooden-coffee-stirrers-bulk-pack",
+    "image": "/products/wooden-coffee-stirrers.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Butter Paper Sheets Pack",
+    "slug": "butter-paper-sheets-pack",
+    "image": "/products/butter-paper-sheets.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Fay Spring Fresh Facial Tissues 200 Sheets",
+    "slug": "fay-spring-fresh-facial-tissues-200-sheets",
+    "image": "/products/fay-facial-tissues-200.jpg",
+    "category": "Tissue & Paper Wholesale",
+    "brand": "Fay",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Butterfly Toilet Roll 2 Ply",
+    "slug": "butterfly-toilet-roll-2-ply",
+    "image": "/products/butterfly-toilet-roll.jpg",
+    "category": "Tissue & Paper Wholesale",
+    "brand": "Butterfly",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
   }
 ];
 export const CATEGORIES = [
