@@ -10,6 +10,7 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
+    image: "/images/banner-workspace.jpg",
     accent: "from-[#0b3a24] via-[#114b2f] to-[#0d4229]",
   },
   {
@@ -18,6 +19,7 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
+    image: "/images/hero-banner.png",
     accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
   },
   {
@@ -26,6 +28,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
     primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
+    image: "/images/banner-hygiene-solutions.jpg",
     accent: "from-[#0c3d26] via-[#125233] to-[#0e4028]",
   },
   {
@@ -34,6 +37,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
     primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
+    image: "/images/hero-banner-2.jpg",
     accent: "from-[#0b3a24] via-[#0e4a2d] to-[#0c3822]",
   },
 ];
@@ -73,17 +77,15 @@ export default function Hero() {
         {SLIDES.map((s, i) => (
           <div
             key={s.title}
-            className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-br ${s.accent} ${i === idx ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
             aria-hidden={i !== idx}
           >
-            <div className="absolute inset-0 opacity-[0.07]">
-              <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-white blur-3xl" />
-              <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-300 blur-3xl" />
-            </div>
-            <div className="absolute inset-0 opacity-[0.04]" style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-              backgroundSize: "32px 32px"
-            }} />
+            <img
+              src={s.image}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className={`absolute inset-0 bg-gradient-to-r from-[#0b3a24]/95 via-[#0b3a24]/70 to-[#0b3a24]/20`} />
           </div>
         ))}
 
