@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -75,11 +74,6 @@ function ShopInner() {
   );
 }
 
-
-export const metadata: Metadata = {
-  title: "Shop All Products",
-  description: "Browse 66 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
-};
 
 export default function ShopPage() {
   return (
