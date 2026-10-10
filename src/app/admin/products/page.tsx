@@ -1,24 +1,38 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { PRODUCTS, CATEGORIES } from "@/data/products";
+import { CATEGORIES } from "@/data/products";
 import type { Product } from "@/data/products";
+import { getSupabase, isSupabaseConfigured, DBProduct } from "@/lib/supabase";
 
-const STORAGE_KEY = "admin_products_override";
-
-function getProducts(): Product[] {
-  if (typeof window === "undefined") return PRODUCTS;
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored);
-  } catch {}
-  return PRODUCTS;
+function dbToProduct(db: DBProduct): Product {
+  let image = db.image;
+  if (image.includes("pakmultilinks-final.vercel.app")) {
+    image = image.replace("https://pakmultilinks-final.vercel.app", "");
+  }
+  return {
+    name: db.name,
+    slug: db.slug,
+    image,
+    category: db.category,
+    brand: db.brand,
+    moq: db.moq,
+    price: db.price,
+    inStock: db.in_stock,
+  };
 }
 
-function saveProducts(products: Product[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
-  // Also notify the store to refresh
-  window.dispatchEvent(new CustomEvent("admin-products-updated"));
+async function getProducts(): Promise<Product[]> {
+  if (!isSupabaseConfigured()) {
+    const { PRODUCTS } = await import("@/data/products");
+    return PRODUCTS;
+  }
+  const { data, error } = await getSupabase()!.from("products").select("*").order("name");
+  if (error || !data) {
+    const { PRODUCTS } = await import("@/data/products");
+    return PRODUCTS;
+  }
+  return data.map(dbToProduct);
 }
 
 const EMPTY_PRODUCT: Product = {
@@ -41,7 +55,7 @@ export default function AdminProducts() {
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
 
   useEffect(() => {
-    setProducts(getProducts());
+    getProducts().then(setProducts);
   }, []);
 
   const filtered = products.filter((p) =>
@@ -66,7 +80,7 @@ export default function AdminProducts() {
     setIsNew(false);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!form.name.trim()) {
       alert("Product name is required");
       return;
@@ -76,36 +90,63 @@ export default function AdminProducts() {
       return;
     }
 
-    let updated: Product[];
-    if (isNew) {
-      // Check for duplicate slug
-      if (products.some((p) => p.slug === form.slug)) {
-        alert("A product with this slug already exists");
-        return;
-      }
-      updated = [...products, form];
-    } else {
-      updated = products.map((p) => (p.slug === editing?.slug ? form : p));
+    if (!isSupabaseConfigured()) {
+      alert("Database not configured. Cannot save.");
+      return;
     }
 
+    // Convert image to full URL for database
+    const dbImage = form.image.startsWith("http") ? form.image : `https://pakmultilinks-final.vercel.app${form.image.startsWith("/") ? form.image : "/" + form.image}`;
+
+    const dbData = {
+      name: form.name,
+      slug: form.slug,
+      image: dbImage,
+      category: form.category,
+      brand: form.brand,
+      moq: form.moq,
+      price: form.price,
+      in_stock: form.inStock,
+    };
+
+    if (isNew) {
+      const { error } = await getSupabase()!.from("products").insert(dbData);
+      if (error) {
+        alert("Error adding product: " + error.message);
+        return;
+      }
+    } else {
+      const { error } = await getSupabase()!.from("products").update(dbData).eq("slug", editing?.slug);
+      if (error) {
+        alert("Error updating product: " + error.message);
+        return;
+      }
+    }
+
+    // Refresh list
+    const updated = await getProducts();
     setProducts(updated);
-    saveProducts(updated);
     closeForm();
   };
 
-  const handleDelete = (slug: string) => {
-    const updated = products.filter((p) => p.slug !== slug);
+  const handleDelete = async (slug: string) => {
+    if (!isSupabaseConfigured()) {
+      alert("Database not configured. Cannot delete.");
+      return;
+    }
+    if (!confirm("Delete this product? This cannot be undone.")) return;
+    const { error } = await getSupabase()!.from("products").delete().eq("slug", slug);
+    if (error) {
+      alert("Error deleting: " + error.message);
+      return;
+    }
+    const updated = await getProducts();
     setProducts(updated);
-    saveProducts(updated);
     setDeleteConfirm(null);
   };
 
   const resetToDefault = () => {
-    if (confirm("Reset all products to default? This will remove all your changes.")) {
-      localStorage.removeItem(STORAGE_KEY);
-      setProducts(PRODUCTS);
-      window.dispatchEvent(new CustomEvent("admin-products-updated"));
-    }
+    alert("Reset is disabled when using database. Delete products individually.");
   };
 
   return (

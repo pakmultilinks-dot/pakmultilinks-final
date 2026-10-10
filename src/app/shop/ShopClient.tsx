@@ -3,10 +3,12 @@
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
-import { PRODUCTS, CATEGORIES } from "@/data/products";
+import { CATEGORIES } from "@/data/products";
+import { useProducts } from "@/lib/products-db";
 
 export default function ShopClient() {
   const params = useSearchParams();
+  const { products: PRODUCTS } = useProducts();
   const [q, setQ] = useState(params.get("q") ?? "");
   const [cat, setCat] = useState(params.get("category") ?? "");
   const [sort, setSort] = useState("featured");
