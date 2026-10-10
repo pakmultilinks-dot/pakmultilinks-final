@@ -21,6 +21,22 @@ const SLIDES = [
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
     image: "/images/hero-main-banner.jpg",
   },
+  {
+    eyebrow: "Tissue & Paper Wholesale",
+    title: "Facial Tissues, Toilet Rolls & Napkins in Bulk",
+    subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
+    primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
+    secondaryCta: { label: "Get a Quote", href: "/request-quote" },
+    image: "/images/hero-tissue-pro.jpg",
+  },
+  {
+    eyebrow: "Cleaning Essentials",
+    title: "Professional Cleaning Supplies in Bulk",
+    subtitle: "Detergents, disinfectants, and cleaning tools for offices, schools, and commercial spaces. Wholesale carton pricing.",
+    primaryCta: { label: "Shop Cleaning", href: "/shop" },
+    secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
+    image: "/images/hero-cleaning-pro.jpg",
+  },
 ];
 
 export default function Hero() {
@@ -57,36 +73,40 @@ export default function Hero() {
           aria-hidden={i !== idx}
         >
           <div className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] overflow-hidden">
-            <Image
-              src={s.image}
-              alt=""
-              fill
-              className="object-cover"
-              priority={i === 0}
-            />
+            <div key={`img-${i}-${animKey}`} className="absolute inset-0 hero-kenburns">
+              <Image
+                src={s.image}
+                alt=""
+                fill
+                className="object-cover"
+                priority={i === 0}
+              />
+            </div>
+            {/* Animated gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
                 <div key={`${i}-${animKey}`} className="max-w-lg">
-                  <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold">
+                  <p className="hero-anim hero-delay-1 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold">
                     {s.eyebrow}
                   </p>
-                  <h2 className="hero-anim mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
+                  <h2 className="hero-anim hero-delay-2 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
                     {s.title}
                   </h2>
-                  <p className="hero-anim mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                  <p className="hero-anim hero-delay-3 mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
                     {s.subtitle}
                   </p>
-                  <div className="hero-anim mt-6 flex flex-wrap gap-3">
+                  <div className="hero-anim hero-delay-4 mt-6 flex flex-wrap gap-3">
                     <Link
                       href={s.primaryCta.href}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#114b2f] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-sm"
+                      className="group inline-flex items-center gap-2 px-6 py-3 bg-[#114b2f] text-white font-semibold rounded-full transition-all hover:scale-105 hover:shadow-xl shadow-lg text-sm"
                     >
                       {s.primaryCta.label}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white text-[#114b2f] font-semibold rounded-full border border-[#114b2f]/20 transition-all text-sm"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white text-[#114b2f] font-semibold rounded-full border border-[#114b2f]/20 transition-all hover:scale-105 text-sm"
                     >
                       {s.secondaryCta.label}
                     </Link>
@@ -94,6 +114,10 @@ export default function Hero() {
                 </div>
               </div>
             </div>
+            {/* Floating decorative dots */}
+            <div className="absolute top-10 right-10 w-3 h-3 bg-[#114b2f]/20 rounded-full hero-float hidden sm:block" />
+            <div className="absolute top-20 right-24 w-2 h-2 bg-[#114b2f]/30 rounded-full hero-float-delay hidden sm:block" />
+            <div className="absolute bottom-20 left-10 w-4 h-4 bg-[#114b2f]/10 rounded-full hero-float hidden sm:block" />
           </div>
         </div>
       ))}
@@ -142,9 +166,37 @@ export default function Hero() {
           opacity: 0;
           animation: heroSlideUp 0.7s ease-out forwards;
         }
+        .hero-delay-1 { animation-delay: 0.1s; }
+        .hero-delay-2 { animation-delay: 0.25s; }
+        .hero-delay-3 { animation-delay: 0.4s; }
+        .hero-delay-4 { animation-delay: 0.55s; }
         @keyframes heroSlideUp {
-          from { opacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(24px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-kenburns {
+          animation: kenBurns 8s ease-out forwards;
+        }
+        @keyframes kenBurns {
+          from { transform: scale(1); }
+          to { transform: scale(1.08); }
+        }
+        .hero-float {
+          animation: floatY 4s ease-in-out infinite;
+        }
+        .hero-float-delay {
+          animation: floatY 4s ease-in-out 1s infinite;
+        }
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-12px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-anim, .hero-kenburns, .hero-float, .hero-float-delay {
+            animation: none;
+            opacity: 1;
+            transform: none;
+          }
         }
       `}</style>
     </section>
