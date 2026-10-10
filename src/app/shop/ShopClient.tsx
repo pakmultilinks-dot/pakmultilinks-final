@@ -61,7 +61,7 @@ export default function ShopClient() {
           <button onClick={() => { setQ(""); setCat(""); }} className="mt-3 text-[#114b2f] font-medium underline">Clear filters</button>
         </div>
       ) : (
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
           {filtered.map((p) => <ProductCard key={p.slug} product={p} />)}
         </div>
       )}
