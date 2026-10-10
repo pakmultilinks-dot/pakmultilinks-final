@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
@@ -10,6 +10,12 @@ export default function ShopClient() {
   const [q, setQ] = useState(params.get("q") ?? "");
   const [cat, setCat] = useState(params.get("category") ?? "");
   const [sort, setSort] = useState("featured");
+
+  // Update filters when URL params change (e.g., clicking category from nav)
+  useEffect(() => {
+    setCat(params.get("category") ?? "");
+    setQ(params.get("q") ?? "");
+  }, [params]);
 
   const filtered = useMemo(() => {
     let list = [...PRODUCTS];
