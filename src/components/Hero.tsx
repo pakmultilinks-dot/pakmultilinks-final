@@ -86,11 +86,11 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent sm:from-white/40 sm:via-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
-                <div key={`${i}-${animKey}`} className="max-w-lg">
+                <div key={`${i}-${animKey}`} className="max-w-lg bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-4 sm:p-0">
                   <p className="hero-anim hero-delay-1 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold">
                     {s.eyebrow}
                   </p>
-                  <h2 className="hero-anim hero-delay-2 mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
+                  <h2 className="hero-anim hero-delay-2 mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
                     {s.title}
                   </h2>
                   <p className="hero-anim hero-delay-3 mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
