@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,7 +6,7 @@
   --color-brand-dark: #0b3a24;
   --color-brand-light: #e8f3ec;
   --color-accent: #b8860b;
-  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 html {
