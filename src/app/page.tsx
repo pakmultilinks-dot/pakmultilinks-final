@@ -43,12 +43,12 @@ export default function Home() {
       </section>
 
       {/* Trusted partners */}
-      <section className="py-12 bg-[#f7faf8]">
+      <section className="py-12 bg-[#f7faf8] overflow-hidden">
         <h2 className="text-center text-xl sm:text-2xl font-bold mb-8">Our Trusted Partners</h2>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {PARTNERS.map((p) => (
-              <div key={p.name} className="flex flex-col items-center gap-3">
+        <div className="relative">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
+            {[...PARTNERS, ...PARTNERS].map((p, i) => (
+              <div key={`${p.name}-${i}`} className="flex flex-col items-center gap-3 shrink-0">
                 <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
                   <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
                 </div>
@@ -57,6 +57,18 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <style jsx>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+          .animate-marquee:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
       </section>
 
       <Reveal>
