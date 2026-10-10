@@ -130,11 +130,46 @@ export default function Home() {
       </section>
 
       {/* Price list */}
-      <section className="max-w-4xl mx-auto px-4 pb-16">
+      <section className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-center">Wholesale Price List</h2>
         <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
-        <div className="mt-8 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-          <Image src="/images/price-list.jpg" alt="Pak Multilinks Hygiene products price list with wholesale rates" width={759} height={1600} className="w-full h-auto" />
+        <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#114b2f] text-white">
+                  <th className="text-left px-5 py-4 font-semibold">Product</th>
+                  <th className="text-left px-5 py-4 font-semibold hidden sm:table-cell">Category</th>
+                  <th className="text-center px-5 py-4 font-semibold">MOQ</th>
+                  <th className="text-right px-5 py-4 font-semibold">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PRODUCTS.slice(0, 20).map((p, i) => (
+                  <tr key={p.slug} className={`border-t border-gray-100 hover:bg-[#f7faf8] ${i % 2 === 1 ? "bg-gray-50/50" : ""}`}>
+                    <td className="px-5 py-3.5">
+                      <Link href={`/product/${p.slug}`} className="font-medium text-gray-900 hover:text-[#114b2f]">
+                        {p.name}
+                      </Link>
+                      <p className="text-xs text-gray-500 sm:hidden mt-0.5">{p.category}</p>
+                    </td>
+                    <td className="px-5 py-3.5 text-gray-600 hidden sm:table-cell">{p.category}</td>
+                    <td className="px-5 py-3.5 text-center text-gray-600">{p.moq}</td>
+                    <td className="px-5 py-3.5 text-right font-bold text-[#114b2f] whitespace-nowrap">
+                      {p.price != null ? `Rs ${p.price.toLocaleString("en-PK")}` : "On request"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="px-5 py-4 bg-[#f7faf8] border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products. Full list available on request.</p>
+            <div className="flex gap-3">
+              <Link href="/shop" className="text-sm font-semibold text-[#114b2f] hover:underline">View all products</Link>
+              <Link href="/request-quote" className="text-sm font-semibold bg-[#114b2f] text-white px-5 py-2 rounded-full hover:bg-[#0b3a24]">Get bulk quote</Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
