@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const SLIDES = [
   {
@@ -10,6 +11,7 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
+    image: "/images/hero-clean-1.jpg",
     accent: "from-[#0b3a24] via-[#114b2f] to-[#0d4229]",
   },
   {
@@ -18,6 +20,7 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
+    image: "/images/hero-clean-2.jpg",
     accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
   },
   {
@@ -26,6 +29,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
     primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
+    image: "/images/hero-clean-3.jpg",
     accent: "from-[#0c3d26] via-[#125233] to-[#0e4028]",
   },
   {
@@ -34,6 +38,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
     primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
+    image: "/images/hero-clean-4.jpg",
     accent: "from-[#0b3a24] via-[#0e4a2d] to-[#0c3822]",
   },
 ];
@@ -69,29 +74,29 @@ export default function Hero() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
+      {/* Background gradient */}
+      <div className="absolute inset-0">
         {SLIDES.map((s, i) => (
           <div
             key={s.title}
             className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-br ${s.accent} ${i === idx ? "opacity-100" : "opacity-0"}`}
             aria-hidden={i !== idx}
-          >
-            <div className="absolute inset-0 opacity-[0.07]">
-              <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-white blur-3xl" />
-              <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-300 blur-3xl" />
-            </div>
-          </div>
+          />
         ))}
+      </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 w-full">
-          <div key={animKey} className="max-w-2xl">
+      {/* Content: text left, image right */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] py-12 sm:py-16">
+          {/* Text panel - left side, on green */}
+          <div key={animKey} className="max-w-xl">
             <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
               {slide.eyebrow}
             </p>
-            <h2 className="hero-anim mt-4 text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight" style={{ animationDelay: "120ms" }}>
+            <h2 className="hero-anim mt-4 text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight" style={{ animationDelay: "120ms" }}>
               {slide.title}
             </h2>
-            <p className="hero-anim mt-5 text-sm sm:text-lg text-white/85 leading-relaxed max-w-xl" style={{ animationDelay: "240ms" }}>
+            <p className="hero-anim mt-5 text-sm sm:text-lg text-white/85 leading-relaxed" style={{ animationDelay: "240ms" }}>
               {slide.subtitle}
             </p>
             <div className="hero-anim mt-8 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
@@ -110,9 +115,28 @@ export default function Hero() {
               </Link>
             </div>
           </div>
+
+          {/* Image panel - right side, no text overlap */}
+          <div className="hidden lg:block relative h-full min-h-[400px]">
+            {SLIDES.map((s, i) => (
+              <div
+                key={s.image}
+                className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+                aria-hidden={i !== idx}
+              >
+                <Image
+                  src={s.image}
+                  alt=""
+                  fill
+                  className="object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
+      {/* Controls */}
       <button
         aria-label="Previous slide"
         onClick={() => goTo((idx - 1 + SLIDES.length) % SLIDES.length)}
