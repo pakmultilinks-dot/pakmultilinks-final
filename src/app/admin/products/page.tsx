@@ -3,36 +3,36 @@
 import { useState, useEffect } from "react";
 import { CATEGORIES } from "@/data/products";
 import type { Product } from "@/data/products";
-import { getSupabase, isSupabaseConfigured, DBProduct } from "@/lib/supabase";
-
-function dbToProduct(db: DBProduct): Product {
-  let image = db.image;
-  if (image.includes("pakmultilinks-final.vercel.app")) {
-    image = image.replace("https://pakmultilinks-final.vercel.app", "");
-  }
-  return {
-    name: db.name,
-    slug: db.slug,
-    image,
-    category: db.category,
-    brand: db.brand,
-    moq: db.moq,
-    price: db.price,
-    inStock: db.in_stock,
-  };
-}
 
 async function getProducts(): Promise<Product[]> {
-  if (!isSupabaseConfigured()) {
+  try {
+    const res = await fetch("/api/admin/products");
+    if (!res.ok) throw new Error("API failed");
+    const { products } = await res.json();
+    if (!products || products.length === 0) {
+      const { PRODUCTS } = await import("@/data/products");
+      return PRODUCTS;
+    }
+    return products.map((db: any) => {
+      let image = db.image || "";
+      if (image.includes("pakmultilinks-final.vercel.app")) {
+        image = image.replace("https://pakmultilinks-final.vercel.app", "");
+      }
+      return {
+        name: db.name,
+        slug: db.slug,
+        image,
+        category: db.category,
+        brand: db.brand,
+        moq: db.moq,
+        price: db.price,
+        inStock: db.in_stock,
+      };
+    });
+  } catch {
     const { PRODUCTS } = await import("@/data/products");
     return PRODUCTS;
   }
-  const { data, error } = await getSupabase()!.from("products").select("*").order("name");
-  if (error || !data) {
-    const { PRODUCTS } = await import("@/data/products");
-    return PRODUCTS;
-  }
-  return data.map(dbToProduct);
 }
 
 const EMPTY_PRODUCT: Product = {
@@ -90,11 +90,6 @@ export default function AdminProducts() {
       return;
     }
 
-    if (!isSupabaseConfigured()) {
-      alert("Database not configured. Cannot save.");
-      return;
-    }
-
     // Convert image to full URL for database
     const dbImage = form.image.startsWith("http") ? form.image : `https://pakmultilinks-final.vercel.app${form.image.startsWith("/") ? form.image : "/" + form.image}`;
 
@@ -109,18 +104,33 @@ export default function AdminProducts() {
       in_stock: form.inStock,
     };
 
-    if (isNew) {
-      const { error } = await getSupabase()!.from("products").insert(dbData);
-      if (error) {
-        alert("Error adding product: " + error.message);
-        return;
+    try {
+      if (isNew) {
+        const res = await fetch("/api/admin/products", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dbData),
+        });
+        if (!res.ok) {
+          const { error } = await res.json();
+          alert("Error adding product: " + error);
+          return;
+        }
+      } else {
+        const res = await fetch("/api/admin/products", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...dbData, slug: form.slug }),
+        });
+        if (!res.ok) {
+          const { error } = await res.json();
+          alert("Error updating product: " + error);
+          return;
+        }
       }
-    } else {
-      const { error } = await getSupabase()!.from("products").update(dbData).eq("slug", editing?.slug);
-      if (error) {
-        alert("Error updating product: " + error.message);
-        return;
-      }
+    } catch (e: any) {
+      alert("Error: " + e.message);
+      return;
     }
 
     // Refresh list
@@ -130,14 +140,16 @@ export default function AdminProducts() {
   };
 
   const handleDelete = async (slug: string) => {
-    if (!isSupabaseConfigured()) {
-      alert("Database not configured. Cannot delete.");
-      return;
-    }
     if (!confirm("Delete this product? This cannot be undone.")) return;
-    const { error } = await getSupabase()!.from("products").delete().eq("slug", slug);
-    if (error) {
-      alert("Error deleting: " + error.message);
+    try {
+      const res = await fetch(`/api/admin/products?slug=${encodeURIComponent(slug)}`, { method: "DELETE" });
+      if (!res.ok) {
+        const { error } = await res.json();
+        alert("Error deleting: " + error);
+        return;
+      }
+    } catch (e: any) {
+      alert("Error: " + e.message);
       return;
     }
     const updated = await getProducts();
