@@ -33,10 +33,10 @@ const SLIDES = [
     link: "/shop",
   },
   {
-    eyebrow: "Cleaning Products",
-    title: "Floor Cleaners, Phenyl, Bleach & Detergents",
-    subtitle: "Commercial-grade cleaning chemicals for spotless spaces. Sweep, Glint, Vim and more, packed for businesses of every size.",
-    primaryCta: { label: "Shop Cleaning", href: "/shop?category=Cleaning%20Products" },
+    eyebrow: "Bulk Deals & Value Packs",
+    title: "Wholesale Deals on Trusted Brands",
+    subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
+    primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
     bg: "/images/marketing-ciblure.jpg",
     link: "/shop",
@@ -85,7 +85,7 @@ export default function Hero() {
         ))}
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-20 sm:pb-24 w-full">
           <div key={animKey} className="max-w-2xl">
             <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
               {slide.eyebrow}
@@ -116,7 +116,7 @@ export default function Hero() {
         </div>
 
         {/* Trust badges */}
-        <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 hidden md:block">
+        <div className="absolute bottom-5 left-0 right-0 z-10 hidden md:block">
           <div className="max-w-7xl mx-auto px-6 flex gap-8 text-white/70 text-xs">
             <span className="flex items-center gap-2">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6 9 17l-5-5"/></svg>
