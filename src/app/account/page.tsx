@@ -68,7 +68,7 @@ export default function AccountPage() {
           ))}
           <div className="bg-[#e8f3ec] rounded-2xl p-5 text-sm text-[#114b2f]">
             <p className="font-semibold">Prefer WhatsApp?</p>
-            <a href="https://wa.me/923006917385" className="font-bold underline underline-offset-2">Message us directly</a>
+            <a href="https://wa.me/${CONTACT.zoher.waNumber}" className="font-bold underline underline-offset-2">Message us directly</a>
           </div>
         </div>
 

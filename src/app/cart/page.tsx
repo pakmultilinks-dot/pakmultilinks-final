@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/components/ProductCard";
 
-const WA_NUMBER = "923006917385";
+import { CONTACT } from "@/data/contact";
 
 export default function CartPage() {
   const { items, setQty, remove, clear } = useCart();
@@ -53,7 +53,7 @@ export default function CartPage() {
       <div className="mt-8 border-t pt-6">
         <p className="text-sm text-gray-600">Pricing is quoted after review of your quantities. Our team confirms packing and final rates before fulfilment.</p>
         <div className="mt-4 flex flex-col sm:flex-row gap-3">
-          <a href={`https://wa.me/${WA_NUMBER}?text=${waText}`} target="_blank" rel="noopener" className="flex-1 text-center bg-[#25D366] text-white font-semibold rounded-full py-3.5 hover:bg-[#1eb856]">Order on WhatsApp</a>
+          <a href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`} target="_blank" rel="noopener" className="flex-1 text-center bg-[#25D366] text-white font-semibold rounded-full py-3.5 hover:bg-[#1eb856]">Order on WhatsApp</a>
           <Link href="/request-quote" className="flex-1 text-center bg-[#114b2f] text-white font-semibold rounded-full py-3.5 hover:bg-[#0b3a24]">Request bulk quote</Link>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
-const WA_NUMBER = "923006917385";
+import { CONTACT } from "@/data/contact";
 
 export default function CartDrawer() {
   const { items, drawerOpen, setDrawerOpen, setQty, remove, count } = useCart();
@@ -53,7 +53,7 @@ export default function CartDrawer() {
           <div className="border-t px-5 py-4 space-y-2.5">
             <p className="text-xs text-gray-500 text-center">Pricing is quoted after review of quantities.</p>
             <Link href="/cart" onClick={() => setDrawerOpen(false)} className="block text-center w-full bg-[#114b2f] text-white font-semibold rounded-full py-3 hover:bg-[#0b3a24]">View cartons</Link>
-            <a href={`https://wa.me/${WA_NUMBER}?text=${waText}`} target="_blank" rel="noopener" className="block text-center w-full border border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3 hover:bg-green-50">Order on WhatsApp</a>
+            <a href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`} target="_blank" rel="noopener" className="block text-center w-full border border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3 hover:bg-green-50">Order on WhatsApp</a>
             <Link href="/request-quote" onClick={() => setDrawerOpen(false)} className="block text-center w-full text-sm text-[#114b2f] font-medium hover:underline py-1">Request bulk quote</Link>
           </div>
         )}

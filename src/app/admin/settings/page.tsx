@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CONTACT } from "@/data/contact";
 
 export default function AdminSettings() {
   const [saved, setSaved] = useState(false);
@@ -22,7 +23,7 @@ export default function AdminSettings() {
         </div>
         <div>
           <label className="block text-sm font-medium mb-1">WhatsApp Number</label>
-          <input type="text" defaultValue="923006917385" className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]" />
+          <input type="text" defaultValue={CONTACT.zoher.waNumber} className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]" />
         </div>
         <div>
           <label className="block text-sm font-medium mb-1">Contact Email</label>

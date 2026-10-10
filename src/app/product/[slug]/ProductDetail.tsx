@@ -7,7 +7,7 @@ import { useCart } from "@/context/CartContext";
 import ProductCard, { formatPrice } from "@/components/ProductCard";
 import type { Product } from "@/data/products";
 
-const WA_NUMBER = "923006917385";
+import { CONTACT } from "@/data/contact";
 
 export default function ProductDetail({ product, related }: { product: Product; related: Product[] }) {
   const { add, setDrawerOpen } = useCart();
@@ -54,7 +54,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
               Add to cart
             </button>
             <a
-              href={`https://wa.me/${WA_NUMBER}?text=${waText}`}
+              href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`}
               target="_blank" rel="noopener"
               className="flex-1 text-center border-2 border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3 hover:bg-green-50"
             >

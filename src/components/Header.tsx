@@ -7,8 +7,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { CATEGORIES, PRODUCTS } from "@/data/products";
 
-const WA_BILAL = "923258166829";
-const WA_ZOHER = "923006917385";
+import { CONTACT, DEFAULT_WA_MESSAGE } from "@/data/contact";
 
 export default function Header() {
   const { count, setDrawerOpen } = useCart();
@@ -110,11 +109,11 @@ export default function Header() {
                 <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
               )}
             </button>
-            <a href={`https://wa.me/${WA_ZOHER}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label="WhatsApp Zoher Ahmed" title="Zoher Ahmed" className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
+            <a href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${encodeURIComponent(DEFAULT_WA_MESSAGE)}`} target="_blank" rel="noopener" aria-label="WhatsApp Zoher Ahmed" title="Zoher Ahmed" className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4zm-3.2 4.1c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.9-.4-1.5-.7-2.1-1.4-.5-.5-.8-1.1-.9-1.3-.1-.3 0-.4.1-.5l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5L9.4 6.6c-.2-.3-.4-.4-.6-.4z"/></svg>
               <span className="hidden sm:block text-xs font-bold leading-tight">Zoher Ahmed</span>
             </a>
-            <a href={`https://wa.me/${WA_BILAL}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label="WhatsApp Bilal Shah" title="Bilal Shah" className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
+            <a href={`https://wa.me/${CONTACT.bilal.waNumber}?text=${encodeURIComponent(DEFAULT_WA_MESSAGE)}`} target="_blank" rel="noopener" aria-label="WhatsApp Bilal Shah" title="Bilal Shah" className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4zm-3.2 4.1c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.9-.4-1.5-.7-2.1-1.4-.5-.5-.8-1.1-.9-1.3-.1-.3 0-.4.1-.5l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5L9.4 6.6c-.2-.3-.4-.4-.6-.4z"/></svg>
               <span className="hidden sm:block text-xs font-bold leading-tight">Bilal Shah</span>
             </a>

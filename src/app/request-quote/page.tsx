@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { PRODUCTS } from "@/data/products";
+import { CONTACT } from "@/data/contact";
 import { useCart } from "@/context/CartContext";
 
 
@@ -25,7 +26,7 @@ export default function RequestQuotePage() {
       "Requested items:",
       ...items.map((i) => `- ${i.product.name} x ${i.qty} carton(s)`),
     ];
-    const wa = `https://wa.me/923006917385?text=${encodeURIComponent(lines.join("\n"))}`;
+    const wa = `https://wa.me/${CONTACT.zoher.waNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
     window.open(wa, "_blank");
     setSent(true);
     clear();
