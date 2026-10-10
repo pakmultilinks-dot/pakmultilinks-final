@@ -15,30 +15,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [q, setQ] = useState("");
   const [suggest, setSuggest] = useState<typeof PRODUCTS>([]);
-  const [theme, setTheme] = useState<"system" | "light" | "dark">("light");
   const router = useRouter();
   const dropRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("pm-theme") as "system" | "light" | "dark" | null;
-    if (saved) setTheme(saved);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("pm-theme", theme);
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else if (theme === "light") {
-      root.classList.remove("dark");
-    } else {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        root.classList.add("dark");
-      } else {
-        root.classList.remove("dark");
-      }
-    }
-  }, [theme]);
 
   useEffect(() => {
     const h = (e: MouseEvent) => {
@@ -108,19 +86,6 @@ export default function Header() {
           </form>
 
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
-            <div className="hidden sm:flex items-center border border-gray-200 rounded-full p-1">
-              {(["system", "light", "dark"] as const).map((t) => (
-                <button
-                  key={t}
-                  onClick={() => setTheme(t)}
-                  aria-label={`${t} theme`}
-                  title={`${t.charAt(0).toUpperCase() + t.slice(1)} theme`}
-                  className={`px-2.5 py-1.5 text-[11px] font-semibold rounded-full capitalize transition-colors ${theme === t ? "bg-[#114b2f] text-white" : "text-gray-500 hover:text-[#114b2f]"}`}
-                >
-                  {t}
-                </button>
-              ))}
-            </div>
             <Link href="/account" aria-label="Your account" className="p-2 rounded-full hover:bg-gray-100 hidden sm:block">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg>
             </Link>

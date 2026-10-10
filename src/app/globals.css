@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --color-brand: #114b2f;
   --color-brand-dark: #0b3a24;
@@ -19,15 +17,6 @@ body {
   color: #1a1a1a;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
-}
-
-.dark body {
-  color: #e5e5e5;
-  background: #121212;
-}
-
-.dark {
-  color-scheme: dark;
 }
 
 @keyframes marquee {
