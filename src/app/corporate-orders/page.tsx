@@ -124,7 +124,7 @@ export default function CorporateOrders() {
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-green-300 font-semibold">Industries</p>
             <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white">Who we supply</h2>
-            <p className="text-white/70 mt-2">Trusted by workplaces across Lahore</p>
+            <p className="text-white/70 mt-2">Wholesale hygiene supply for businesses across Lahore</p>
           </div>
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-4">
             {SECTORS.map((s) => (

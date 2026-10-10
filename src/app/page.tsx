@@ -5,13 +5,6 @@ import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
-const PARTNERS = [
-  { name: "Lahore Garrison University", logo: "/images/partner-lgu.png" },
-  { name: "Ramy Clinic", logo: "/images/partner-ramy-clinic.png" },
-  { name: "Aroma Hair Salon", logo: "/images/partner-aroma.png" },
-  { name: "Moon Banquet Halls", logo: "/images/partner-moon-hall.png" },
-];
-
 const FEATURED = [
   "rose-petal-pop-up-tissues-ultra-soft",
   "rose-petal-maxob-toilet-roll-8-2-offer",
@@ -39,23 +32,6 @@ export default function Home() {
               <p className="text-sm text-gray-600 mt-1">{d}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Trusted partners */}
-      <section className="py-12 bg-[#f7faf8]">
-        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {PARTNERS.map((p) => (
-              <div key={p.name} className="flex flex-col items-center gap-3">
-                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
-                  <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
-                </div>
-                <p className="text-sm font-medium text-gray-700 text-center leading-tight">{p.name}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -148,6 +124,12 @@ export default function Home() {
           </Link>
           <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
             <Image src="/images/deal-maxob.jpg" alt="Rose Petal Maxob 8+2 offer - best seller tissue deal" width={1254} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          </Link>
+          <Link href="/shop?category=Tissue%20%26%20Paper%20Wholesale" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-tissue-mega.jpg" alt="Tissue Mega Deal - bulk tissue bundle offer" width={1200} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          </Link>
+          <Link href="/shop?category=Cleaning%20Products" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-cleaning-combo.jpg" alt="Cleaning Combo Deal - complete cleaning bundle offer" width={1200} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
           </Link>
         </div>
       </section>

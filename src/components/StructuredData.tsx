@@ -81,7 +81,7 @@ export default function StructuredData() {
         name: "Who can order from Pak Multilinks Hygiene?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Offices, schools, clinics, hospitals, restaurants, hotels, and any business that needs hygiene supplies in bulk. There is no minimum order for first-time business customers.",
+          text: "Offices, schools, clinics, hospitals, restaurants, hotels, and any business that needs hygiene supplies in bulk. Our standard minimum order is 1 carton per product.",
         },
       },
       {
@@ -89,7 +89,7 @@ export default function StructuredData() {
         name: "How do I get a wholesale quotation?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Send your product list via the request-quote page or WhatsApp (+92 300 6917 385 or +92 317 1678829) and receive a wholesale quotation within one working day.",
+          text: "Send your product list via the request-quote page or WhatsApp (+92 300 6917 385 or +92 325 8166829) and receive a wholesale quotation within one working day.",
         },
       },
       {
@@ -105,7 +105,7 @@ export default function StructuredData() {
         name: "What brands does Pak Multilinks Hygiene carry?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Rose Petal tissue products, Hi-Jeen, Sweep cleaning products, and a full range of wholesale hygiene essentials from trusted manufacturers.",
+          text: "Dettol, Harpic, Vim, Surf Excel, Ariel, Rose Petal, Hi-Jeen, Lux, Lifebuoy, Safeguard, Colgate, Closeup, Pepsodent, Head and Shoulders, Sunsilk, Pantene, Clear, Nivea, Vaseline, Ponds, Dove, Palmolive, Gillette, Sensodyne, Mortein, Lysol, and more.",
         },
       },
     ],
