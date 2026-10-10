@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f4f7f5]" aria-label="Featured">
-      <div className="relative w-full aspect-[3/4] sm:aspect-[16/9] max-h-[640px] overflow-hidden">
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/7] max-h-[560px] overflow-hidden bg-[#f4f7f5]">
         <div
           className="flex h-full transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${idx * 100}%)` }}
@@ -37,9 +37,9 @@ export default function Hero() {
               key={s.src}
               href={s.link}
               aria-hidden={i !== idx}
-              className="relative w-full h-full shrink-0"
+              className="relative w-full h-full shrink-0 bg-[#f4f7f5]"
             >
-              <Image src={s.src} alt={s.alt} fill priority={i === 0} className="object-cover" sizes="100vw" />
+              <Image src={s.src} alt={s.alt} fill priority={i === 0} className="object-contain" sizes="100vw" />
             </Link>
           ))}
         </div>
