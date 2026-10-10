@@ -21,6 +21,22 @@ const SLIDES = [
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
     image: "/images/hero-main-banner.jpg",
   },
+  {
+    eyebrow: "Tissue & Paper Wholesale",
+    title: "Facial Tissues, Toilet Rolls & Napkins in Bulk",
+    subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
+    primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
+    secondaryCta: { label: "Get a Quote", href: "/request-quote" },
+    image: "/images/hero-banner-tissue.jpg",
+  },
+  {
+    eyebrow: "Cleaning Essentials",
+    title: "Professional Cleaning Supplies in Bulk",
+    subtitle: "Detergents, disinfectants, and cleaning tools for offices, schools, and commercial spaces. Wholesale carton pricing.",
+    primaryCta: { label: "Shop Cleaning", href: "/shop" },
+    secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
+    image: "/images/hero-banner-cleaning.jpg",
+  },
 ];
 
 export default function Hero() {
@@ -42,8 +58,6 @@ export default function Hero() {
     setAnimKey((k) => k + 1);
   };
 
-  const slide = SLIDES[idx];
-
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -51,63 +65,56 @@ export default function Hero() {
       aria-roledescription="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
     >
-      <div className="relative w-full">
-        {SLIDES.map((s, i) => (
-          <div
-            key={s.image}
-            className={`transition-opacity duration-700 ${i === idx ? "opacity-100 relative" : "opacity-0 absolute inset-0"}`}
-            aria-hidden={i !== idx}
-          >
-            <div className="relative w-full">
-              <Image
-                src={s.image}
-                alt=""
-                width={1600}
-                height={600}
-                className="w-full h-auto"
-                priority={i === 0}
-              />
-              {/* Text positioned on left empty area */}
-              <div className="absolute inset-0 flex items-center pt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
-                  <div key={`${i}-${animKey}`} className="max-w-lg">
-                      <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold" style={{ animationDelay: "0ms" }}>
-                        {s.eyebrow}
-                      </p>
-                      <h2 className="hero-anim mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight" style={{ animationDelay: "120ms" }}>
-                        {s.title}
-                      </h2>
-                      <p className="hero-anim mt-4 text-sm sm:text-base text-gray-700 leading-relaxed" style={{ animationDelay: "240ms" }}>
-                        {s.subtitle}
-                      </p>
-                      <div className="hero-anim mt-6 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
-                        <Link
-                          href={s.primaryCta.href}
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-[#114b2f] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-sm"
-                        >
-                          {s.primaryCta.label}
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </Link>
-                        <Link
-                          href={s.secondaryCta.href}
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white text-[#114b2f] font-semibold rounded-full border border-[#114b2f]/20 transition-all text-sm"
-                        >
-                          {s.secondaryCta.label}
-                        </Link>
-                      </div>
-                    </div>
+      {SLIDES.map((s, i) => (
+        <div
+          key={s.image}
+          className={i === idx ? "relative" : "hidden"}
+          aria-hidden={i !== idx}
+        >
+          <div className="relative w-full">
+            <Image
+              src={s.image}
+              alt=""
+              width={1600}
+              height={600}
+              className="w-full h-auto"
+              priority={i === 0}
+            />
+            <div className="absolute inset-0 flex items-center pt-16">
+              <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+                <div key={`${i}-${animKey}`} className="max-w-lg">
+                  <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold">
+                    {s.eyebrow}
+                  </p>
+                  <h2 className="hero-anim mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
+                    {s.title}
+                  </h2>
+                  <p className="hero-anim mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                    {s.subtitle}
+                  </p>
+                  <div className="hero-anim mt-6 flex flex-wrap gap-3">
+                    <Link
+                      href={s.primaryCta.href}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#114b2f] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-sm"
+                    >
+                      {s.primaryCta.label}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </Link>
+                    <Link
+                      href={s.secondaryCta.href}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white text-[#114b2f] font-semibold rounded-full border border-[#114b2f]/20 transition-all text-sm"
+                    >
+                      {s.secondaryCta.label}
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
-      {/* Controls */}
       <button
         aria-label="Previous slide"
         onClick={() => goTo((idx - 1 + SLIDES.length) % SLIDES.length)}
@@ -143,10 +150,6 @@ export default function Hero() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
           )}
         </button>
-      </div>
-
-      <div aria-live="polite" className="sr-only">
-        Slide {idx + 1} of {SLIDES.length}
       </div>
 
       <h1 className="sr-only">Pak Multilinks Hygiene - Wholesale Tissue and Hygiene Supplies Lahore</h1>
