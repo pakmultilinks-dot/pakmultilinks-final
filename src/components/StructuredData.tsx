@@ -25,7 +25,7 @@ export default function StructuredData() {
       },
       {
         "@type": "ContactPoint",
-        telephone: "+92-317-1678829",
+        telephone: "+92-325-8166829",
         contactType: "sales",
         name: "Bilal Shah",
         areaServed: "PK",
@@ -50,17 +50,6 @@ export default function StructuredData() {
       streetAddress: "Shop No LG-9, Rehman Tower Main Market Gulberg II",
       addressLocality: "Lahore",
       addressCountry: "PK",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 31.5165,
-      longitude: 74.3492,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "20:00",
     },
     sameAs: [],
   };

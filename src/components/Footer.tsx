@@ -67,6 +67,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/60">
           <p>&copy; 2026 Pak Multilinks Hygiene. All rights reserved.</p>
           <div className="flex gap-4">
+            <Link href="/faq" className="hover:text-white">FAQ</Link>
             <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Service</Link>
           </div>
