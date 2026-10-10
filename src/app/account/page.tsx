@@ -4,9 +4,38 @@ import { useState } from "react";
 import Link from "next/link";
 
 const BENEFITS = [
-  { icon: "⚡", title: "Faster re-orders", text: "One-click repeat of your usual cartons" },
-  { icon: "💰", title: "Saved quotations", text: "Your negotiated rates, always on file" },
-  { icon: "📦", title: "Order history", text: "Track every delivery in one place" },
+  {
+    title: "Faster re-orders",
+    text: "One-click repeat of your usual cartons",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#114b2f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Saved quotations",
+    text: "Your negotiated rates, always on file",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#114b2f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Order history",
+    text: "Track every delivery in one place",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#114b2f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.3 7 12 12 20.7 7"/>
+        <line x1="12" y1="22" x2="12" y2="12"/>
+      </svg>
+    ),
+  },
 ];
 
 export default function AccountPage() {
@@ -28,8 +57,8 @@ export default function AccountPage() {
       <div className="max-w-5xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-4">
           {BENEFITS.map((b) => (
-            <div key={b.title} className="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-              <span className="text-3xl">{b.icon}</span>
+            <div key={b.title} className="flex gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <span className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#e8f3ec] flex items-center justify-center">{b.icon}</span>
               <div>
                 <p className="font-bold text-gray-900">{b.title}</p>
                 <p className="text-sm text-gray-600 mt-1">{b.text}</p>
