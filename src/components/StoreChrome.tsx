@@ -17,7 +17,7 @@ export default function StoreChrome({ children }: { children: React.ReactNode })
   return (
     <>
       <Header />
-      <main className="min-h-[60vh] pb-16 lg:pb-0">{children}</main>
+      <main className="min-h-[60vh] pb-24 lg:pb-0">{children}</main>
       <Footer />
       <CartDrawer />
       <MobileBottomBar />

@@ -72,7 +72,7 @@ export default function Hero() {
           className={i === idx ? "relative" : "hidden"}
           aria-hidden={i !== idx}
         >
-          <div className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] overflow-hidden">
+          <div className="relative w-full h-[480px] sm:h-[450px] lg:h-[500px] overflow-hidden">
             <div key={`img-${i}-${animKey}`} className="absolute inset-0 hero-kenburns">
               <Image
                 src={s.image}
@@ -125,19 +125,19 @@ export default function Hero() {
       <button
         aria-label="Previous slide"
         onClick={() => goTo((idx - 1 + SLIDES.length) % SLIDES.length)}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
+        className="hidden sm:block absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       </button>
       <button
         aria-label="Next slide"
         onClick={() => goTo((idx + 1) % SLIDES.length)}
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
+        className="hidden sm:block absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </button>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/20 backdrop-blur-sm rounded-full px-3 py-1.5">
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/20 backdrop-blur-sm rounded-full px-3 py-1.5">
         {SLIDES.map((_, i) => (
           <button
             key={i}
