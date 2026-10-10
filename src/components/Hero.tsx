@@ -72,13 +72,12 @@ export default function Hero() {
           className={i === idx ? "relative" : "hidden"}
           aria-hidden={i !== idx}
         >
-          <div className="relative w-full">
+          <div className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] overflow-hidden">
             <Image
               src={s.image}
               alt=""
-              width={1600}
-              height={600}
-              className="w-full h-auto"
+              fill
+              className="object-cover"
               priority={i === 0}
             />
             <div className="absolute inset-0 flex items-center pt-16">
