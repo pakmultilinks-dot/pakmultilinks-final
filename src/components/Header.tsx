@@ -138,18 +138,19 @@ export default function Header() {
 
         {/* Nav */}
         <nav className="hidden lg:block border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 xl:gap-1">
-            <Link href="/" className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap">Home</Link>
-            <Link href="/shop" className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap">Shop</Link>
-            <div className="relative" ref={dropRef}>
-              <button
-                onClick={() => setDropOpen((v) => !v)}
-                aria-expanded={dropOpen}
-                className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] flex items-center gap-1 whitespace-nowrap"
-              >
-                Collections
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={`transition-transform ${dropOpen ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6"/></svg>
-              </button>
+          <div className="max-w-7xl mx-auto px-4 flex items-center gap-0">
+            <div className="flex items-center gap-0 overflow-x-auto flex-1 min-w-0">
+              <Link href="/" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Home</Link>
+              <Link href="/shop" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Shop</Link>
+              <div className="relative shrink-0" ref={dropRef}>
+                <button
+                  onClick={() => setDropOpen((v) => !v)}
+                  aria-expanded={dropOpen}
+                  className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] flex items-center gap-1 whitespace-nowrap"
+                >
+                  Collections
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={`transition-transform ${dropOpen ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6"/></svg>
+                </button>
               {dropOpen && (
                 <div className="absolute top-full left-0 w-72 bg-white border border-gray-200 rounded-xl shadow-xl py-2 z-50">
                   {CATEGORIES.map((c) => (
@@ -165,10 +166,11 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/corporate-orders" className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap">Corporate Orders</Link>
-            <Link href="/about" className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap">About Us</Link>
-            <Link href="/contact" className="px-3 xl:px-4 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap">Contact</Link>
-            <Link href="/request-quote" className="ml-auto my-2 px-4 xl:px-5 py-2 bg-[#114b2f] text-white text-sm font-semibold rounded-full hover:bg-[#0b3a24] whitespace-nowrap">Get a quote</Link>
+            <Link href="/corporate-orders" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Corporate Orders</Link>
+            <Link href="/about" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">About Us</Link>
+            <Link href="/contact" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Contact</Link>
+            </div>
+            <Link href="/request-quote" className="ml-2 my-2 px-4 py-2 bg-[#114b2f] text-white text-sm font-semibold rounded-full hover:bg-[#0b3a24] whitespace-nowrap shrink-0">Get a quote</Link>
           </div>
         </nav>
       </header>
