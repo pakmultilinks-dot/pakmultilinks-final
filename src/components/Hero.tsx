@@ -11,8 +11,7 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
-    image: "/images/hero-clean-1.jpg",
-    accent: "from-[#0b3a24] via-[#114b2f] to-[#0d4229]",
+    image: "/images/hero-banner.png",
   },
   {
     eyebrow: "Your Hygiene Partner",
@@ -20,8 +19,7 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
-    image: "/images/hero-clean-2.jpg",
-    accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
+    image: "/images/banner-hygiene-solutions.jpg",
   },
   {
     eyebrow: "Tissue & Paper Wholesale",
@@ -29,8 +27,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
     primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
-    image: "/images/hero-clean-3.jpg",
-    accent: "from-[#0c3d26] via-[#125233] to-[#0e4028]",
+    image: "/images/banner-workspace.jpg",
   },
   {
     eyebrow: "Bulk Deals & Value Packs",
@@ -38,8 +35,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
     primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
-    image: "/images/hero-clean-4.jpg",
-    accent: "from-[#0b3a24] via-[#0e4a2d] to-[#0c3822]",
+    image: "/images/hero-banner-2.jpg",
   },
 ];
 
@@ -66,7 +62,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0b3a24]"
+      className="relative w-full overflow-hidden"
       aria-label="Featured"
       aria-roledescription="carousel"
       onMouseEnter={() => setPaused(true)}
@@ -74,56 +70,55 @@ export default function Hero() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      {/* Background: image with transparent green overlay */}
-      <div className="absolute inset-0">
-        {SLIDES.map((s, i) => (
-          <div
-            key={s.title}
-            className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
-            aria-hidden={i !== idx}
-          >
-            <Image
-              src={s.image}
-              alt=""
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24] via-[#0b3a24]/95 to-[#0b3a24]/85" />
-          </div>
-        ))}
-      </div>
-
-      {/* Content: text on left */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] py-12 sm:py-16">
-          {/* Text panel - left side */}
-          <div key={animKey} className="max-w-2xl">
-            <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
-              {slide.eyebrow}
-            </p>
-            <h2 className="hero-anim mt-4 text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight" style={{ animationDelay: "120ms" }}>
-              {slide.title}
-            </h2>
-            <p className="hero-anim mt-5 text-sm sm:text-lg text-white/85 leading-relaxed" style={{ animationDelay: "240ms" }}>
-              {slide.subtitle}
-            </p>
-            <div className="hero-anim mt-8 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
-              <Link
-                href={slide.primaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
-              >
-                {slide.primaryCta.label}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link
-                href={slide.secondaryCta.href}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/30 backdrop-blur transition-all"
-              >
-                {slide.secondaryCta.label}
-              </Link>
+      <div className="flex flex-col lg:flex-row min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
+        {/* Left: Solid green text panel - NO image behind text */}
+        <div className="lg:w-[55%] bg-[#0b3a24] flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 w-full">
+            <div key={animKey} className="max-w-xl">
+              <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
+                {slide.eyebrow}
+              </p>
+              <h2 className="hero-anim mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight" style={{ animationDelay: "120ms" }}>
+                {slide.title}
+              </h2>
+              <p className="hero-anim mt-5 text-sm sm:text-base text-white/85 leading-relaxed" style={{ animationDelay: "240ms" }}>
+                {slide.subtitle}
+              </p>
+              <div className="hero-anim mt-8 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
+                <Link
+                  href={slide.primaryCta.href}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+                >
+                  {slide.primaryCta.label}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </Link>
+                <Link
+                  href={slide.secondaryCta.href}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-full border border-white/30 backdrop-blur transition-all"
+                >
+                  {slide.secondaryCta.label}
+                </Link>
+              </div>
             </div>
           </div>
+        </div>
 
+        {/* Right: Product image - NO text overlay */}
+        <div className="lg:w-[45%] relative min-h-[300px] lg:min-h-0">
+          {SLIDES.map((s, i) => (
+            <div
+              key={s.image}
+              className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+              aria-hidden={i !== idx}
+            >
+              <Image
+                src={s.image}
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -143,7 +138,7 @@ export default function Hero() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </button>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/20 backdrop-blur-sm rounded-full px-3 py-1.5">
         {SLIDES.map((_, i) => (
           <button
             key={i}
@@ -155,7 +150,7 @@ export default function Hero() {
         <button
           aria-label={paused ? "Play slideshow" : "Pause slideshow"}
           onClick={(e) => { e.stopPropagation(); setPaused(!paused); }}
-          className="ml-2 bg-white/20 hover:bg-white/30 text-white rounded-full p-1.5 backdrop-blur"
+          className="ml-1 text-white/80 hover:text-white"
         >
           {paused ? (
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
