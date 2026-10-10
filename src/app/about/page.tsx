@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Pak Multilinks Hygiene - your wholesale hygiene partner in Lahore. Supplying offices, schools, clinics and businesses since 2010.",
+};
 
 export default function AboutPage() {
   return (

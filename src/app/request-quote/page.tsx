@@ -1,8 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 import { PRODUCTS } from "@/data/products";
 import { useCart } from "@/context/CartContext";
+
+
+export const metadata: Metadata = {
+  title: "Request a Quote",
+  description: "Get a wholesale quote for tissue, hygiene and cleaning supplies. Bulk pricing for businesses in Lahore & Pakistan.",
+};
 
 export default function RequestQuotePage() {
   const { items, clear } = useCart();

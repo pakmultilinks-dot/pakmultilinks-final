@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 const STEPS = [
@@ -32,6 +33,12 @@ const SECTORS = [
   { name: "Hotels & Hospitality", icon: "🏨" },
   { name: "Restaurants & Cafes", icon: "🍽️" },
 ];
+
+
+export const metadata: Metadata = {
+  title: "Corporate Orders",
+  description: "Bulk hygiene supply for offices, schools, clinics, restaurants. Get wholesale quotations within one working day.",
+};
 
 export default function CorporateOrders() {
   return (

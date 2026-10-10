@@ -1,9 +1,16 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 import Image from "next/image";
 
 const WA_NUMBER = "923006917385";
+
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Contact Pak Multilinks Hygiene. Call +92 300 6917 385, WhatsApp, or visit Shop LG-9 Rehman Tower Gulberg II Lahore.",
+};
 
 export default function ContactPage() {
   const [name, setName] = useState("");
