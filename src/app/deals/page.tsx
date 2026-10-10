@@ -40,9 +40,9 @@ export default function DealsPage() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute top-3 left-3 flex gap-1.5">
-                <span className="px-2.5 py-1 bg-[#114b2f] text-white text-[11px] font-bold rounded-full shadow">{badge}</span>
-                <span className="px-2.5 py-1 bg-amber-500 text-white text-[11px] font-bold rounded-full shadow">{discount}</span>
+              <div className="absolute bottom-3 left-3 flex gap-1.5">
+                <span className="px-2.5 py-1 bg-[#114b2f]/95 backdrop-blur text-white text-[11px] font-bold rounded-full shadow">{badge}</span>
+                <span className="px-2.5 py-1 bg-amber-500/95 backdrop-blur text-white text-[11px] font-bold rounded-full shadow">{discount}</span>
               </div>
             </div>
             <div className="p-4 flex items-center justify-between gap-2">
