@@ -116,7 +116,7 @@ export default function Header() {
             </a>
             <a href={`https://wa.me/${WA_BILAL}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label="WhatsApp Bilal Shah" title="Bilal Shah" className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4zm-3.2 4.1c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.9-.4-1.5-.7-2.1-1.4-.5-.5-.8-1.1-.9-1.3-.1-.3 0-.4.1-.5l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5L9.4 6.6c-.2-.3-.4-.4-.6-.4z"/></svg>
-              <span className="hidden sm:block text-xs font-bold leading-tight">Bilal Shah<br/><span className="font-normal opacity-90">BDO</span></span>
+              <span className="hidden sm:block text-xs font-bold leading-tight">Bilal Shah</span>
             </a>
             {/* Social icons */}
             <div className="hidden md:flex items-center gap-1.5 ml-1">
