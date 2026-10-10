@@ -104,7 +104,7 @@ export default function Header() {
         {/* Nav */}
         <nav className="hidden lg:block border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 flex items-center gap-0">
-            <div className="flex items-center gap-0 overflow-x-auto flex-1 min-w-0">
+            <div className="flex items-center gap-0 flex-1 min-w-0">
               <Link href="/" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Home</Link>
               <Link href="/shop" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Shop</Link>
               <div className="relative shrink-0" ref={dropRef}>
