@@ -57,18 +57,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <style jsx>{`
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-marquee {
-            animation: marquee 20s linear infinite;
-          }
-          .animate-marquee:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
       </section>
 
       <Reveal>
@@ -77,17 +65,36 @@ export default function Home() {
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Find what you need</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2">Shop by Category</h2>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {CATEGORIES.slice(0, 5).map((c) => (
+          {CATEGORIES.slice(0, 5).map((c) => {
+            const catImages: Record<string, string> = {
+              "Tissue & Paper Wholesale": "/products/1083fd45-8b0f-4208-8af7-e30a14eed5a1.jpg",
+              "Washroom Supplies": "/products/19138fec-d08c-4773-8718-2b84e24831ec.jpg",
+              "Cleaning Products": "/products/0850fdc9-7367-466e-bd96-f1d97ec45de0.jpg",
+              "Personal Care": "/products/03da356c-5510-43d6-94be-7d5f7f691f37.jpg",
+              "Disposable Items": "/products/046dbaf2-bc2f-45b7-aec7-7d9433057ada.jpg",
+            };
+            return (
             <Link
               key={c.slug}
               href={`/shop?category=${encodeURIComponent(c.name)}`}
-              className="group bg-[#e8f3ec] hover:bg-[#114b2f] rounded-2xl p-6 text-center transition-colors"
+              className="group bg-white border border-gray-200 hover:border-[#114b2f]/30 rounded-2xl overflow-hidden text-center transition-all hover:shadow-lg"
             >
-              <p className="font-bold text-[#114b2f] group-hover:text-white text-sm sm:text-base">{c.name}</p>
-              <p className="mt-2 text-xs text-gray-600 group-hover:text-white/80 line-clamp-2 hidden sm:block">{c.description}</p>
-              <span className="inline-block mt-3 text-xs font-semibold text-[#114b2f] group-hover:text-white underline underline-offset-2">Browse</span>
+              <div className="aspect-square bg-[#f6f5f1] overflow-hidden">
+                <img
+                  src={catImages[c.name] || "/products/1083fd45-8b0f-4208-8af7-e30a14eed5a1.jpg"}
+                  alt={c.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <p className="font-bold text-[#114b2f] text-sm sm:text-base leading-tight">{c.name}</p>
+                <p className="mt-2 text-xs text-gray-600 line-clamp-2 hidden sm:block">{c.description}</p>
+                <span className="inline-block mt-3 text-xs font-semibold text-[#114b2f] underline underline-offset-2">Browse →</span>
+              </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -138,11 +145,9 @@ export default function Home() {
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           <Link href="/shop" className="relative rounded-2xl overflow-hidden shadow-md group block">
             <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack - essential cleaning products deal" width={1145} height={1374} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
-            <span className="absolute bottom-4 left-4 bg-white/90 text-[#114b2f] text-sm font-semibold px-5 py-2.5 rounded-full shadow">Shop the deal</span>
           </Link>
           <Link href="/shop" className="relative rounded-2xl overflow-hidden shadow-md group block">
             <Image src="/images/deal-maxob.jpg" alt="Rose Petal Maxob 8+2 offer - best seller tissue deal" width={1254} height={1254} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
-            <span className="absolute bottom-4 left-4 bg-white/90 text-[#114b2f] text-sm font-semibold px-5 py-2.5 rounded-full shadow">Shop the deal</span>
           </Link>
         </div>
       </section>
