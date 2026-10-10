@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const SLIDES = [
   {
@@ -11,8 +10,7 @@ const SLIDES = [
     subtitle: "From tissues to total facility care. We supply the essentials that keep offices, schools, clinics, restaurants, and commercial spaces clean, safe, and ready every day.",
     primaryCta: { label: "Shop Products", href: "/shop" },
     secondaryCta: { label: "Get a Bulk Quote", href: "/request-quote" },
-    bg: "/images/banner-workspace.jpg",
-    link: "/shop",
+    accent: "from-[#0b3a24] via-[#114b2f] to-[#0d4229]",
   },
   {
     eyebrow: "Your Hygiene Partner",
@@ -20,17 +18,15 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
-    bg: "/images/banner-hygiene-solutions.jpg",
-    link: "/shop",
+    accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
   },
   {
     eyebrow: "Tissue & Paper Wholesale",
     title: "Facial Tissues, Toilet Rolls & Napkins in Bulk",
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
-    primaryCta: { label: "Shop Tissue & Paper", href: "/shop?category=Tissue%20%26%20Paper%20Wholesale" },
+    primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
-    bg: "/images/marketing-party-pack.jpg",
-    link: "/shop",
+    accent: "from-[#0c3d26] via-[#125233] to-[#0e4028]",
   },
   {
     eyebrow: "Bulk Deals & Value Packs",
@@ -38,8 +34,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo, Sweep and more. Stock up with value packs and combo deals designed for businesses that buy by the carton.",
     primaryCta: { label: "View Deals", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
-    bg: "/images/marketing-ciblure.jpg",
-    link: "/shop",
+    accent: "from-[#0b3a24] via-[#0e4a2d] to-[#0c3822]",
   },
 ];
 
@@ -65,27 +60,24 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-[#0b3a24]" aria-label="Featured">
       <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] flex items-center">
-        {/* Background with crossfade */}
         {SLIDES.map((s, i) => (
           <div
-            key={s.bg}
-            className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+            key={s.title}
+            className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-br ${s.accent} ${i === idx ? "opacity-100" : "opacity-0"}`}
             aria-hidden={i !== idx}
           >
-            <Image
-              src={s.bg}
-              alt=""
-              fill
-              priority={i === 0}
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24] via-[#0b3a24]/90 to-[#0b3a24]/75" />
+            <div className="absolute inset-0 opacity-[0.07]">
+              <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-white blur-3xl" />
+              <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-emerald-300 blur-3xl" />
+            </div>
+            <div className="absolute inset-0 opacity-[0.04]" style={{
+              backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+              backgroundSize: "32px 32px"
+            }} />
           </div>
         ))}
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-20 sm:pb-24 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 w-full">
           <div key={animKey} className="max-w-2xl">
             <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
               {slide.eyebrow}
@@ -114,27 +106,8 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Trust badges */}
-        <div className="absolute bottom-5 left-0 right-0 z-10 hidden md:block">
-          <div className="max-w-7xl mx-auto px-6 flex gap-8 text-white/70 text-xs">
-            <span className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6 9 17l-5-5"/></svg>
-              Trusted Quality Brands
-            </span>
-            <span className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6 9 17l-5-5"/></svg>
-              Dedicated B2B Support
-            </span>
-            <span className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 6 9 17l-5-5"/></svg>
-              A Cleaner, Healthier Tomorrow
-            </span>
-          </div>
-        </div>
       </div>
 
-      {/* Controls */}
       <button
         aria-label="Previous slide"
         onClick={() => goTo((idx - 1 + SLIDES.length) % SLIDES.length)}
