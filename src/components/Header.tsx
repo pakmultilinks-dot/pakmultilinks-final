@@ -132,6 +132,7 @@ export default function Header() {
               )}
             </div>
             <Link href="/corporate-orders" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Corporate Orders</Link>
+            <Link href="/deals" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Deals</Link>
             <Link href="/about" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">About Us</Link>
             <Link href="/contact" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Contact</Link>
             </div>
