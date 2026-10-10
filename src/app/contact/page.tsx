@@ -53,7 +53,7 @@ export default function ContactPage() {
             <div>
               <label htmlFor="contact-name" className="block text-sm font-semibold mb-1.5">Your name</label>
               <input
-                id="contact-name" type="text" required value={name}
+                id="contact-name" name="name" type="text" required value={name}
                 onChange={(e) => setName(e.target.value)} placeholder="Your full name"
                 className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-2 focus:ring-[#114b2f]/15"
               />
@@ -61,7 +61,7 @@ export default function ContactPage() {
             <div>
               <label htmlFor="contact-email" className="block text-sm font-semibold mb-1.5">Email</label>
               <input
-                id="contact-email" type="email" required value={email}
+                id="contact-email" name="email" type="email" required value={email}
                 onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com"
                 className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-2 focus:ring-[#114b2f]/15"
               />
@@ -69,7 +69,7 @@ export default function ContactPage() {
             <div>
               <label htmlFor="contact-message" className="block text-sm font-semibold mb-1.5">Message</label>
               <textarea
-                id="contact-message" required value={message}
+                id="contact-message" name="message" required value={message}
                 onChange={(e) => setMessage(e.target.value)} placeholder="How can we help?"
                 rows={4}
                 className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-2 focus:ring-[#114b2f]/15 resize-none"

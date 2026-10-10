@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* Trusted partners */}
       <section className="py-12 bg-[#f7faf8] overflow-hidden">
-        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8">Our Trusted Partners</h2>
+        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>
         <div className="relative">
           <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
             {[...PARTNERS, ...PARTNERS].map((p, i) => (
@@ -63,7 +63,7 @@ export default function Home() {
 {/* Shop by category */}
       <section className="max-w-7xl mx-auto px-4 py-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Find what you need</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2">Shop by Category</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2 font-serif-head">Shop by Category</h2>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {CATEGORIES.slice(0, 5).map((c) => {
             const catImages: Record<string, string> = {
@@ -103,7 +103,7 @@ export default function Home() {
 {/* From our collection */}
       <section className="max-w-7xl mx-auto px-4 pb-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">For your everyday spaces</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2">From Our Collection</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2 font-serif-head">From Our Collection</h2>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {featured.map((p) => p && <ProductCard key={p.slug} product={p} />)}
         </div>
@@ -141,7 +141,7 @@ export default function Home() {
       <Reveal>
 {/* Deals */}
       <section className="max-w-7xl mx-auto px-4 py-14">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center">Deals &amp; Value Packs</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Deals &amp; Value Packs</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           <Link href="/shop" className="relative rounded-2xl overflow-hidden shadow-md group block">
             <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack - essential cleaning products deal" width={1145} height={1374} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
@@ -156,7 +156,7 @@ export default function Home() {
       <Reveal>
 {/* Product list */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center">Our Products</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Our Products</h2>
         <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
         <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="overflow-x-auto">
