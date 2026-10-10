@@ -1029,6 +1029,486 @@ export const PRODUCTS: Product[] = [
     "moq": "1 carton",
     "price": null,
     "inStock": true
+  },
+  {
+    "name": "Wheel 2 in 1 Detergent Powder 1kg",
+    "slug": "wheel-2-in-1-detergent-powder-1kg",
+    "image": "/products/wheel-active-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Wheel",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Rin Ala Detergent Powder 1kg",
+    "slug": "rin-ala-detergent-powder-1kg",
+    "image": "/products/rin-ala-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Rin",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Brite Detergent Powder 1kg",
+    "slug": "brite-detergent-powder-1kg",
+    "image": "/products/brite-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Brite",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Express Power Detergent Powder 1kg",
+    "slug": "express-power-detergent-powder-1kg",
+    "image": "/products/express-power-detergent-powder-1kg.jpg",
+    "category": "Cleaning Products",
+    "brand": "Express Power",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Sufi Safon Dishwashing Liquid 475ml",
+    "slug": "sufi-safon-dishwashing-liquid-475ml",
+    "image": "/products/sufi-dishwashing-liquid-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Sufi",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Vim Dishwash Liquid 500ml",
+    "slug": "vim-dishwash-liquid-500ml",
+    "image": "/products/vim-dishwash-liquid-250ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Vim",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dettol Antiseptic Liquid 1L",
+    "slug": "dettol-antiseptic-liquid-1l",
+    "image": "/products/dettol-antiseptic-liquid-1l.jpg",
+    "category": "Cleaning Products",
+    "brand": "Dettol",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Domex Floor Cleaner 975ml",
+    "slug": "domex-floor-cleaner-975ml",
+    "image": "/products/domex-floor-cleaner-975ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Domex",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Lysol Disinfectant Spray Crisp Linen 350g",
+    "slug": "lysol-disinfectant-spray-crisp-linen-350g",
+    "image": "/products/lysol-disinfectant-surface-cleaner-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Lysol",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Harpic Active Fresh Toilet Cleaner 450ml",
+    "slug": "harpic-active-fresh-toilet-cleaner-450ml",
+    "image": "/products/harpic-active-fresh-toilet-cleaner-450ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Harpic",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Tyfon Toilet Cleaner 500ml",
+    "slug": "tyfon-toilet-cleaner-500ml",
+    "image": "/products/tyfon-toilet-cleaner-500ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Tyfon",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Ambipur Air Freshener Lavender Vanilla 275g",
+    "slug": "ambipur-air-freshener-lavender-vanilla-275g",
+    "image": "/products/ambipur-air-freshener-lavender-300ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Ambipur",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Naphthalene Balls 200g",
+    "slug": "naphthalene-balls-200g",
+    "image": "/products/naphthalene-balls-200g.jpg",
+    "category": "Cleaning Products",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Cobra Cockroach Killer 600ml",
+    "slug": "cobra-cockroach-killer-600ml",
+    "image": "/products/cobra-cockroach-killer-600ml.jpg",
+    "category": "Cleaning Products",
+    "brand": "Cobra",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Angled Toilet Brush with Holder",
+    "slug": "angled-toilet-brush-with-holder",
+    "image": "/products/angled-toilet-brush-with-holder.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Steel Mop Stick 120cm",
+    "slug": "steel-mop-stick-120cm",
+    "image": "/products/steel-mop-stick-120cm.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Bucket Set 3 Piece",
+    "slug": "bucket-set-3-piece",
+    "image": "/products/bucket-set-3-piece.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Bathroom Tiles Cleaner 500ml",
+    "slug": "bathroom-tiles-cleaner-500ml",
+    "image": "/products/bathroom-tiles-cleaner-500ml.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Drain Opener Powder 500g",
+    "slug": "drain-opener-powder-500g",
+    "image": "/products/drain-opener-powder-500g.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Liquid Soap Dispenser 500ml",
+    "slug": "liquid-soap-dispenser-500ml",
+    "image": "/products/liquid-soap-dispenser-500ml.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Steel Wool Scrubbers 12 Pack",
+    "slug": "steel-wool-scrubbers-12-pack",
+    "image": "/products/steel-wool-scrubbers-12-pack.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Sponge Wipes 5 Pack",
+    "slug": "sponge-wipes-5-pack",
+    "image": "/products/sponge-wipes-5-pack.jpg",
+    "category": "Washroom Supplies",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Cotton Buds 200 Pack",
+    "slug": "cotton-buds-200-pack",
+    "image": "/products/cotton-buds-200-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Johnson's Baby Wipes 72 Pack",
+    "slug": "johnsons-baby-wipes-72-pack",
+    "image": "/products/johnsons-baby-wipes-72-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Johnson's",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Hand Sanitizer Gel 500ml",
+    "slug": "hand-sanitizer-gel-500ml",
+    "image": "/products/hand-sanitizer-gel-500ml.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Disposable Face Masks 50 Pack",
+    "slug": "disposable-face-masks-50-pack",
+    "image": "/products/disposable-face-masks-50-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Disposable Latex Gloves 100 Pack",
+    "slug": "disposable-latex-gloves-100-pack",
+    "image": "/products/disposable-latex-gloves-100-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Plastic Spoons 100 Pack",
+    "slug": "plastic-spoons-100-pack",
+    "image": "/products/plastic-spoons-100-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Plastic Forks 100 Pack",
+    "slug": "plastic-forks-100-pack",
+    "image": "/products/plastic-forks-100-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Scented Garbage Bags 20 Pack",
+    "slug": "scented-garbage-bags-20-pack",
+    "image": "/products/scented-garbage-bags-20-pack.jpg",
+    "category": "Disposable Items",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dove Original Beauty Bar 100g",
+    "slug": "dove-original-beauty-bar-100g",
+    "image": "/products/dove-original-beauty-bar-100g.jpg",
+    "category": "Personal Care",
+    "brand": "Dove",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Palmolive Naturals Soap 90g",
+    "slug": "palmolive-naturals-soap-90g",
+    "image": "/products/palmolive-naturals-soap-130g.jpg",
+    "category": "Personal Care",
+    "brand": "Palmolive",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Medicam Dental Cream 35g",
+    "slug": "medicam-dental-cream-35g",
+    "image": "/products/medicam-dental-cream-140g.jpg",
+    "category": "Personal Care",
+    "brand": "Medicam",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Dabur Miswak Toothpaste 170g",
+    "slug": "dabur-miswak-toothpaste-170g",
+    "image": "/products/dabur-miswak-toothpaste-170g.jpg",
+    "category": "Personal Care",
+    "brand": "Dabur",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Sensodyne Rapid Relief Toothpaste 75ml",
+    "slug": "sensodyne-rapid-relief-toothpaste-75ml",
+    "image": "/products/sensodyne-rapid-relief-toothpaste-100g.jpg",
+    "category": "Personal Care",
+    "brand": "Sensodyne",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Oral-B Soft Toothbrush",
+    "slug": "oral-b-soft-toothbrush",
+    "image": "/products/oral-b-soft-toothbrush.jpg",
+    "category": "Personal Care",
+    "brand": "Oral-B",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Nivea Soft Moisturizing Cream 200ml",
+    "slug": "nivea-soft-moisturizing-cream-200ml",
+    "image": "/products/nivea-soft-moisturizing-cream-200ml.jpg",
+    "category": "Personal Care",
+    "brand": "Nivea",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Vaseline Original Petroleum Jelly 100ml",
+    "slug": "vaseline-original-petroleum-jelly-100ml",
+    "image": "/products/vaseline-original-petroleum-jelly-100ml.jpg",
+    "category": "Personal Care",
+    "brand": "Vaseline",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Ponds Cold Cream 269g",
+    "slug": "ponds-cold-cream-269g",
+    "image": "/products/ponds-cold-cream-100ml.jpg",
+    "category": "Personal Care",
+    "brand": "Ponds",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Imperial Leather Classic Soap 125g",
+    "slug": "imperial-leather-classic-soap-125g",
+    "image": "/products/imperial-leather-classic-soap-125g.jpg",
+    "category": "Personal Care",
+    "brand": "Imperial Leather",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Rexona Men Deodorant Spray 150ml",
+    "slug": "rexona-men-deodorant-spray-150ml",
+    "image": "/products/rexona-men-deodorant-spray-150ml.jpg",
+    "category": "Personal Care",
+    "brand": "Rexona",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Fa Men Deodorant Spray 150ml",
+    "slug": "fa-men-deodorant-spray-150ml",
+    "image": "/products/fa-men-deodorant-spray-150ml.jpg",
+    "category": "Personal Care",
+    "brand": "Fa",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Nivea Men Deodorant Roll On 50ml",
+    "slug": "nivea-men-deodorant-roll-on-50ml",
+    "image": "/products/nivea-men-deodorant-roll-on-50ml.jpg",
+    "category": "Personal Care",
+    "brand": "Nivea Men",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Gillette Mach3 Razor",
+    "slug": "gillette-mach3-razor",
+    "image": "/products/gillette-mach3-razor.jpg",
+    "category": "Personal Care",
+    "brand": "Gillette",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Gillette Shaving Foam 200ml",
+    "slug": "gillette-shaving-foam-200ml",
+    "image": "/products/gillette-shaving-foam-200ml.jpg",
+    "category": "Personal Care",
+    "brand": "Gillette",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Fay Toilet Roll 4 Pack",
+    "slug": "fay-toilet-roll-4-pack",
+    "image": "/products/fay-toilet-roll-4-pack.jpg",
+    "category": "Tissue & Paper Wholesale",
+    "brand": "Fay",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Rose Petal Hand Towels Premium Pack 100 Pulls",
+    "slug": "rose-petal-hand-towels-premium-pack-100-pulls",
+    "image": "/products/hi-jeen-kitchen-towel.jpg",
+    "category": "Tissue & Paper Wholesale",
+    "brand": "Rose Petal",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
+  },
+  {
+    "name": "Toilet Roll Jumbo 12 Pack",
+    "slug": "toilet-roll-jumbo-12-pack",
+    "image": "/products/toilet-roll-jumbo-12-pack.jpg",
+    "category": "Tissue & Paper Wholesale",
+    "brand": "Pak Multilinks",
+    "moq": "1 carton",
+    "price": null,
+    "inStock": true
   }
 ];
 export const CATEGORIES = [
