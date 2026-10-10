@@ -43,7 +43,7 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
         </button>
         <div className="grid md:grid-cols-2">
           <div className="relative bg-gray-50 min-h-[280px]">
-            <Image src={product.image} alt={product.name} width={700} height={700} className="w-full h-full object-cover md:rounded-l-3xl" />
+            <Image src={product.image} alt={product.name} width={700} height={700} className="w-full h-full object-contain bg-[#f6f5f1] md:rounded-l-3xl p-4" />
           </div>
           <div className="p-6 sm:p-8">
             <p className="text-xs uppercase tracking-wide text-gray-500">{product.category} &middot; {product.brand}</p>

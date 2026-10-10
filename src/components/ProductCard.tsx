@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
               src={product.image}
               alt={product.name}
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-contain bg-[#f6f5f1] p-3 transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
           <span className="absolute top-2 left-2 bg-amber-500 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full pointer-events-none">
