@@ -83,7 +83,7 @@ export default function Hero() {
               />
             </div>
             {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent sm:from-white/40 sm:via-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
                 <div key={`${i}-${animKey}`} className="max-w-lg">
@@ -143,7 +143,7 @@ export default function Hero() {
             key={i}
             aria-label={`Go to slide ${i + 1}`}
             onClick={(e) => { e.stopPropagation(); goTo(i); }}
-            className={`h-2 rounded-full transition-all cursor-pointer ${i === idx ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"}`}
+            className={`h-3 rounded-full transition-all cursor-pointer ${i === idx ? "w-10 bg-white" : "w-3 bg-white/50 hover:bg-white/80"}`}
           />
         ))}
         <button

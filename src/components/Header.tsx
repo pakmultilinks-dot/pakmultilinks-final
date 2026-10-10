@@ -86,7 +86,10 @@ export default function Header() {
           </form>
 
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
-            <Link href="/account" aria-label="Your account" className="p-2 rounded-full hover:bg-gray-100 hidden sm:block">
+            <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="md:hidden p-2 rounded-full hover:bg-gray-100">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </button>
+            <Link href="/account" aria-label="Your account" className="p-2 rounded-full hover:bg-gray-100">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg>
             </Link>
             <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#114b2f] text-white hover:bg-[#0b3a24]">
@@ -157,7 +160,7 @@ export default function Header() {
             </form>
             <nav className="px-2 pb-6">
               {[
-                ["Home", "/"], ["Shop", "/shop"], ["Corporate Orders", "/corporate-orders"],
+                ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Corporate Orders", "/corporate-orders"],
                 ["About Us", "/about"], ["Contact", "/contact"], ["Business Account", "/account"],
               ].map(([label, href]) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium border-b border-gray-100 hover:text-[#114b2f]">{label}</Link>

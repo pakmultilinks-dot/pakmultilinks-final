@@ -7,9 +7,9 @@ import { PRODUCTS, CATEGORIES } from "@/data/products";
 
 const PARTNERS = [
   { name: "Lahore Garrison University", logo: "/images/partner-lgu.png" },
-  { name: "Ramay Clinic", logo: "/images/partner-ramay.png" },
+  { name: "Ramy Clinic", logo: "/images/partner-ramy-clinic.png" },
   { name: "Aroma Hair Salon", logo: "/images/partner-aroma.png" },
-  { name: "Moon Banquet Hall", logo: "/images/partner-moon.png" },
+  { name: "Moon Banquet Halls", logo: "/images/partner-moon-hall.png" },
 ];
 
 const FEATURED = [
