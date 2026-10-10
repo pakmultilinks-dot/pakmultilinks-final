@@ -7,9 +7,9 @@ import { PRODUCTS, CATEGORIES } from "@/data/products";
 
 const PARTNERS = [
   { name: "Lahore Garrison University", logo: "/images/partner-lgu.png" },
-  { name: "Ramay Clinic", icon: "medical" },
-  { name: "Aroma Hair Salon", icon: "salon" },
-  { name: "Moon Banquet Hall", icon: "banquet" },
+  { name: "Ramay Clinic", logo: "/images/partner-ramay.png" },
+  { name: "Aroma Hair Salon", logo: "/images/partner-aroma.png" },
+  { name: "Moon Banquet Hall", logo: "/images/partner-moon.png" },
 ];
 
 const FEATURED = [
@@ -49,16 +49,8 @@ export default function Home() {
           <div className="flex w-max animate-marquee gap-8 px-4 items-start">
             {[...PARTNERS, ...PARTNERS].map((p, i) => (
               <div key={i} className="shrink-0 flex flex-col items-center gap-3 w-36">
-                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden grayscale">
-                  {p.logo ? (
-                    <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-contain p-2" />
-                  ) : p.icon === "medical" ? (
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-                  ) : p.icon === "salon" ? (
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
-                  ) : (
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                  )}
+                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
+                  <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
                 </div>
                 <p className="text-sm font-medium text-gray-700 text-center leading-tight">{p.name}</p>
               </div>
