@@ -19,23 +19,6 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const dropRef = useRef<HTMLDivElement>(null);
-  const [navHidden, setNavHidden] = useState(false);
-  const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      // Hide nav when scrolling down past 200px, show when scrolling up
-      if (y > 200 && y > lastScrollY.current) {
-        setNavHidden(true);
-      } else if (y < lastScrollY.current) {
-        setNavHidden(false);
-      }
-      lastScrollY.current = y;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -146,8 +129,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Nav - desktop only, hides on scroll down */}
-        <nav className={`desktop-nav border-t border-gray-100 bg-white/95 backdrop-blur transition-transform duration-300 ${navHidden ? "-translate-y-full" : "translate-y-0"}`}>
+        {/* Nav - desktop only */}
+        <nav className="desktop-nav border-t border-gray-100 bg-white">
           <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 py-1">
             <div className="flex items-center gap-0 flex-1 min-w-0">
               {navLink("/", "Home")}
