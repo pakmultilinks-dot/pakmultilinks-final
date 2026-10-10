@@ -19,6 +19,23 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const dropRef = useRef<HTMLDivElement>(null);
+  const [navHidden, setNavHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      // Hide nav when scrolling down past 200px, show when scrolling up
+      if (y > 200 && y > lastScrollY.current) {
+        setNavHidden(true);
+      } else if (y < lastScrollY.current) {
+        setNavHidden(false);
+      }
+      lastScrollY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -63,14 +80,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Announcement bar - dark green */}
-      <div className="bg-[#114b2f] text-white text-xs sm:text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-4">
-          <p className="truncate">Tissue &amp; hygiene essentials &middot; Wholesale supply from Lahore</p>
-          <p className="hidden sm:block whitespace-nowrap">Zohair Ahmed &middot; Call +92 300 6917 385</p>
-        </div>
-      </div>
-
       {/* Sticky header */}
       <header className="sticky top-0 z-40 bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-3 sm:gap-6">
@@ -122,11 +131,23 @@ export default function Header() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4zm-3.2 4.1c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.9-.4-1.5-.7-2.1-1.4-.5-.5-.8-1.1-.9-1.3-.1-.3 0-.4.1-.5l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5L9.4 6.6c-.2-.3-.4-.4-.6-.4z"/></svg>
               <span className="hidden sm:block text-xs font-bold leading-tight">Bilal Shah<br/><span className="font-normal opacity-90">BDO</span></span>
             </a>
+            {/* Social icons */}
+            <div className="hidden md:flex items-center gap-1.5 ml-1">
+              <a href="https://facebook.com/pakmultilinks" target="_blank" rel="noopener" aria-label="Facebook" className="p-2 rounded-full text-gray-500 hover:text-[#1877F2] hover:bg-blue-50 transition-all">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://instagram.com/pakmultilinks" target="_blank" rel="noopener" aria-label="Instagram" className="p-2 rounded-full text-gray-500 hover:text-[#E4405F] hover:bg-pink-50 transition-all">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="https://linkedin.com/company/pakmultilinks" target="_blank" rel="noopener" aria-label="LinkedIn" className="p-2 rounded-full text-gray-500 hover:text-[#0A66C2] hover:bg-blue-50 transition-all">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Nav - desktop only */}
-        <nav className="desktop-nav border-t border-gray-100 bg-white/95 backdrop-blur">
+        {/* Nav - desktop only, hides on scroll down */}
+        <nav className={`desktop-nav border-t border-gray-100 bg-white/95 backdrop-blur transition-transform duration-300 ${navHidden ? "-translate-y-full" : "translate-y-0"}`}>
           <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 py-1">
             <div className="flex items-center gap-0 flex-1 min-w-0">
               {navLink("/", "Home")}

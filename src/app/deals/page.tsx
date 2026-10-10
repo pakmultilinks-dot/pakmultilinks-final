@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const PROMO_DEALS = [
   {
+    image: "/images/deal-tissue-mega.jpg",
+    alt: "Tissue Mega Deal - buy by the carton, save more",
+    href: "/shop?category=Tissue%20%26%20Paper%20Wholesale",
+  },
+  {
+    image: "/images/deal-cleaning-combo.jpg",
+    alt: "Cleaning Combo Deal - complete facility care pack",
+    href: "/shop?category=Cleaning%20Products",
+  },
+  {
     image: "/images/deal-family-starter.jpg",
     alt: "Family Starter Pack - essential cleaning products deal",
     href: "/shop?search=family",

@@ -53,6 +53,25 @@ export default function AdminProducts() {
   const [isNew, setIsNew] = useState(false);
   const [form, setForm] = useState<Product>(EMPTY_PRODUCT);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [deletedProduct, setDeletedProduct] = useState<Product | null>(null);
+  const [showUndo, setShowUndo] = useState(false);
+
+  const handleImageUpload = async (file: File) => {
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Upload failed");
+      setForm({ ...form, image: data.url });
+    } catch (e: any) {
+      alert(e.message || "Image upload failed");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   useEffect(() => {
     getProducts().then(setProducts);
@@ -140,7 +159,9 @@ export default function AdminProducts() {
   };
 
   const handleDelete = async (slug: string) => {
-    if (!confirm("Delete this product? This cannot be undone.")) return;
+    const product = products.find((p) => p.slug === slug);
+    if (!product) return;
+    if (!confirm(`Delete "${product.name}"?`)) return;
     try {
       const res = await fetch(`/api/admin/products?slug=${encodeURIComponent(slug)}`, { method: "DELETE" });
       if (!res.ok) {
@@ -155,6 +176,29 @@ export default function AdminProducts() {
     const updated = await getProducts();
     setProducts(updated);
     setDeleteConfirm(null);
+    // Save for undo
+    setDeletedProduct(product);
+    setShowUndo(true);
+    setTimeout(() => setShowUndo(false), 10000);
+  };
+
+  const handleUndo = async () => {
+    if (!deletedProduct) return;
+    try {
+      const dbImage = deletedProduct.image.startsWith("http") ? deletedProduct.image : `https://pakmultilinks-final.vercel.app${deletedProduct.image.startsWith("/") ? deletedProduct.image : "/" + deletedProduct.image}`;
+      const res = await fetch("/api/admin/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...deletedProduct, image: dbImage }),
+      });
+      if (!res.ok) throw new Error("Restore failed");
+      const updated = await getProducts();
+      setProducts(updated);
+      setShowUndo(false);
+      setDeletedProduct(null);
+    } catch (e: any) {
+      alert("Undo failed: " + e.message);
+    }
   };
 
   const resetToDefault = () => {
@@ -301,17 +345,46 @@ export default function AdminProducts() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Image URL</label>
+                <label className="block text-sm font-medium mb-1">Product Image</label>
+                <div
+                  onClick={() => document.getElementById("product-image-upload")?.click()}
+                  onDragOver={(e) => e.preventDefault()}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    const f = e.dataTransfer.files?.[0];
+                    if (f) handleImageUpload(f);
+                  }}
+                  className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-[#114b2f] hover:bg-[#f4f9f6] transition-all"
+                >
+                  {uploading ? (
+                    <div className="py-4">
+                      <div className="animate-spin w-8 h-8 border-3 border-[#114b2f] border-t-transparent rounded-full mx-auto" />
+                      <p className="mt-2 text-sm text-gray-600">Uploading...</p>
+                    </div>
+                  ) : form.image ? (
+                    <div>
+                      <img src={form.image} alt="Preview" className="mx-auto w-32 h-32 object-contain rounded bg-gray-50 border" />
+                      <p className="mt-2 text-sm text-[#114b2f] font-semibold">Click or drop to change image</p>
+                    </div>
+                  ) : (
+                    <div className="py-4">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="mx-auto text-gray-400"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                      <p className="mt-2 text-sm font-semibold text-gray-700">Click to upload or drag & drop</p>
+                      <p className="text-xs text-gray-500 mt-1">JPG, PNG, WebP or GIF (max 5MB)</p>
+                    </div>
+                  )}
+                </div>
                 <input
-                  type="text"
-                  value={form.image}
-                  onChange={(e) => setForm({ ...form, image: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]"
-                  placeholder="/products/image.jpg"
+                  id="product-image-upload"
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp,image/gif"
+                  className="hidden"
+                  onChange={(e) => {
+                    const f = e.target.files?.[0];
+                    if (f) handleImageUpload(f);
+                    e.target.value = "";
+                  }}
                 />
-                {form.image && (
-                  <img src={form.image} alt="Preview" className="mt-2 w-24 h-24 object-contain rounded bg-gray-50 border" />
-                )}
               </div>
 
               <div>
@@ -380,6 +453,22 @@ export default function AdminProducts() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Undo toast */}
+      {showUndo && deletedProduct && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-gray-900 text-white px-6 py-4 rounded-2xl shadow-2xl">
+          <p className="text-sm">Deleted <span className="font-bold">"{deletedProduct.name}"</span></p>
+          <button
+            onClick={handleUndo}
+            className="px-4 py-2 bg-[#114b2f] hover:bg-[#0b3a24] text-white text-sm font-bold rounded-full transition-all"
+          >
+            Undo
+          </button>
+          <button onClick={() => setShowUndo(false)} className="text-gray-400 hover:text-white">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
         </div>
       )}
     </div>

@@ -140,22 +140,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (!authed) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar - like ChatGPT */}
+    <div className="min-h-screen bg-[#f6f6f7] flex">
+      {/* Sidebar - Shopify style */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#0b3a24] text-white transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-[#1a1a1a] text-white transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:static lg:flex-shrink-0 flex flex-col`}
       >
         {/* Logo */}
-        <div className="px-6 py-5 border-b border-white/10">
+        <div className="px-5 py-5 border-b border-white/10">
           <Link href="/admin/dashboard" className="flex items-center gap-3 select-none">
-            <div className="w-9 h-9 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-              <span className="text-[#0b3a24] font-bold text-lg">P</span>
+            <div className="w-9 h-9 bg-[#008060] rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-lg">P</span>
             </div>
             <div>
               <p className="font-bold text-sm">Pak Multilinks</p>
-              <p className="text-xs text-white/60">Admin Panel</p>
+              <p className="text-xs text-white/50">Admin</p>
             </div>
           </Link>
         </div>
@@ -171,23 +171,23 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   active
-                    ? "bg-white/15 text-white"
-                    : "text-white/70 hover:bg-white/10 hover:text-white"
+                    ? "bg-white/10 text-white font-semibold"
+                    : "text-[#a7a7a7] hover:bg-white/5 hover:text-white"
                 }`}
               >
-                {item.icon}
+                <span className={active ? "text-[#00d1a1]" : ""}>{item.icon}</span>
                 {item.label}
               </Link>
             );
           })}
         </nav>
 
-        {/* Bottom */}
-        <div className="p-4 border-t border-white/10 space-y-2">
+        {/* Bottom - sticky */}
+        <div className="sticky bottom-0 p-4 border-t border-white/10 space-y-1 bg-[#1a1a1a]">
           <Link
             href="/"
             target="_blank"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/70 hover:bg-white/10 hover:text-white transition-colors"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#a7a7a7] hover:bg-white/5 hover:text-white transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -198,7 +198,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/70 hover:bg-white/10 hover:text-white transition-colors"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[#a7a7a7] hover:bg-white/5 hover:text-white transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
