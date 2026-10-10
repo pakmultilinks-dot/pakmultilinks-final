@@ -69,9 +69,9 @@ export default function Home() {
             const catImages: Record<string, string> = {
               "Tissue & Paper Wholesale": "/products/1083fd45-8b0f-4208-8af7-e30a14eed5a1.jpg",
               "Washroom Supplies": "/products/19138fec-d08c-4773-8718-2b84e24831ec.jpg",
-              "Cleaning Products": "/products/0850fdc9-7367-466e-bd96-f1d97ec45de0.jpg",
-              "Personal Care": "/products/03da356c-5510-43d6-94be-7d5f7f691f37.jpg",
-              "Disposable Items": "/products/046dbaf2-bc2f-45b7-aec7-7d9433057ada.jpg",
+              "Cleaning Products": "/products/118712e4-11a6-451d-83ff-89823a258a5c.jpg",
+              "Personal Care": "/products/00b9062b-d381-4473-a4ee-9e48823632bd.jpg",
+              "Disposable Items": "/products/35ee928a-1f93-408c-997e-e88e41e76988.jpg",
             };
             return (
             <Link
