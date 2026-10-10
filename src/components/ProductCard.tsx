@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import QuickViewModal from "@/components/QuickViewModal";
 import type { Product } from "@/data/products";
 
@@ -12,7 +13,9 @@ export function formatPrice(p: Product): string {
 
 export default function ProductCard({ product }: { product: Product }) {
   const { add, setDrawerOpen } = useCart();
+  const { toggle, has } = useWishlist();
   const [quickView, setQuickView] = useState(false);
+  const wished = has(product.slug);
 
   return (
     <>
@@ -36,6 +39,14 @@ export default function ProductCard({ product }: { product: Product }) {
             className="absolute top-2 right-2 bg-white/95 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+          <button
+            onClick={() => toggle(product)}
+            aria-label={wished ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
+            title={wished ? "Remove from wishlist" : "Add to wishlist"}
+            className={`absolute top-12 right-2 rounded-full p-2.5 shadow-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${wished ? "bg-red-50 text-red-500" : "bg-white/95 hover:bg-white text-gray-600"}`}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill={wished ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
         </div>
         <div className="p-4 flex flex-col flex-1">

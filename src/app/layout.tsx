@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CartProvider } from "@/context/CartContext";
+import { WishlistProvider } from "@/context/WishlistContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -27,11 +28,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <CartProvider>
+          <WishlistProvider>
           <Header />
           <main className="min-h-[60vh] pb-16 lg:pb-0">{children}</main>
           <Footer />
           <CartDrawer />
           <MobileBottomBar />
+          </WishlistProvider>
         </CartProvider>
       </body>
     </html>

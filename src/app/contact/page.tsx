@@ -93,6 +93,7 @@ export default function ContactPage() {
           <figcaption className="mt-4 text-center">
             <p className="font-bold">Zohair Ahmed</p>
             <p className="text-sm text-gray-600">Founder &amp; Sales Head</p>
+            <a href="tel:+923006917385" className="inline-block mt-2 text-[#114b2f] font-semibold hover:underline">+92 300 6917 385</a>
           </figcaption>
         </figure>
         <figure className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm">
