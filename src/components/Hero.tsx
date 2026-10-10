@@ -19,7 +19,7 @@ const SLIDES = [
     subtitle: "Premium tissue, hygiene and cleaning supplies by the carton. Trusted brands, wholesale pricing, delivered across Lahore and Pakistan.",
     primaryCta: { label: "Browse Catalog", href: "/shop" },
     secondaryCta: { label: "Corporate Orders", href: "/corporate-orders" },
-    image: "/images/hero-banner.png",
+    image: "/images/banner-workspace.jpg",
     accent: "from-[#0a3520] via-[#0f4a2c] to-[#0b3a24]",
   },
   {
