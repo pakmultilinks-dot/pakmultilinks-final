@@ -101,19 +101,41 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const [authed, setAuthed] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [checking, setChecking] = useState(true);
+
+  const isLoginPage = pathname === "/admin";
 
   useEffect(() => {
+    // Skip auth check on login page
+    if (isLoginPage) {
+      setChecking(false);
+      return;
+    }
     if (localStorage.getItem("admin_auth") !== "true") {
       router.push("/admin");
     } else {
       setAuthed(true);
     }
-  }, [router]);
+    setChecking(false);
+  }, [router, isLoginPage]);
 
   const handleLogout = () => {
     localStorage.removeItem("admin_auth");
     router.push("/admin");
   };
+
+  // Login page: render without sidebar
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
+
+  if (checking) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    );
+  }
 
   if (!authed) return null;
 
