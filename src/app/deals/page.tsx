@@ -15,24 +15,26 @@ export default function DealsPage() {
         Wholesale deals on trusted brands. Stock up with value packs and combo offers designed for businesses that buy by the carton.
       </p>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-8 items-start">
-        <Link href="/shop?search=family" className="relative rounded-2xl overflow-hidden shadow-lg group block">
-          <Image
-            src="/images/deal-family-starter.jpg"
-            alt="Family Starter Pack - essential cleaning products deal"
-            width={1145}
-            height={1374}
-            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-          />
+      <div className="mt-10 grid md:grid-cols-2 gap-8">
+        <Link href="/shop?search=family" className="rounded-2xl overflow-hidden shadow-lg group block bg-white">
+          <div className="aspect-[4/5] relative">
+            <Image
+              src="/images/deal-family-starter.jpg"
+              alt="Family Starter Pack - essential cleaning products deal"
+              fill
+              className="object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
         </Link>
-        <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="relative rounded-2xl overflow-hidden shadow-lg group block">
-          <Image
-            src="/images/deal-maxob.jpg"
-            alt="Rose Petal Maxob 8+2 offer - best seller tissue deal"
-            width={1254}
-            height={1254}
-            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-          />
+        <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="rounded-2xl overflow-hidden shadow-lg group block bg-white">
+          <div className="aspect-[4/5] relative">
+            <Image
+              src="/images/deal-maxob.jpg"
+              alt="Rose Petal Maxob 8+2 offer - best seller tissue deal"
+              fill
+              className="object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
         </Link>
       </div>
 
