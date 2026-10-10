@@ -15,21 +15,23 @@ export default function DealsPage() {
         Wholesale deals on trusted brands. Stock up with value packs and combo offers designed for businesses that buy by the carton.
       </p>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-8">
-        <Link href="/shop?search=family" className="relative rounded-2xl overflow-hidden shadow-lg group block aspect-[4/3]">
+      <div className="mt-10 grid md:grid-cols-2 gap-8 items-start">
+        <Link href="/shop?search=family" className="relative rounded-2xl overflow-hidden shadow-lg group block">
           <Image
             src="/images/deal-family-starter.jpg"
             alt="Family Starter Pack - essential cleaning products deal"
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            width={1145}
+            height={1374}
+            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
-        <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="relative rounded-2xl overflow-hidden shadow-lg group block aspect-[4/3]">
+        <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="relative rounded-2xl overflow-hidden shadow-lg group block">
           <Image
             src="/images/deal-maxob.jpg"
             alt="Rose Petal Maxob 8+2 offer - best seller tissue deal"
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            width={1254}
+            height={1254}
+            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
       </div>
