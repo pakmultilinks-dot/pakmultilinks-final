@@ -50,3 +50,13 @@ body {
 .font-serif-head {
   font-family: "Playfair Display", Georgia, serif;
 }
+
+/* Desktop nav: hidden on mobile, shown on lg+ */
+.desktop-nav {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: block;
+  }
+}
