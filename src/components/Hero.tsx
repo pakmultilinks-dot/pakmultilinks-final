@@ -111,25 +111,25 @@ export default function Hero() {
       <button
         aria-label="Previous slide"
         onClick={() => goTo((idx - 1 + SLIDES.length) % SLIDES.length)}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       </button>
       <button
         aria-label="Next slide"
         onClick={() => goTo((idx + 1) % SLIDES.length)}
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#114b2f] rounded-full p-2.5 shadow-md"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </button>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {SLIDES.map((_, i) => (
           <button
             key={i}
             aria-label={`Go to slide ${i + 1}`}
-            onClick={() => goTo(i)}
-            className={`h-2 rounded-full transition-all ${i === idx ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"}`}
+            onClick={(e) => { e.stopPropagation(); goTo(i); }}
+            className={`h-2 rounded-full transition-all cursor-pointer ${i === idx ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"}`}
           />
         ))}
       </div>
