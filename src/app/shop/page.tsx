@@ -23,10 +23,6 @@ function ServerProductGrid() {
 export default function ShopPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Professional hygiene supplies</p>
-      <h1 className="text-3xl font-bold mt-2">Shop all products</h1>
-      <p className="text-sm text-gray-600 mt-2">Browse wholesale hygiene products supplied in cartons. Packing and pricing are confirmed before fulfilment.</p>
-
       <Suspense fallback={<ServerProductGrid />}>
         <ShopClient />
       </Suspense>

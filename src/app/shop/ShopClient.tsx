@@ -32,6 +32,15 @@ export default function ShopClient() {
 
   return (
     <>
+      <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Professional hygiene supplies</p>
+      <h1 className="text-3xl font-bold mt-2">
+        {cat ? cat : "Shop all products"}
+      </h1>
+      <p className="text-sm text-gray-600 mt-2">
+        {cat
+          ? `Browse ${filtered.length} wholesale ${cat.toLowerCase()} products supplied in cartons.`
+          : "Browse wholesale hygiene products supplied in cartons. Packing and pricing are confirmed before fulfilment."}
+      </p>
       <div className="mt-6 flex flex-col md:flex-row gap-3">
         <input
           name="q"
