@@ -43,12 +43,12 @@ export default function Home() {
       </section>
 
       {/* Trusted partners */}
-      <section className="py-12 bg-[#f7faf8] overflow-hidden">
+      <section className="py-12 bg-[#f7faf8]">
         <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>
-        <div className="relative">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap w-max">
-            {[...PARTNERS, ...PARTNERS].map((p, i) => (
-              <div key={`${p.name}-${i}`} className="flex flex-col items-center gap-3 shrink-0">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {PARTNERS.map((p) => (
+              <div key={p.name} className="flex flex-col items-center gap-3">
                 <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
                   <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
                 </div>
