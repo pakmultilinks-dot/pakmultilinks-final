@@ -163,7 +163,7 @@ export const PRODUCTS: Product[] = [
   {
     "name": "Rose Petal Perfumed Tissues",
     "slug": "rose-petal-perfumed-tissues",
-    "image": "/products/39fde44d-13fc-4f48-a105-e35dbed51943.png",
+    "image": "/products/39fde44d-13fc-4f48-a105-e35dbed51943.jpg",
     "category": "Tissue & Paper Wholesale",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
@@ -273,7 +273,7 @@ export const PRODUCTS: Product[] = [
   {
     "name": "Rose Petal Zzoop Maxi Roll",
     "slug": "rose-petal-zzoop-maxi-roll",
-    "image": "/products/47e9fd7c-bb31-4e1b-ab00-089ce210fe5b.png",
+    "image": "/products/47e9fd7c-bb31-4e1b-ab00-089ce210fe5b.jpg",
     "category": "Tissue & Paper Wholesale",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
@@ -363,7 +363,7 @@ export const PRODUCTS: Product[] = [
   {
     "name": "Rose Petal Pocket Pack",
     "slug": "rose-petal-pocket-pack",
-    "image": "/products/57d21fe4-0a5b-4ec3-b4cf-f768e2f93603.png",
+    "image": "/products/57d21fe4-0a5b-4ec3-b4cf-f768e2f93603.jpg",
     "category": "General",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
@@ -433,7 +433,7 @@ export const PRODUCTS: Product[] = [
   {
     "name": "Rose Petal Pocket Pack White",
     "slug": "rose-petal-pocket-pack-white",
-    "image": "/products/7e1347f0-f4f9-4f8e-8fa9-0d44f47bb354.png",
+    "image": "/products/7e1347f0-f4f9-4f8e-8fa9-0d44f47bb354.jpg",
     "category": "General",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
@@ -513,7 +513,7 @@ export const PRODUCTS: Product[] = [
   {
     "name": "Rose Petal Pocket Pack Teal",
     "slug": "rose-petal-pocket-pack-teal",
-    "image": "/products/977b0683-f90f-4917-a762-288eeb5e87b8.png",
+    "image": "/products/977b0683-f90f-4917-a762-288eeb5e87b8.jpg",
     "category": "General",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
