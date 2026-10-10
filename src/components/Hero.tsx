@@ -73,15 +73,18 @@ export default function Hero() {
           aria-hidden={i !== idx}
         >
           <div className="relative w-full h-[480px] sm:h-[450px] lg:h-[500px] overflow-hidden">
+            {i === idx && (
             <div key={`img-${i}-${animKey}`} className="absolute inset-0 hero-kenburns">
               <Image
                 src={s.image}
                 alt=""
                 fill
                 className="object-cover"
-                priority={i === 0}
+                priority
+                sizes="100vw"
               />
             </div>
+            )}
             {/* Animated gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent sm:from-white/40 sm:via-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
