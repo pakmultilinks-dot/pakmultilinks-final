@@ -4,7 +4,12 @@ import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
-const PARTNERS = ["Lahore Garrison University", "Ramay Clinic", "Aroma Hair Salon", "Moon Banquet Hall"];
+const PARTNERS = [
+  { name: "Lahore Garrison University" },
+  { name: "Ramay Clinic" },
+  { name: "Aroma Hair Salon" },
+  { name: "Moon Banquet Hall" },
+];
 
 const FEATURED = [
   "rose-petal-pop-up-tissues-ultra-soft",
@@ -36,17 +41,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted partners marquee */}
-      <section className="py-10 bg-[#f7faf8] overflow-hidden">
-        <h2 className="text-center text-xl sm:text-2xl font-bold mb-6">Our Trusted Partners</h2>
+      {/* Trusted partners */}
+      <section className="py-12 bg-[#f7faf8] overflow-hidden">
+        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8">Our Trusted Partners</h2>
         <div className="relative">
-          <div className="flex w-max animate-marquee gap-4 px-4">
+          <div className="flex w-max animate-marquee gap-8 px-4 items-start">
             {[...PARTNERS, ...PARTNERS].map((p, i) => (
-              <span key={i} className="shrink-0 bg-white border border-gray-200 rounded-full px-8 py-3 text-sm font-semibold text-gray-700 shadow-sm whitespace-nowrap">
-                {p}
-              </span>
+              <div key={i} className="shrink-0 flex flex-col items-center gap-3 w-36">
+                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
+                  <span className="text-2xl font-bold text-[#114b2f]">
+                    {p.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                  </span>
+                </div>
+                <p className="text-sm font-medium text-gray-700 text-center leading-tight">{p.name}</p>
+              </div>
             ))}
           </div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f7faf8] to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f7faf8] to-transparent pointer-events-none" />
         </div>
       </section>
 
