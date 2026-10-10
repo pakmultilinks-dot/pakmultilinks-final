@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
+import Reveal from "@/components/Reveal";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
 
 const PARTNERS = [
@@ -62,7 +63,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shop by category */}
+      <Reveal>
+{/* Shop by category */}
       <section className="max-w-7xl mx-auto px-4 py-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Find what you need</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2">Shop by Category</h2>
@@ -81,7 +83,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* From our collection */}
+      </Reveal>
+      <Reveal>
+{/* From our collection */}
       <section className="max-w-7xl mx-auto px-4 pb-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">For your everyday spaces</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2">From Our Collection</h2>
@@ -95,7 +99,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Business banner */}
+      </Reveal>
+      <Reveal>
+{/* Business banner */}
       <section className="bg-[#f2f1ec] border-y border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -116,7 +122,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Deals */}
+      </Reveal>
+      <Reveal>
+{/* Deals */}
       <section className="max-w-7xl mx-auto px-4 py-14">
         <h2 className="text-2xl sm:text-3xl font-bold text-center">Deals &amp; Value Packs</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-6">
@@ -129,7 +137,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Price list */}
+      </Reveal>
+      <Reveal>
+{/* Price list */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-center">Wholesale Price List</h2>
         <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
@@ -171,7 +181,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section></Reveal>
     </>
   );
 }
