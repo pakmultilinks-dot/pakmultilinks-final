@@ -86,27 +86,28 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent sm:from-white/40 sm:via-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
-                <div key={`${i}-${animKey}`} className="max-w-lg bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-4 sm:p-0">
-                  <p className="hero-anim hero-delay-1 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold">
+                <div key={`${i}-${animKey}`} className="max-w-xl bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-5 sm:p-0">
+                  <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
+                    <span className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse" />
                     {s.eyebrow}
                   </p>
-                  <h2 className="hero-anim hero-delay-2 mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold text-[#0b3a24] leading-tight">
+                  <h2 className="hero-anim hero-delay-2 font-display mt-5 text-[28px] sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0b3a24] leading-[1.08] tracking-tight">
                     {s.title}
                   </h2>
-                  <p className="hero-anim hero-delay-3 mt-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+                  <p className="hero-anim hero-delay-3 mt-4 text-[15px] sm:text-lg text-gray-600 leading-relaxed max-w-lg font-normal">
                     {s.subtitle}
                   </p>
-                  <div className="hero-anim hero-delay-4 mt-6 flex flex-wrap gap-3">
+                  <div className="hero-anim hero-delay-4 mt-7 flex flex-wrap gap-3">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex items-center gap-2 px-6 py-3 bg-[#114b2f] text-white font-semibold rounded-full transition-all hover:scale-105 hover:shadow-xl shadow-lg text-sm"
+                      className="group inline-flex items-center gap-2.5 px-7 py-3.5 bg-[#114b2f] text-white font-bold rounded-full transition-all hover:scale-[1.04] hover:shadow-[0_12px_30px_rgba(17,75,47,0.35)] shadow-lg text-[15px]"
                     >
                       {s.primaryCta.label}
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white text-[#114b2f] font-semibold rounded-full border border-[#114b2f]/20 transition-all hover:scale-105 text-sm"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 bg-white hover:bg-gray-50 text-[#114b2f] font-bold rounded-full border-2 border-[#114b2f]/15 hover:border-[#114b2f]/30 transition-all hover:scale-[1.04] text-[15px] shadow-sm"
                     >
                       {s.secondaryCta.label}
                     </Link>

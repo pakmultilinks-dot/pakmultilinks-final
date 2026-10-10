@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 // Server-rendered product grid for SEO and no-JS fallback
 function ServerProductGrid() {
   return (
-    <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
       {PRODUCTS.map((p) => (
         <ProductCard key={p.slug} product={p} />
       ))}

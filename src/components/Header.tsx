@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { CATEGORIES, PRODUCTS } from "@/data/products";
 
-const WA_NUMBER = "923006917385";
+const WA_NUMBER = "923171678829";
+const WA_NAME = "Muhammad Bilal Shah Gilani";
 
 export default function Header() {
   const { count, setDrawerOpen } = useCart();
@@ -16,7 +17,29 @@ export default function Header() {
   const [q, setQ] = useState("");
   const [suggest, setSuggest] = useState<typeof PRODUCTS>([]);
   const router = useRouter();
+  const pathname = usePathname();
   const dropRef = useRef<HTMLDivElement>(null);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  const navLink = (href: string, label: string) => {
+    const active = isActive(href);
+    return (
+      <Link
+        href={href}
+        className={`relative px-4 py-3 text-sm font-semibold whitespace-nowrap shrink-0 transition-all rounded-lg mx-0.5 ${
+          active
+            ? "text-[#114b2f] bg-[#e8f3ec] shadow-[inset_0_-3px_0_#114b2f]"
+            : "text-gray-700 hover:text-[#114b2f] hover:bg-gray-50"
+        }`}
+      >
+        {label}
+      </Link>
+    );
+  };
 
   useEffect(() => {
     const h = (e: MouseEvent) => {
@@ -89,35 +112,37 @@ export default function Header() {
             <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="md:hidden p-2 rounded-full hover:bg-gray-100">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
-            <Link href="/account" aria-label="Your account" className="p-2 rounded-full hover:bg-gray-100">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg>
-            </Link>
             <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#114b2f] text-white hover:bg-[#0b3a24]">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
               {count > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
               )}
             </button>
-            <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label="WhatsApp chat" className="p-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856]">
+            <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label={`WhatsApp ${WA_NAME}`} title={WA_NAME} className="flex items-center gap-2 pl-2 pr-3 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856] transition-all hover:scale-105 shadow-md">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 0 1 12 4zm-3.2 4.1c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.9-.4-1.5-.7-2.1-1.4-.5-.5-.8-1.1-.9-1.3-.1-.3 0-.4.1-.5l.6-.7c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.5L9.4 6.6c-.2-.3-.4-.4-.6-.4z"/></svg>
+              <span className="hidden sm:block text-xs font-bold leading-tight">Bilal Shah<br/><span className="font-normal opacity-90">BDO</span></span>
             </a>
           </div>
         </div>
 
         {/* Nav - desktop only */}
-        <nav className="desktop-nav border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 flex items-center gap-0">
+        <nav className="desktop-nav border-t border-gray-100 bg-white/95 backdrop-blur">
+          <div className="max-w-7xl mx-auto px-4 flex items-center gap-0 py-1">
             <div className="flex items-center gap-0 flex-1 min-w-0">
-              <Link href="/" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Home</Link>
-              <Link href="/shop" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Shop</Link>
+              {navLink("/", "Home")}
+              {navLink("/shop", "Shop")}
               <div className="relative shrink-0" ref={dropRef}>
                 <button
                   onClick={() => setDropOpen((v) => !v)}
                   aria-expanded={dropOpen}
-                  className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] flex items-center gap-1 whitespace-nowrap"
+                  className={`px-4 py-3 text-sm font-semibold flex items-center gap-1.5 whitespace-nowrap transition-all rounded-lg mx-0.5 ${
+                    pathname.startsWith("/shop?category") || dropOpen
+                      ? "text-[#114b2f] bg-[#e8f3ec]"
+                      : "text-gray-700 hover:text-[#114b2f] hover:bg-gray-50"
+                  }`}
                 >
                   Collections
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={`transition-transform ${dropOpen ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className={`transition-transform ${dropOpen ? "rotate-180" : ""}`}><path d="m6 9 6 6 6-6"/></svg>
                 </button>
               {dropOpen && (
                 <div className="absolute top-full left-0 w-72 bg-white border border-gray-200 rounded-xl shadow-xl py-2 z-50">
@@ -134,12 +159,12 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/corporate-orders" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Corporate Orders</Link>
-            <Link href="/deals" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Deals</Link>
-            <Link href="/about" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">About Us</Link>
-            <Link href="/contact" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Contact</Link>
+            {navLink("/corporate-orders", "Corporate Orders")}
+            {navLink("/deals", "Deals")}
+            {navLink("/about", "About Us")}
+            {navLink("/contact", "Contact")}
             </div>
-            <Link href="/request-quote" className="ml-2 my-2 px-4 py-2 bg-[#114b2f] text-white text-sm font-semibold rounded-full hover:bg-[#0b3a24] whitespace-nowrap shrink-0">Get a quote</Link>
+            <Link href="/request-quote" className="ml-2 my-2 px-5 py-2.5 bg-gradient-to-r from-[#114b2f] to-[#0b3a24] text-white text-sm font-bold rounded-full hover:shadow-[0_8px_20px_rgba(17,75,47,0.3)] hover:scale-105 transition-all whitespace-nowrap shrink-0">Get a quote</Link>
           </div>
         </nav>
       </header>
@@ -161,10 +186,13 @@ export default function Header() {
             <nav className="px-2 pb-6">
               {[
                 ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Corporate Orders", "/corporate-orders"],
-                ["About Us", "/about"], ["Contact", "/contact"], ["Business Account", "/account"],
-              ].map(([label, href]) => (
-                <Link key={href} href={href} onClick={() => setMobileOpen(false)} className="block px-4 py-3 text-sm font-medium border-b border-gray-100 hover:text-[#114b2f]">{label}</Link>
-              ))}
+                ["About Us", "/about"], ["Contact", "/contact"],
+              ].map(([label, href]) => {
+                const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+                return (
+                  <Link key={href} href={href} onClick={() => setMobileOpen(false)} className={`block px-4 py-3 text-sm font-semibold border-b border-gray-100 ${active ? "text-[#114b2f] bg-[#e8f3ec]" : "text-gray-700 hover:text-[#114b2f]"}`}>{label}</Link>
+                );
+              })}
               <p className="px-4 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">Collections</p>
               {CATEGORIES.map((c) => (
                 <Link key={c.slug} href={`/shop?category=${encodeURIComponent(c.name)}`} onClick={() => setMobileOpen(false)} className="block px-6 py-2.5 text-sm text-gray-700 hover:text-[#114b2f]">{c.name}</Link>
