@@ -15,8 +15,30 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [q, setQ] = useState("");
   const [suggest, setSuggest] = useState<typeof PRODUCTS>([]);
+  const [theme, setTheme] = useState<"system" | "light" | "dark">("system");
   const router = useRouter();
   const dropRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("pm-theme") as "system" | "light" | "dark" | null;
+    if (saved) setTheme(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("pm-theme", theme);
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else if (theme === "light") {
+      root.classList.remove("dark");
+    } else {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+    }
+  }, [theme]);
 
   useEffect(() => {
     const h = (e: MouseEvent) => {
@@ -86,13 +108,26 @@ export default function Header() {
           </form>
 
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
+            <div className="hidden sm:flex items-center border border-gray-200 rounded-full p-1">
+              {(["system", "light", "dark"] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setTheme(t)}
+                  aria-label={`${t} theme`}
+                  title={`${t.charAt(0).toUpperCase() + t.slice(1)} theme`}
+                  className={`px-2.5 py-1.5 text-[11px] font-semibold rounded-full capitalize transition-colors ${theme === t ? "bg-[#114b2f] text-white" : "text-gray-500 hover:text-[#114b2f]"}`}
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
             <Link href="/account" aria-label="Your account" className="p-2 rounded-full hover:bg-gray-100 hidden sm:block">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5"/></svg>
             </Link>
-            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full hover:bg-gray-100">
+            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#114b2f] text-white hover:bg-[#0b3a24]">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
               {count > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-[#114b2f] text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
+                <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
               )}
             </button>
             <a href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Assalam-o-Alaikum, I want to inquire about hygiene products.")}`} target="_blank" rel="noopener" aria-label="WhatsApp chat" className="p-2 rounded-full bg-[#25D366] text-white hover:bg-[#1eb856]">

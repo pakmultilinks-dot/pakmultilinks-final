@@ -27,17 +27,22 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden bg-[#f4f7f5]" aria-label="Featured">
-      <div className="relative w-full aspect-[3/4] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[640px]">
-        {SLIDES.map((s, i) => (
-          <Link
-            key={s.src}
-            href={s.link}
-            aria-hidden={i !== idx}
-            className={`absolute inset-0 transition-opacity duration-700 ease-out ${i === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"}`}
-          >
-            <Image src={s.src} alt={s.alt} fill priority={i === 0} className="object-cover" sizes="100vw" />
-          </Link>
-        ))}
+      <div className="relative w-full aspect-[3/4] sm:aspect-[16/9] max-h-[640px] overflow-hidden">
+        <div
+          className="flex h-full transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${idx * 100}%)` }}
+        >
+          {SLIDES.map((s, i) => (
+            <Link
+              key={s.src}
+              href={s.link}
+              aria-hidden={i !== idx}
+              className="relative w-full h-full shrink-0"
+            >
+              <Image src={s.src} alt={s.alt} fill priority={i === 0} className="object-cover" sizes="100vw" />
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Controls */}

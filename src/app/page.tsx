@@ -11,10 +11,6 @@ const FEATURED = [
   "rose-petal-maxob-toilet-roll-8-2-offer",
   "glint-glass-cleaner-500ml",
   "black-garbage-bags",
-  "dry-dust-mop-blue",
-  "vim-dishwashing-powder-430g",
-  "blue-nitrile-gloves",
-  "air-freshener-fresh-linen-300ml",
 ];
 
 export default function Home() {
