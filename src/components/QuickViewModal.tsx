@@ -16,11 +16,20 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
   useEffect(() => {
     setQty(1);
     if (product) {
+      // Lock body scroll
+      const originalOverflow = document.body.style.overflow;
+      const originalPosition = document.body.style.position;
       document.body.style.overflow = "hidden";
+      // Prevent iOS bounce
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+
       const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
       document.addEventListener("keydown", h);
       return () => {
-        document.body.style.overflow = "";
+        document.body.style.overflow = originalOverflow;
+        document.body.style.position = originalPosition;
+        document.body.style.width = "";
         document.removeEventListener("keydown", h);
       };
     }
@@ -31,9 +40,9 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
   const waText = encodeURIComponent(`Assalam-o-Alaikum, I want to order ${product.name} (${qty} carton${qty > 1 ? "s" : ""}).`);
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} aria-hidden />
-      <div role="dialog" aria-modal="true" aria-label={`Quick view: ${product.name}`} className="relative bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[92vh] overflow-y-auto">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} aria-hidden />
+      <div role="dialog" aria-modal="true" aria-label={`Quick view: ${product.name}`} className="relative bg-white rounded-3xl shadow-2xl w-full max-w-3xl my-auto max-h-[92vh] overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
         <button
           onClick={onClose}
           aria-label="Close quick view"
