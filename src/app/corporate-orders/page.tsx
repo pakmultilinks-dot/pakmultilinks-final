@@ -26,12 +26,24 @@ const STEPS = [
 ];
 
 const SECTORS = [
-  { name: "Offices & Corporate", icon: "🏢" },
-  { name: "Industries & Warehouses", icon: "🏭" },
-  { name: "Schools & Institutes", icon: "🎓" },
-  { name: "Healthcare & Clinics", icon: "🏥" },
-  { name: "Hotels & Hospitality", icon: "🏨" },
-  { name: "Restaurants & Cafes", icon: "🍽️" },
+  { name: "Offices & Corporate", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
+  ) },
+  { name: "Industries & Warehouses", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></svg>
+  ) },
+  { name: "Schools & Institutes", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+  ) },
+  { name: "Healthcare & Clinics", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v6M9 11h6"/></svg>
+  ) },
+  { name: "Hotels & Hospitality", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M7 11h.01M17 11h.01"/></svg>
+  ) },
+  { name: "Restaurants & Cafes", icon: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+  ) },
 ];
 
 
@@ -97,7 +109,7 @@ export default function CorporateOrders() {
           <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
             {SECTORS.map((s) => (
               <div key={s.name} className="group bg-white rounded-2xl border border-gray-100 px-6 py-6 text-center shadow-sm hover:shadow-md hover:border-[#114b2f]/20 transition-all">
-                <span className="text-3xl">{s.icon}</span>
+                <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#e8f3ec] text-[#114b2f]">{s.icon}</span>
                 <p className="mt-3 font-semibold text-gray-800 text-sm group-hover:text-[#114b2f] transition-colors">{s.name}</p>
               </div>
             ))}
