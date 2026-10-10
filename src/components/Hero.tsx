@@ -35,8 +35,8 @@ export default function Hero() {
             className="w-full h-auto"
             priority
           />
-          {/* Text positioned on left empty area */}
-          <div className="absolute inset-0 flex items-center">
+          {/* Text positioned on left empty area - below the logo */}
+          <div className="absolute inset-0 flex items-center pt-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
               <div key={animKey} className="max-w-lg">
                 <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-[#114b2f] font-semibold" style={{ animationDelay: "0ms" }}>
