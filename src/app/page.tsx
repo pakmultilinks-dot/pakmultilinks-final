@@ -144,14 +144,10 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Deals &amp; Value Packs</h2>
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           <Link href="/shop?search=family" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <div className="aspect-[4/5] relative">
-              <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack - essential cleaning products deal" fill className="object-contain transition-transform duration-500 group-hover:scale-105" />
-            </div>
+            <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack - essential cleaning products deal" width={1145} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
           </Link>
           <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <div className="aspect-[4/5] relative">
-              <Image src="/images/deal-maxob.jpg" alt="Rose Petal Maxob 8+2 offer - best seller tissue deal" fill className="object-contain transition-transform duration-500 group-hover:scale-105" />
-            </div>
+            <Image src="/images/deal-maxob.jpg" alt="Rose Petal Maxob 8+2 offer - best seller tissue deal" width={1254} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
           </Link>
         </div>
       </section>

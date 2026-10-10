@@ -17,24 +17,22 @@ export default function DealsPage() {
 
       <div className="mt-10 grid md:grid-cols-2 gap-8">
         <Link href="/shop?search=family" className="rounded-2xl overflow-hidden shadow-lg group block bg-white">
-          <div className="aspect-[4/5] relative">
-            <Image
-              src="/images/deal-family-starter.jpg"
-              alt="Family Starter Pack - essential cleaning products deal"
-              fill
-              className="object-contain transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
+          <Image
+            src="/images/deal-family-starter.jpg"
+            alt="Family Starter Pack - essential cleaning products deal"
+            width={1145}
+            height={1374}
+            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+          />
         </Link>
         <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="rounded-2xl overflow-hidden shadow-lg group block bg-white">
-          <div className="aspect-[4/5] relative">
-            <Image
-              src="/images/deal-maxob.jpg"
-              alt="Rose Petal Maxob 8+2 offer - best seller tissue deal"
-              fill
-              className="object-contain transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
+          <Image
+            src="/images/deal-maxob.jpg"
+            alt="Rose Petal Maxob 8+2 offer - best seller tissue deal"
+            width={1254}
+            height={1504}
+            className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+          />
         </Link>
       </div>
 
