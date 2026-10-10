@@ -27,7 +27,7 @@ const SLIDES = [
     subtitle: "Rose Petal, Mambo and more. Stock your business with premium paper products at true wholesale rates, supplied by the carton.",
     primaryCta: { label: "Shop Tissue & Paper", href: "/shop" },
     secondaryCta: { label: "Get a Quote", href: "/request-quote" },
-    image: "/images/hero-banner-tissue.jpg",
+    image: "/images/hero-tissue-v2.jpg",
   },
   {
     eyebrow: "Cleaning Essentials",
@@ -35,7 +35,7 @@ const SLIDES = [
     subtitle: "Detergents, disinfectants, and cleaning tools for offices, schools, and commercial spaces. Wholesale carton pricing.",
     primaryCta: { label: "Shop Cleaning", href: "/shop" },
     secondaryCta: { label: "Bulk Pricing", href: "/request-quote" },
-    image: "/images/hero-banner-cleaning.jpg",
+    image: "/images/hero-cleaning-v2.jpg",
   },
 ];
 
