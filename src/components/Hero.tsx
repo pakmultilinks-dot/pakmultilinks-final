@@ -74,22 +74,30 @@ export default function Hero() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      {/* Background gradient */}
+      {/* Background: image with transparent green overlay */}
       <div className="absolute inset-0">
         {SLIDES.map((s, i) => (
           <div
             key={s.title}
-            className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-br ${s.accent} ${i === idx ? "opacity-100" : "opacity-0"}`}
+            className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
             aria-hidden={i !== idx}
-          />
+          >
+            <Image
+              src={s.image}
+              alt=""
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0b3a24]/90 via-[#0b3a24]/70 to-[#0b3a24]/40" />
+          </div>
         ))}
       </div>
 
-      {/* Content: text left, image right */}
+      {/* Content: text on left */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] py-12 sm:py-16">
-          {/* Text panel - left side, on green */}
-          <div key={animKey} className="max-w-xl">
+        <div className="flex items-center min-h-[420px] sm:min-h-[480px] lg:min-h-[520px] py-12 sm:py-16">
+          {/* Text panel - left side */}
+          <div key={animKey} className="max-w-2xl">
             <p className="hero-anim text-xs sm:text-sm uppercase tracking-[0.2em] text-green-300 font-semibold" style={{ animationDelay: "0ms" }}>
               {slide.eyebrow}
             </p>
@@ -116,23 +124,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Image panel - right side, no text overlap */}
-          <div className="hidden lg:block relative h-full min-h-[400px]">
-            {SLIDES.map((s, i) => (
-              <div
-                key={s.image}
-                className={`absolute inset-0 transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
-                aria-hidden={i !== idx}
-              >
-                <Image
-                  src={s.image}
-                  alt=""
-                  fill
-                  className="object-cover rounded-3xl shadow-2xl"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
