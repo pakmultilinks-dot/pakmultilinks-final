@@ -15,7 +15,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [q, setQ] = useState("");
   const [suggest, setSuggest] = useState<typeof PRODUCTS>([]);
-  const [theme, setTheme] = useState<"system" | "light" | "dark">("system");
+  const [theme, setTheme] = useState<"system" | "light" | "dark">("light");
   const router = useRouter();
   const dropRef = useRef<HTMLDivElement>(null);
 
