@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of service for Pak Multilinks Hygiene.",
+};
+
 export default function TermsOfService() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
