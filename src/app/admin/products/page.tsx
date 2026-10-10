@@ -1,48 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useState } from "react";
 import { PRODUCTS } from "@/data/products";
 
 export default function AdminProducts() {
-  const router = useRouter();
-  const [authed, setAuthed] = useState(false);
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    if (localStorage.getItem("admin_auth") !== "true") {
-      router.push("/admin");
-    } else {
-      setAuthed(true);
-    }
-  }, [router]);
-
-  if (!authed) return null;
 
   const filtered = PRODUCTS.filter((p) =>
     p.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-[#0b3a24] text-white px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <Link href="/admin/dashboard" className="text-white/70 hover:text-white">← Dashboard</Link>
-          <h1 className="text-xl font-bold">Products ({PRODUCTS.length})</h1>
-        </div>
-      </header>
+    <div className="max-w-7xl mx-auto">
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-gray-600">{PRODUCTS.length} products</p>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full max-w-md px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]"
-        />
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="mt-4 w-full max-w-md px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#114b2f]"
+      />
 
-        <div className="mt-6 bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="mt-6 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 border-b">
               <tr>
