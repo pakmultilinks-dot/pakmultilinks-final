@@ -104,8 +104,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Nav */}
-        <nav className="hidden lg:block border-t border-gray-100">
+        {/* Nav - desktop only */}
+        <nav className="border-t border-gray-100 max-lg:hidden">
           <div className="max-w-7xl mx-auto px-4 flex items-center gap-0">
             <div className="flex items-center gap-0 flex-1 min-w-0">
               <Link href="/" className="px-3 py-3 text-sm font-medium hover:text-[#114b2f] whitespace-nowrap shrink-0">Home</Link>
