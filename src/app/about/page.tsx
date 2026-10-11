@@ -112,7 +112,7 @@ export default function AboutPage() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/contact" className="inline-block px-8 py-3.5 bg-[#114b2f] text-white font-semibold rounded-full hover:bg-[#0b3a24] transition-colors shadow-md">
+            <Link href="/contact" className="inline-block px-8 py-3.5 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full hover:bg-[#35a80a] transition-colors shadow-md">
               Get in touch
             </Link>
           </div>

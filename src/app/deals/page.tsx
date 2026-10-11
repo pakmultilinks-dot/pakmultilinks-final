@@ -57,12 +57,12 @@ export default function DealsPage() {
         Curated bundles with real product photos at wholesale value.
       </p>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
         {PROMO_DEALS.map((deal) => (
           <Link
             key={deal.image}
             href={deal.href}
-            className="group block rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.18)] transition-all hover:-translate-y-1 bg-white"
+            className="group block rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.18)] transition-all hover:-translate-y-1 bg-white w-full"
           >
             <div className="relative overflow-hidden">
               <Image
@@ -70,6 +70,7 @@ export default function DealsPage() {
                 alt={deal.alt}
                 width={1200}
                 height={600}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </div>
@@ -80,7 +81,7 @@ export default function DealsPage() {
       <div className="mt-12 text-center">
         <Link
           href="/shop"
-          className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#114b2f] hover:bg-[#0b3a24] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#3fc20c] hover:bg-[#35a80a] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
         >
           Shop All Products
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

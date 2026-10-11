@@ -49,7 +49,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => { add(product, qty); setDrawerOpen(true); }}
-              className="flex-1 bg-[#114b2f] text-white font-semibold rounded-full py-3.5 hover:bg-[#0b3a24]"
+              className="flex-1 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#35a80a]"
             >
               Add to cart
             </button>

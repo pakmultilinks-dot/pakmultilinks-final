@@ -83,7 +83,7 @@ export default function AccountPage() {
               </span>
               <p className="font-bold text-xl text-gray-900">Request received</p>
               <p className="text-sm text-gray-600 mt-2">We will contact <span className="font-medium text-gray-900">{email}</span> to set up your business account.</p>
-              <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-[#114b2f] text-white text-sm font-semibold rounded-full hover:bg-[#0b3a24]">Continue shopping</Link>
+              <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-[#3fc20c] text-[#0b3a24] text-sm font-semibold rounded-full hover:bg-[#35a80a]">Continue shopping</Link>
             </div>
           ) : (
             <>
@@ -95,7 +95,7 @@ export default function AccountPage() {
                 onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com"
                 className="w-full border border-gray-300 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-2 focus:ring-[#114b2f]/15"
               />
-              <button type="submit" className="w-full mt-4 bg-[#114b2f] text-white font-semibold rounded-full py-3.5 hover:bg-[#0b3a24] transition-colors shadow-md">
+              <button type="submit" className="w-full mt-4 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#35a80a] transition-colors shadow-md">
                 Request business account
               </button>
             </>

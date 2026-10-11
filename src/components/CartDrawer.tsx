@@ -30,7 +30,7 @@ export default function CartDrawer() {
             <div className="text-center py-16 text-gray-500">
               <p className="text-lg font-medium">Your cart is empty</p>
               <p className="text-sm mt-1">Add products by the carton to get started.</p>
-              <Link href="/shop" onClick={() => setDrawerOpen(false)} className="inline-block mt-4 px-6 py-2.5 bg-[#114b2f] text-white text-sm font-semibold rounded-full">Browse products</Link>
+              <Link href="/shop" onClick={() => setDrawerOpen(false)} className="inline-block mt-4 px-6 py-2.5 bg-[#3fc20c] text-[#0b3a24] text-sm font-semibold rounded-full hover:bg-[#35a80a]">Browse products</Link>
             </div>
           )}
           {items.map(({ product, qty }) => (
@@ -52,7 +52,7 @@ export default function CartDrawer() {
         {items.length > 0 && (
           <div className="border-t px-5 py-4 space-y-2.5">
             <p className="text-xs text-gray-500 text-center">Pricing is quoted after review of quantities.</p>
-            <Link href="/cart" onClick={() => setDrawerOpen(false)} className="block text-center w-full bg-[#114b2f] text-white font-semibold rounded-full py-3 hover:bg-[#0b3a24]">View cartons</Link>
+            <Link href="/cart" onClick={() => setDrawerOpen(false)} className="block text-center w-full bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full py-3 hover:bg-[#35a80a]">View cartons</Link>
             <a href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`} target="_blank" rel="noopener" className="block text-center w-full border border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3 hover:bg-green-50">Order on WhatsApp</a>
             <Link href="/request-quote" onClick={() => setDrawerOpen(false)} className="block text-center w-full text-sm text-[#114b2f] font-medium hover:underline py-1">Request bulk quote</Link>
           </div>
