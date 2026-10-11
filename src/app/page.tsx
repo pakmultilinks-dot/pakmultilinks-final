@@ -119,42 +119,18 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 py-14">
         <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Deals &amp; Value Packs</h2>
         <p className="text-center text-gray-600 mt-2 text-sm">Real product bundles at wholesale value</p>
-        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
-            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
-              <Image src="/products/1f3020be-5360-43d0-ba6e-0d42a06ee7bd.jpg" alt="Rose Petal Tissues" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/lux-soap-150g.jpg" alt="Lux Soap" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/surf-excel-detergent-powder-1kg.jpg" alt="Surf Excel" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/vim-dishwash-bar-300g.jpg" alt="Vim Bar" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-            </div>
-            <p className="text-center font-bold py-3 text-sm">Family Starter Pack</p>
+        <div className="mt-8 grid md:grid-cols-2 gap-6">
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack deal" width={1200} height={600} className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
           </Link>
-          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
-            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
-              <Image src="/products/535ca8e5-e823-4ca1-8597-effca4811888.jpg" alt="Rose Petal Maxob" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/fay-facial-tissues-200.jpg" alt="Fay Tissues" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/rose-petal-tulip-tissues-160.jpg" alt="Rose Petal Tulip" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/butterfly-toilet-roll.jpg" alt="Butterfly Roll" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-            </div>
-            <p className="text-center font-bold py-3 text-sm">Tissue Mega Deal</p>
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-tissue-mega.jpg" alt="Tissue Mega Deal" width={1200} height={600} className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
           </Link>
-          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
-            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
-              <Image src="/products/5764be5a-0d2a-41c5-8fb5-93f13911ebe4.jpg" alt="Dettol Floor Cleaner" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/robin-bleach-1-5l.jpg" alt="Robin Bleach" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/colin-glass-cleaner-500ml.jpg" alt="Colin Cleaner" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/b135a8bf-aec0-40f2-b0e2-8e6baaa52326.jpg" alt="Harpic" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-            </div>
-            <p className="text-center font-bold py-3 text-sm">Cleaning Combo Deal</p>
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-cleaning-combo.jpg" alt="Cleaning Combo Deal" width={1200} height={600} className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
           </Link>
-          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
-            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
-              <Image src="/products/lifebuoy-soap-145g.jpg" alt="Lifebuoy Soap" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/head-and-shoulders-shampoo-340ml.jpg" alt="Head & Shoulders" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/colgate-toothpaste-160g.jpg" alt="Colgate" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-              <Image src="/products/dettol-handwash-200ml.jpg" alt="Dettol Handwash" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
-            </div>
-            <p className="text-center font-bold py-3 text-sm">Personal Care Bundle</p>
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
+            <Image src="/images/deal-personal-care.jpg" alt="Personal Care Bundle deal" width={1200} height={600} className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
           </Link>
         </div>
         <div className="text-center mt-6">
