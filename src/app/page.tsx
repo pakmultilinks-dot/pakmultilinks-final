@@ -182,12 +182,12 @@ export default function Home() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-6 max-w-3xl mx-auto">
-            <Link href="/deals" className="block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-              <Image src="/images/deal-rose-petal-popup.jpg" alt="Rose Petal Pop-Up Tissue - Best Seller" width={1200} height={800} sizes="(max-width: 768px) 100vw, 700px" className="w-full h-auto" />
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <Link href="/deals" className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+              <Image src="/images/deal-rose-petal-popup.jpg" alt="Rose Petal Pop-Up Tissue - Best Seller" width={600} height={400} sizes="(max-width: 640px) 100vw, 50vw" className="w-full h-auto" />
             </Link>
-            <Link href="/deals" className="block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
-              <Image src="/images/deal-maxob-8plus2.jpg" alt="Rose Petal Maxob 8+2 Offer" width={1200} height={800} sizes="(max-width: 768px) 100vw, 700px" className="w-full h-auto" />
+            <Link href="/deals" className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+              <Image src="/images/deal-maxob-8plus2.jpg" alt="Rose Petal Maxob 8+2 Offer" width={600} height={400} sizes="(max-width: 640px) 100vw, 50vw" className="w-full h-auto" />
             </Link>
           </div>
         </div>

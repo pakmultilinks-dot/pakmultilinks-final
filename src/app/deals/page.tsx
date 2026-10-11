@@ -37,19 +37,19 @@ export default function DealsPage() {
         Curated bundles with real product photos at wholesale value.
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {PROMO_DEALS.map((deal) => (
           <Link
             key={deal.image}
             href={deal.href}
-            className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-white"
+            className="group block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all bg-white"
           >
             <Image
               src={deal.image}
               alt={deal.alt}
-              width={1200}
-              height={800}
-              sizes="(max-width: 768px) 100vw, 800px"
+              width={600}
+              height={400}
+              sizes="(max-width: 640px) 100vw, 50vw"
               className="w-full h-auto"
             />
           </Link>
