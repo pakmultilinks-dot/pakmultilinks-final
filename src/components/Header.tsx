@@ -70,7 +70,7 @@ export default function Header() {
           </button>
 
           <Link href="/" className="flex items-center gap-2 shrink-0 min-w-0">
-            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={400} height={112} className="h-11 sm:h-16 lg:h-20 w-auto" priority />
+            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={400} height={112} className="h-10 sm:h-16 lg:h-20 w-auto" priority />
           </Link>
 
           {/* Search */}
@@ -100,7 +100,7 @@ export default function Header() {
           </form>
 
           <div className="flex items-center gap-1 sm:gap-3 ml-auto">
-            <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="md:hidden p-2 rounded-full hover:bg-gray-100">
+            <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="hidden min-[430px]:block md:hidden p-2 rounded-full hover:bg-gray-100">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
             <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#114b2f] text-white hover:bg-[#0b3a24]">

@@ -63,8 +63,8 @@ export default function Hero() {
       className="relative w-full overflow-hidden"
       aria-label="Featured"
       aria-roledescription="carousel"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => { if (window.matchMedia("(hover: hover)").matches) setPaused(true); }}
+      onMouseLeave={() => { if (window.matchMedia("(hover: hover)").matches) setPaused(false); }}
     >
       {SLIDES.map((s, i) => (
         <div
@@ -72,7 +72,7 @@ export default function Hero() {
           className={i === idx ? "relative" : "hidden"}
           aria-hidden={i !== idx}
         >
-          <div className="relative w-full min-h-[520px] sm:h-[450px] lg:h-[500px] overflow-hidden flex pb-16 sm:pb-0">
+          <div className="relative w-full overflow-hidden">
             {i === idx && (
             <div key={`img-${i}-${animKey}`} className="absolute inset-0">
               <Image
@@ -87,8 +87,8 @@ export default function Hero() {
             )}
             {/* Readability gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/10 sm:from-white/90 sm:via-white/60 sm:to-transparent pointer-events-none" />
-            <div className="absolute inset-0 flex items-center pt-16 pb-12">
-              <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+            <div className="relative px-4 sm:px-8 pt-16 pb-24 sm:pb-20 min-h-[540px] sm:min-h-[470px] lg:min-h-[500px] flex items-center">
+              <div className="max-w-7xl mx-auto w-full">
                 <div key={`${i}-${animKey}`} className="max-w-xl bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-5 sm:p-0">
                   <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
                     <span className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse" />
