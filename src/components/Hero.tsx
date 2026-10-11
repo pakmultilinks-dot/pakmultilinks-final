@@ -74,7 +74,7 @@ export default function Hero() {
         >
           <div className="relative w-full h-[480px] sm:h-[450px] lg:h-[500px] overflow-hidden">
             {i === idx && (
-            <div key={`img-${i}-${animKey}`} className="absolute inset-0 hero-kenburns">
+            <div key={`img-${i}-${animKey}`} className="absolute inset-0">
               <Image
                 src={s.image}
                 alt=""
