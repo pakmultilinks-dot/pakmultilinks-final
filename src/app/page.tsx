@@ -52,21 +52,6 @@ export default function Home() {
         <Hero />
       </div>
 
-      {/* Mobile welcome - compact header for mobile only */}
-      <section className="md:hidden bg-white px-4 pt-8 pb-6 border-b border-gray-100">
-        <p className="text-[11px] uppercase tracking-[0.18em] text-[#114b2f] font-bold">Wholesale Hygiene Supply</p>
-        <h1 className="text-[28px] font-bold text-[#0b3a24] mt-3 leading-[1.15] tracking-tight">Corporate Hygiene Products by the Carton</h1>
-        <p className="text-[15px] text-gray-600 mt-3 leading-relaxed">Tissues, cleaning and washroom supplies for offices, schools and clinics across Lahore.</p>
-        <div className="flex gap-3 mt-5">
-          <Link href="/shop" className="flex-1 text-center bg-[#2fa84f] text-white font-semibold rounded-lg py-3.5 min-h-[52px] flex items-center justify-center text-[15px]">
-            Shop Products
-          </Link>
-          <Link href="/request-quote" className="flex-1 text-center border border-[#114b2f] text-[#114b2f] font-semibold rounded-lg py-3.5 min-h-[52px] flex items-center justify-center text-[15px]">
-            Get Bulk Quote
-          </Link>
-        </div>
-      </section>
-
       {/* Trusted partners */}
       <section className="py-10 bg-[#f7faf8] border-b border-gray-100">
         <p className="text-center text-[11px] uppercase tracking-[0.18em] text-gray-500 font-bold">Our Trusted Partners</p>
