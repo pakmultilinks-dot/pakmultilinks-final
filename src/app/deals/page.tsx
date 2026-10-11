@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 
 const PROMO_DEALS = [
   {
+    image: "/images/deal-family-starter-pack.jpg",
+    alt: "Family Starter Pack - Essential cleaning products, Deal Price Rs. 799",
+    href: "/shop",
+  },
+  {
     image: "/images/deal-rose-petal-popup.jpg",
     alt: "Rose Petal Pop-Up Tissue - Best Seller, Ultra Soft, 24 boxes per carton",
     href: "/shop?q=rose+petal+pop-up",

@@ -183,6 +183,9 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <Link href="/deals" className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all sm:col-span-2">
+              <Image src="/images/deal-family-starter-pack.jpg" alt="Family Starter Pack - Deal Price Rs. 799" width={1200} height={800} sizes="(max-width: 640px) 100vw, 800px" className="w-full h-auto" />
+            </Link>
             <Link href="/deals" className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
               <Image src="/images/deal-rose-petal-popup.jpg" alt="Rose Petal Pop-Up Tissue - Best Seller" width={600} height={400} sizes="(max-width: 640px) 100vw, 50vw" className="w-full h-auto" />
             </Link>
