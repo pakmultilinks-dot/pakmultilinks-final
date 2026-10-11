@@ -52,6 +52,21 @@ export default function Home() {
         <Hero />
       </div>
 
+      {/* Mobile welcome - compact header for mobile only */}
+      <section className="md:hidden bg-white px-4 pt-6 pb-2">
+        <p className="text-xs uppercase tracking-[0.2em] text-[#114b2f] font-semibold">Wholesale Hygiene Supply</p>
+        <h1 className="text-2xl font-bold text-[#0b3a24] mt-2 leading-tight">Corporate Hygiene Products by the Carton</h1>
+        <p className="text-sm text-gray-600 mt-2">Tissues, cleaning & washroom supplies for offices, schools and clinics across Lahore.</p>
+        <div className="flex gap-3 mt-4">
+          <Link href="/shop" className="flex-1 text-center bg-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3.5 min-h-[52px] flex items-center justify-center">
+            Shop Products
+          </Link>
+          <Link href="/request-quote" className="flex-1 text-center border-2 border-[#114b2f] text-[#114b2f] font-semibold rounded-full py-3.5 min-h-[52px] flex items-center justify-center">
+            Get Bulk Quote
+          </Link>
+        </div>
+      </section>
+
       {/* Trusted partners */}
       <section className="py-12 bg-[#f7faf8]">
         <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>

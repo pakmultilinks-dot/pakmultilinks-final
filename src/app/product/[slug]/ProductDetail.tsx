@@ -56,7 +56,7 @@ export default function ProductDetail({ product, related }: { product: Product; 
             <a
               href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`}
               target="_blank" rel="noopener"
-              className="flex-1 text-center border-2 border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3 hover:bg-green-50"
+              className="flex-1 text-center border-2 border-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3 hover:bg-green-50"
             >
               WhatsApp order
             </a>

@@ -82,8 +82,8 @@ export default function FAQPage() {
         <p className="font-semibold">Still have questions?</p>
         <p className="text-sm text-gray-600 mt-1">Chat with us on WhatsApp for instant answers.</p>
         <div className="mt-4 flex flex-wrap justify-center gap-3">
-          <a href={CONTACT.zoher.waLink(DEFAULT_WA_MESSAGE)} target="_blank" rel="noopener" className="px-5 py-2.5 bg-[#25D366] text-white text-sm font-bold rounded-full hover:bg-[#1eb856]">WhatsApp Zoher Ahmed</a>
-          <a href={CONTACT.bilal.waLink(DEFAULT_WA_MESSAGE)} target="_blank" rel="noopener" className="px-5 py-2.5 bg-[#25D366] text-white text-sm font-bold rounded-full hover:bg-[#1eb856]">WhatsApp Bilal Shah</a>
+          <a href={CONTACT.zoher.waLink(DEFAULT_WA_MESSAGE)} target="_blank" rel="noopener" className="px-5 py-2.5 bg-[#2fa84f] text-white text-sm font-bold rounded-full hover:bg-[#268a41]">WhatsApp Zoher Ahmed</a>
+          <a href={CONTACT.bilal.waLink(DEFAULT_WA_MESSAGE)} target="_blank" rel="noopener" className="px-5 py-2.5 bg-[#2fa84f] text-white text-sm font-bold rounded-full hover:bg-[#268a41]">WhatsApp Bilal Shah</a>
         </div>
       </div>
     </main>

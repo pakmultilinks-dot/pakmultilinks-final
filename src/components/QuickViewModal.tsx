@@ -89,7 +89,7 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
               <a
                 href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`}
                 target="_blank" rel="noopener"
-                className="w-full text-center border-2 border-[#25D366] text-[#128C4B] font-semibold rounded-full py-2.5 hover:bg-green-50"
+                className="w-full text-center border-2 border-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-2.5 hover:bg-green-50"
               >
                 WhatsApp Order
               </a>

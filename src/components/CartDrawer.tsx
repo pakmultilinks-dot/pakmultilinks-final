@@ -131,7 +131,7 @@ export default function CartDrawer() {
               href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`}
               target="_blank"
               rel="noopener"
-              className="block text-center w-full border border-[#25D366] text-[#128C4B] font-semibold rounded-full py-3.5 hover:bg-green-50"
+              className="block text-center w-full border border-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-green-50"
             >
               Order on WhatsApp
             </a>
