@@ -211,16 +211,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Garbage Bags",
-    "slug": "garbage-bags",
-    "image": "/products/57815928-0eee-4c80-a2cb-c68a17caad90.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": 510,
-    "inStock": true
-  },
-  {
     "name": "Party White",
     "slug": "party-white",
     "image": "/products/6ad2345f-1182-42fb-84f5-e82c8fc2539f.jpg",
@@ -235,16 +225,6 @@ export const PRODUCTS: Product[] = [
     "slug": "popup",
     "image": "/products/8e70831d-7c2f-41ce-a718-884de9247dd0.jpg",
     "category": "Tissue & Paper Wholesale",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Paper Coffee Cups",
-    "slug": "paper-coffee-cups",
-    "image": "/products/b124c95f-f5e3-448d-8c09-432e05a2d462.jpg",
-    "category": "Disposable Items",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": null,
