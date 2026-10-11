@@ -118,18 +118,49 @@ export default function Home() {
 {/* Deals */}
       <section className="max-w-7xl mx-auto px-4 py-14">
         <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Deals &amp; Value Packs</h2>
-        <div className="mt-8 grid md:grid-cols-2 gap-6">
-          <Link href="/shop?search=family" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack - essential cleaning products deal" width={1145} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+        <p className="text-center text-gray-600 mt-2 text-sm">Real product bundles at wholesale value</p>
+        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
+            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
+              <Image src="/products/1f3020be-5360-43d0-ba6e-0d42a06ee7bd.jpg" alt="Rose Petal Tissues" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/lux-soap-150g.jpg" alt="Lux Soap" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/surf-excel-detergent-powder-1kg.jpg" alt="Surf Excel" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/vim-dishwash-bar-300g.jpg" alt="Vim Bar" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+            </div>
+            <p className="text-center font-bold py-3 text-sm">Family Starter Pack</p>
           </Link>
-          <Link href="/product/rose-petal-maxob-toilet-roll-8-2-offer" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <Image src="/images/deal-maxob.jpg" alt="Rose Petal Maxob 8+2 offer - best seller tissue deal" width={1254} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
+            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
+              <Image src="/products/535ca8e5-e823-4ca1-8597-effca4811888.jpg" alt="Rose Petal Maxob" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/fay-facial-tissues-200.jpg" alt="Fay Tissues" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/rose-petal-tulip-tissues-160.jpg" alt="Rose Petal Tulip" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/butterfly-toilet-roll.jpg" alt="Butterfly Roll" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+            </div>
+            <p className="text-center font-bold py-3 text-sm">Tissue Mega Deal</p>
           </Link>
-          <Link href="/shop?category=Tissue%20%26%20Paper%20Wholesale" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <Image src="/images/deal-tissue-mega.jpg" alt="Tissue Mega Deal - bulk tissue bundle offer" width={1200} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
+            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
+              <Image src="/products/5764be5a-0d2a-41c5-8fb5-93f13911ebe4.jpg" alt="Dettol Floor Cleaner" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/robin-bleach-1-5l.jpg" alt="Robin Bleach" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/colin-glass-cleaner-500ml.jpg" alt="Colin Cleaner" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/b135a8bf-aec0-40f2-b0e2-8e6baaa52326.jpg" alt="Harpic" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+            </div>
+            <p className="text-center font-bold py-3 text-sm">Cleaning Combo Deal</p>
           </Link>
-          <Link href="/shop?category=Cleaning%20Products" className="rounded-2xl overflow-hidden shadow-md group block bg-white">
-            <Image src="/images/deal-cleaning-combo.jpg" alt="Cleaning Combo Deal - complete cleaning bundle offer" width={1200} height={600} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+          <Link href="/deals" className="rounded-2xl overflow-hidden shadow-md group block bg-white border border-gray-100 hover:shadow-lg transition-all">
+            <div className="grid grid-cols-2 gap-1 p-2 bg-[#f6f5f1]">
+              <Image src="/products/lifebuoy-soap-145g.jpg" alt="Lifebuoy Soap" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/head-and-shoulders-shampoo-340ml.jpg" alt="Head & Shoulders" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/colgate-toothpaste-160g.jpg" alt="Colgate" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+              <Image src="/products/dettol-handwash-200ml.jpg" alt="Dettol Handwash" width={200} height={200} className="w-full aspect-square object-contain bg-white rounded-lg" loading="lazy" />
+            </div>
+            <p className="text-center font-bold py-3 text-sm">Personal Care Bundle</p>
+          </Link>
+        </div>
+        <div className="text-center mt-6">
+          <Link href="/deals" className="inline-flex items-center gap-2 text-[#114b2f] font-semibold hover:underline">
+            View all 6 deals
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Link>
         </div>
       </section>
