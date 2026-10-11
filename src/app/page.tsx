@@ -139,33 +139,27 @@ export default function Home() {
 
       </Reveal>
       <Reveal>
-{/* Deals */}
+{/* Deals - compact teaser */}
       <section className="bg-gradient-to-b from-[#f4f9f6] via-white to-white border-y border-[#114b2f]/10">
-        <div className="max-w-7xl mx-auto px-4 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
           <div className="text-center">
             <p className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-white font-bold bg-[#114b2f] px-5 py-2 rounded-full shadow-md">
-              <span className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-[#4ad80a] rounded-full animate-pulse" />
               Limited Time Offers
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 font-serif-head text-[#0b3a24]">Deals &amp; Value Packs</h2>
-            <p className="text-gray-600 mt-3 text-sm sm:text-base max-w-xl mx-auto">Real product bundles at wholesale value. Big savings when you buy by the carton.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mt-4 font-serif-head text-[#0b3a24]">Deals &amp; Value Packs</h2>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base max-w-xl mx-auto">Real product bundles at wholesale value.</p>
           </div>
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Link href="/deals" className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.2)] transition-all hover:-translate-y-1 group block bg-white">
               <Image src="/images/deal-family-starter.jpg" alt="Family Starter Pack deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
             </Link>
             <Link href="/deals" className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.2)] transition-all hover:-translate-y-1 group block bg-white">
               <Image src="/images/deal-tissue-mega.jpg" alt="Tissue Mega Deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
             </Link>
-            <Link href="/deals" className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.2)] transition-all hover:-translate-y-1 group block bg-white">
-              <Image src="/images/deal-cleaning-combo.jpg" alt="Cleaning Combo Deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
-            </Link>
-            <Link href="/deals" className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.2)] transition-all hover:-translate-y-1 group block bg-white">
-              <Image src="/images/deal-personal-care.jpg" alt="Office Hygiene Bundle deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
-            </Link>
           </div>
-          <div className="text-center mt-10">
-            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#4ad80a] hover:bg-[#3db009] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base">
+          <div className="text-center mt-8">
+            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#4ad80a] hover:bg-[#3db009] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base min-h-[52px]">
               View All 6 Deals
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
@@ -174,29 +168,6 @@ export default function Home() {
       </section>
 
       </Reveal>
-      <Reveal>
-{/* Our Products */}
-      <section className="max-w-7xl mx-auto px-4 py-16 sm:py-14">
-        <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Browse the range</p>
-        <h2 className="text-[26px] sm:text-3xl font-bold text-center mt-2 font-serif-head">Our Products</h2>
-        <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
-        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {PRODUCTS.slice(0, 20).map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products.</p>
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/shop" className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[52px] bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009] text-base">
-              View all products
-            </Link>
-            <Link href="/request-quote" className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[52px] text-base font-semibold text-[#114b2f] border-2 border-[#114b2f]/20 rounded-full hover:border-[#114b2f]/40 hover:bg-[#114b2f]/5">
-              Get bulk quote
-            </Link>
-          </div>
-        </div>
-      </section></Reveal>
     </>
   );
 }

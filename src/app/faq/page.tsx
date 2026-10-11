@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: "What products does Pak Multilinks sell?",
-    a: "We wholesale tissue and paper products (facial tissues, toilet rolls, kitchen towels), washroom supplies (mops, brushes, dispensers), cleaning products (floor cleaners, bleach, detergents, dishwash), personal care (soaps, shampoos, toothpaste, handwash), and disposable items (cups, plates, garbage bags). Over 150 real products from brands like Dettol, Harpic, Vim, Surf Excel, Rose Petal, and more.",
+    a: "We wholesale corporate hygiene and cleaning products: tissue and paper products (facial tissues, toilet rolls, kitchen towels, napkins), cleaning products (floor cleaners, bleach, phenyl, detergents, dishwash, glass cleaners, toilet cleaners), washroom supplies (mops, brushes, cloths, soap dispensers), and disposable items (garbage bags, gloves, face masks, aprons). 125 products from brands like Dettol, Harpic, Vim, Surf Excel, Ariel, Rose Petal, Domex, Lysol, and more.",
   },
   {
     q: "What is the minimum order quantity?",

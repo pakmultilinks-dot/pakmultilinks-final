@@ -207,12 +207,12 @@ export default function Header() {
         <aside
           role="dialog"
           aria-label="Mobile menu"
-          className={`absolute left-0 top-0 bottom-0 w-[85vw] max-w-[320px] bg-white shadow-xl overflow-y-auto transition-transform duration-300 ease-out ${
+          className={`absolute left-0 top-0 bottom-0 w-[85vw] max-w-[320px] bg-white shadow-xl flex flex-col transition-transform duration-300 ease-out ${
             mobileOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {/* Menu header */}
-          <div className="flex items-center justify-between pl-4 pr-2 py-3 border-b border-gray-100">
+          <div className="flex items-center justify-between pl-4 pr-2 py-3 border-b border-gray-100 shrink-0">
             <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={220} height={60} className="h-12 w-auto shrink-0" />
             <button
               onClick={() => setMobileOpen(false)}
@@ -225,7 +225,7 @@ export default function Header() {
           {/* Search - full width */}
           <form
             onSubmit={(e) => { submitSearch(e); setMobileOpen(false); }}
-            className="px-4 py-4 border-b border-gray-100"
+            className="px-4 py-4 border-b border-gray-100 shrink-0"
           >
             <input
               value={q}
@@ -235,8 +235,8 @@ export default function Header() {
               className="w-full min-h-[48px] border border-gray-300 rounded-full px-5 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-1 focus:ring-[#114b2f]"
             />
           </form>
-          {/* Nav links - min 48px touch targets, never clipped */}
-          <nav className="pt-2 pb-8">
+          {/* Nav links - scrollable, min 48px touch targets, never clipped */}
+          <nav className="flex-1 overflow-y-auto pt-2 pb-4">
             {[
               ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Rate List", "/rate-list"], ["Corporate Orders", "/corporate-orders"],
               ["About Us", "/about"], ["Contact", "/contact"],
@@ -266,14 +266,17 @@ export default function Header() {
                 {c.name}
               </Link>
             ))}
+          </nav>
+          {/* Fixed CTA at bottom - always visible, not scrollable */}
+          <div className="shrink-0 p-4 border-t border-gray-100 bg-white" style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}>
             <Link
               href="/request-quote"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center min-h-[48px] mx-4 mt-4 px-5 py-3 bg-[#4ad80a] text-[#0b3a24] text-sm font-semibold rounded-full hover:bg-[#3db009] transition-colors"
+              className="flex items-center justify-center min-h-[52px] px-5 py-3 bg-[#4ad80a] text-[#0b3a24] text-[15px] font-bold rounded-full hover:bg-[#3db009] transition-colors shadow-lg"
             >
               Request bulk quote
             </Link>
-          </nav>
+          </div>
         </aside>
       </div>
     </>
