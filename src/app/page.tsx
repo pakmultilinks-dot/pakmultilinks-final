@@ -77,7 +77,7 @@ export default function Home() {
             <Link
               key={c.slug}
               href={`/shop?category=${encodeURIComponent(c.name)}`}
-              className="group bg-white border border-gray-200 hover:border-[#114b2f]/30 rounded-2xl overflow-hidden text-center transition-all hover:shadow-lg"
+              className="group bg-white border border-gray-200 hover:border-[#114b2f]/30 rounded-2xl overflow-hidden text-center transition-all hover:shadow-lg flex flex-col"
             >
               <div className="aspect-square bg-[#f6f5f1] overflow-hidden">
                 <img
@@ -87,10 +87,10 @@ export default function Home() {
                   className="w-full h-full object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="p-4">
-                <p className="font-bold text-[#114b2f] text-[15px] sm:text-base leading-snug">{c.name}</p>
+              <div className="p-4 flex flex-col items-center flex-1">
+                <p className="font-bold text-[#114b2f] text-[15px] sm:text-base leading-snug min-h-[2.75rem] flex items-center">{c.name}</p>
                 <p className="mt-2 text-xs text-gray-600 line-clamp-2 hidden sm:block">{c.description}</p>
-                <span className="inline-block mt-3 text-xs font-semibold text-[#114b2f] underline underline-offset-2">Browse →</span>
+                <span className="inline-block mt-auto pt-3 text-xs font-semibold text-[#114b2f] underline underline-offset-2">Browse →</span>
               </div>
             </Link>
             );
@@ -127,7 +127,7 @@ export default function Home() {
             <p className="mt-4 text-gray-600 text-sm leading-7 max-w-md">
               From offices and restaurants to schools and clinics, we help you arrange the everyday supplies your team needs. Send us your quantities for a quotation.
             </p>
-            <Link href="/corporate-orders" className="inline-block mt-6 px-7 py-3 bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">
+            <Link href="/corporate-orders" className="inline-flex items-center justify-center mt-6 px-7 py-4 min-h-[52px] bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">
               Explore business supply
             </Link>
           </div>

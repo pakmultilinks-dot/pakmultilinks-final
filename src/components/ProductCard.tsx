@@ -55,13 +55,13 @@ export default function ProductCard({ product }: { product: Product }) {
           <div className="mt-3 flex flex-col sm:flex-row gap-2 pt-1">
             <button
               onClick={() => { add(product); setDrawerOpen(true); }}
-              className="flex-1 bg-[#4ad80a] text-[#0b3a24] text-sm font-semibold rounded-full py-2.5 hover:bg-[#3db009] transition-colors whitespace-nowrap"
+              className="flex-1 bg-[#4ad80a] text-[#0b3a24] text-sm font-semibold rounded-full py-3 min-h-[48px] hover:bg-[#3db009] transition-colors whitespace-nowrap"
             >
               Add to cart
             </button>
             <button
               onClick={() => setQuickView(true)}
-              className="px-4 py-2.5 text-sm font-medium border border-[#4ad80a] text-[#0b3a24] rounded-full hover:bg-[#4ad80a]/10 transition-colors whitespace-nowrap"
+              className="px-4 py-3 min-h-[48px] text-sm font-medium border border-[#4ad80a] text-[#0b3a24] rounded-full hover:bg-[#4ad80a]/10 transition-colors whitespace-nowrap"
               aria-label={`Quick view ${product.name}`}
             >
               Quick view

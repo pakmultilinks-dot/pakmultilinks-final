@@ -34,7 +34,7 @@ export default function ContactClient() {
           ["Email", "zohair.shah8@gmail.com", "mailto:zohair.shah8@gmail.com", "Send email"],
           ["Visit us", "Shop No LG-9, Rehman Tower Main Market Gulberg II, Lahore", "https://maps.google.com/?q=Rehman+Tower+Gulberg+II+Lahore", "Open map"],
         ].map(([t, d, href, cta]) => (
-          <a key={t} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener" className="block bg-white border border-gray-200 rounded-2xl p-8 text-center hover:shadow-md transition-shadow">
+          <a key={t} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener" className="block bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 text-center hover:shadow-md transition-shadow">
             <p className="font-bold text-[#114b2f]">{t}</p>
             <p className="mt-2 text-sm text-gray-700 break-words">{d}</p>
             <span className="inline-block mt-4 text-sm font-semibold text-[#114b2f] underline underline-offset-2">{cta}</span>

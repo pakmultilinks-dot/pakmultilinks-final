@@ -36,15 +36,15 @@ export default function CartPage() {
           <div key={product.slug} className="flex gap-4 border border-gray-200 rounded-2xl p-4">
             <img src={product.image} alt={product.name} className="w-24 h-24 object-cover rounded-xl shrink-0" />
             <div className="flex-1 min-w-0">
-              <Link href={`/product/${product.slug}`} className="font-semibold hover:text-[#114b2f]">{product.name}</Link>
+              <Link href={`/product/${product.slug}`} className="font-semibold hover:text-[#114b2f] line-clamp-2 leading-snug">{product.name}</Link>
               <p className="text-sm text-gray-500 mt-1">{product.category} &middot; {formatPrice(product)}</p>
               <div className="mt-3 flex items-center gap-3">
                 <div className="flex items-center border border-gray-300 rounded-full">
-                  <button onClick={() => setQty(product.slug, qty - 1)} aria-label="Decrease" className="w-9 h-9 hover:bg-gray-100 rounded-l-full">-</button>
+                  <button onClick={() => setQty(product.slug, qty - 1)} aria-label="Decrease" className="w-11 h-11 flex items-center justify-center hover:bg-gray-100 rounded-l-full">-</button>
                   <span className="w-8 text-center font-semibold text-sm">{qty}</span>
-                  <button onClick={() => setQty(product.slug, qty + 1)} aria-label="Increase" className="w-9 h-9 hover:bg-gray-100 rounded-r-full">+</button>
+                  <button onClick={() => setQty(product.slug, qty + 1)} aria-label="Increase" className="w-11 h-11 flex items-center justify-center hover:bg-gray-100 rounded-r-full">+</button>
                 </div>
-                <button onClick={() => remove(product.slug)} className="text-sm text-red-600 hover:underline">Remove</button>
+                <button onClick={() => remove(product.slug)} className="text-sm text-red-600 hover:underline px-3 py-2 min-h-[44px]">Remove</button>
               </div>
             </div>
           </div>

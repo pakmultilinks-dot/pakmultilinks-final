@@ -59,15 +59,15 @@ export default function ShopClient() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search by name or category..."
-          className="flex-1 border border-gray-300 rounded-full px-5 py-2.5 text-sm focus:outline-none focus:border-[#114b2f]"
+          className="flex-1 border border-gray-300 rounded-full px-5 py-3 min-h-[48px] text-sm focus:outline-none focus:border-[#114b2f]"
         />
-        <select name="category" value={cat} onChange={(e) => setCat(e.target.value)} className="border border-gray-300 rounded-full px-4 py-2.5 text-sm bg-white focus:outline-none focus:border-[#114b2f]">
+        <select name="category" value={cat} onChange={(e) => setCat(e.target.value)} className="border border-gray-300 rounded-full px-4 py-3 min-h-[48px] text-sm bg-white focus:outline-none focus:border-[#114b2f]">
           <option value="">All categories</option>
           {categoryOptions.map((c) => (
             <option key={c.name} value={c.name}>{c.name} ({c.count})</option>
           ))}
         </select>
-        <select name="sort" value={sort} onChange={(e) => setSort(e.target.value)} className="border border-gray-300 rounded-full px-4 py-2.5 text-sm bg-white focus:outline-none focus:border-[#114b2f]">
+        <select name="sort" value={sort} onChange={(e) => setSort(e.target.value)} className="border border-gray-300 rounded-full px-4 py-3 min-h-[48px] text-sm bg-white focus:outline-none focus:border-[#114b2f]">
           <option value="featured">Sort: Featured</option>
           <option value="name">Sort: Name A-Z</option>
           <option value="price-low">Sort: Price low to high</option>

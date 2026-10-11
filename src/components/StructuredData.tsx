@@ -72,59 +72,11 @@ export default function StructuredData() {
     inLanguage: "en-PK",
   };
 
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What does Pak Multilinks Hygiene supply?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Pak Multilinks Hygiene supplies wholesale tissue and paper products (facial tissues, toilet rolls, napkins, kitchen towels), cleaning products (detergents, disinfectants, floor cleaners), washroom supplies (mops, brushes, cloths), personal care items (hand wash, sanitizers, gloves) and disposable items (cups, plates, cutlery, containers) by the carton to businesses in Lahore and across Pakistan.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Who can order from Pak Multilinks Hygiene?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Offices, schools, clinics, hospitals, restaurants, hotels, and any business that needs hygiene supplies in bulk. Our standard minimum order is 1 carton per product.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do I get a wholesale quotation?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Send your product list via the request-quote page or WhatsApp (+92 300 6917 385 or +92 325 8166829) and receive a wholesale quotation within one working day.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Where is Pak Multilinks Hygiene located?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Shop No LG-9, Rehman Tower Main Market Gulberg II, Lahore, Pakistan. Delivery available across Lahore and Pakistan.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What brands does Pak Multilinks Hygiene carry?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Dettol, Harpic, Vim, Surf Excel, Ariel, Rose Petal, Hi-Jeen, Lux, Lifebuoy, Safeguard, Colgate, Closeup, Pepsodent, Head and Shoulders, Sunsilk, Pantene, Clear, Nivea, Vaseline, Ponds, Dove, Palmolive, Gillette, Sensodyne, Mortein, Lysol, and more.",
-        },
-      },
-    ],
-  };
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
     </>
   );
 }

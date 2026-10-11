@@ -97,7 +97,7 @@ export default function Footer() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="inline-block py-1 text-sm text-white/75 transition-colors hover:text-[#4ad80a]"
+                      className="inline-block py-2 text-sm text-white/75 transition-colors hover:text-[#4ad80a]"
                     >
                       {label}
                     </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
                   <li key={c}>
                     <Link
                       href={`/shop?category=${encodeURIComponent(c)}`}
-                      className="inline-block py-1 text-sm text-white/75 transition-colors hover:text-[#4ad80a]"
+                      className="inline-block py-2 text-sm text-white/75 transition-colors hover:text-[#4ad80a]"
                     >
                       {c}
                     </Link>
