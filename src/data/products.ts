@@ -11,26 +11,6 @@ export interface Product {
 
 export const PRODUCTS: Product[] = [
   {
-    "name": "Antiseptic Liquid 100ml",
-    "slug": "antiseptic-liquid-100ml",
-    "image": "/products/00b9062b-d381-4473-a4ee-9e48823632bd.jpg",
-    "category": "Personal Care",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Food Takeaway Containers",
-    "slug": "food-takeaway-containers",
-    "image": "/products/03da356c-5510-43d6-94be-7d5f7f691f37.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Straw Broom",
     "slug": "straw-broom",
     "image": "/products/046dbaf2-bc2f-45b7-aec7-7d9433057ada.jpg",
@@ -151,16 +131,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Clear PET Cups with Dome Lids",
-    "slug": "clear-pet-cups-with-dome-lids",
-    "image": "/products/35ee928a-1f93-408c-997e-e88e41e76988.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Rose Petal Perfumed Tissues",
     "slug": "rose-petal-perfumed-tissues",
     "image": "/products/39fde44d-13fc-4f48-a105-e35dbed51943.jpg",
@@ -185,16 +155,6 @@ export const PRODUCTS: Product[] = [
     "slug": "white-microfiber-cloths",
     "image": "/products/3f1e5dd5-ebc8-4270-a04f-4b92b57040d2.jpg",
     "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Cling Film Roll",
-    "slug": "cling-film-roll",
-    "image": "/products/4034ce74-1155-45e7-8036-af8558544160.jpg",
-    "category": "Disposable Items",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": null,
@@ -231,16 +191,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Aluminum Foil Containers",
-    "slug": "aluminum-foil-containers",
-    "image": "/products/bd0893be-1954-49a7-ac3c-6c4915864113.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "White Paper Napkins Bulk Pack",
     "slug": "white-paper-napkins-bulk-pack",
     "image": "/products/473e796c-df93-47bf-8b4e-4df25d9a6d8a.jpg",
@@ -271,16 +221,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Aluminum Foil Roll",
-    "slug": "aluminum-foil-roll",
-    "image": "/products/53351c12-ded2-43c0-a30a-f3ba92c01864.jpg",
-    "category": "Tissue & Paper Wholesale",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Rose Petal Maxob Toilet Roll 8+2 Offer",
     "slug": "rose-petal-maxob-toilet-roll-8-2-offer",
     "image": "/products/535ca8e5-e823-4ca1-8597-effca4811888.jpg",
@@ -295,16 +235,6 @@ export const PRODUCTS: Product[] = [
     "slug": "rose-petal-luxury-tissues",
     "image": "/products/53ba4c66-c83a-49b5-b620-9a73ad964829.jpg",
     "category": "Tissue & Paper Wholesale",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Disposable Paper Plates",
-    "slug": "disposable-paper-plates",
-    "image": "/products/560a7d3e-a041-4a09-b926-560ec81d9113.jpg",
-    "category": "Disposable Items",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": null,
@@ -431,16 +361,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Blue Nitrile Gloves",
-    "slug": "blue-nitrile-gloves",
-    "image": "/products/84633e17-93f8-4c6c-ae60-9c999117ec20.jpg",
-    "category": "Personal Care",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": 65,
-    "inStock": true
-  },
-  {
     "name": "Glint Glass Cleaner 500ml",
     "slug": "glint-glass-cleaner-500ml",
     "image": "/products/90810e46-bfb2-4003-ab7f-fd8d34726634.jpg",
@@ -468,16 +388,6 @@ export const PRODUCTS: Product[] = [
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": 290,
-    "inStock": true
-  },
-  {
-    "name": "Disposable Cutlery Set",
-    "slug": "disposable-cutlery-set",
-    "image": "/products/9379e6bc-d0ae-40fa-b50e-973fe9df4268.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
     "inStock": true
   },
   {
@@ -518,16 +428,6 @@ export const PRODUCTS: Product[] = [
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": 510,
-    "inStock": true
-  },
-  {
-    "name": "Paper Coffee Cups with Lids",
-    "slug": "paper-coffee-cups-with-lids",
-    "image": "/products/a9a2a002-6d8b-4f0e-b4d2-44a5b7abbefb.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
     "inStock": true
   },
   {
@@ -578,36 +478,6 @@ export const PRODUCTS: Product[] = [
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": 510,
-    "inStock": true
-  },
-  {
-    "name": "Rose Petal Wet Wipes Rose-Scent Freshen Up",
-    "slug": "rose-petal-wet-wipes-rose-scent-freshen-up",
-    "image": "/products/db2f3bc5-c28b-452a-8392-fb81b32767ae.jpg",
-    "category": "Personal Care",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Disposable Paper Plates Fluted",
-    "slug": "disposable-paper-plates-fluted",
-    "image": "/products/dcb91384-973e-4732-be8c-dcf1ccc0255e.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Disposable Plastic Plates Wrapped",
-    "slug": "disposable-plastic-plates-wrapped",
-    "image": "/products/e21bc403-4d64-4a0e-a8da-b8d6c8296570.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
     "inStock": true
   },
   {
@@ -771,156 +641,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Lifebuoy Total 10 Soap 145g",
-    "slug": "lifebuoy-total-10-soap-145g",
-    "image": "/products/lifebuoy-soap-145g.jpg",
-    "category": "Personal Care",
-    "brand": "Lifebuoy",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Lux Soft Touch Soap 150g",
-    "slug": "lux-soft-touch-soap-150g",
-    "image": "/products/lux-soap-150g.jpg",
-    "category": "Personal Care",
-    "brand": "Lux",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Safeguard Lemon Fresh Soap 130g",
-    "slug": "safeguard-lemon-fresh-soap-130g",
-    "image": "/products/safeguard-soap-130g.jpg",
-    "category": "Personal Care",
-    "brand": "Safeguard",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Dettol Original Soap 125g",
-    "slug": "dettol-original-soap-125g",
-    "image": "/products/dettol-soap-125g.jpg",
-    "category": "Personal Care",
-    "brand": "Dettol",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Capri Moisturising Soap 120g",
-    "slug": "capri-moisturising-soap-120g",
-    "image": "/products/capri-soap-120g.jpg",
-    "category": "Personal Care",
-    "brand": "Capri",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Colgate Maximum Cavity Protection Toothpaste 160g",
-    "slug": "colgate-maximum-cavity-protection-toothpaste-160g",
-    "image": "/products/colgate-toothpaste-160g.jpg",
-    "category": "Personal Care",
-    "brand": "Colgate",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Closeup Red Hot Toothpaste 150g",
-    "slug": "closeup-red-hot-toothpaste-150g",
-    "image": "/products/closeup-toothpaste-150g.jpg",
-    "category": "Personal Care",
-    "brand": "Closeup",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Pepsodent Germi Check Toothpaste 200g",
-    "slug": "pepsodent-germi-check-toothpaste-200g",
-    "image": "/products/pepsodent-toothpaste-200g.jpg",
-    "category": "Personal Care",
-    "brand": "Pepsodent",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Head and Shoulders Anti Dandruff Shampoo 340ml",
-    "slug": "head-and-shoulders-anti-dandruff-shampoo-340ml",
-    "image": "/products/head-and-shoulders-shampoo-340ml.jpg",
-    "category": "Personal Care",
-    "brand": "Head & Shoulders",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Sunsilk Black Shine Shampoo 350ml",
-    "slug": "sunsilk-black-shine-shampoo-350ml",
-    "image": "/products/sunsilk-shampoo-350ml.jpg",
-    "category": "Personal Care",
-    "brand": "Sunsilk",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Pantene Pro-V Shampoo 340ml",
-    "slug": "pantene-pro-v-shampoo-340ml",
-    "image": "/products/pantene-shampoo-340ml.jpg",
-    "category": "Personal Care",
-    "brand": "Pantene",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Clear Anti Dandruff Shampoo 350ml",
-    "slug": "clear-anti-dandruff-shampoo-350ml",
-    "image": "/products/clear-shampoo-350ml.jpg",
-    "category": "Personal Care",
-    "brand": "Clear",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Lifebuoy Total 10 Handwash 200ml",
-    "slug": "lifebuoy-total-10-handwash-200ml",
-    "image": "/products/lifebuoy-handwash-200ml.jpg",
-    "category": "Personal Care",
-    "brand": "Lifebuoy",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Dettol Original Liquid Handwash 200ml",
-    "slug": "dettol-original-liquid-handwash-200ml",
-    "image": "/products/dettol-handwash-200ml.jpg",
-    "category": "Personal Care",
-    "brand": "Dettol",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Plastic Bucket with Lid 20L",
-    "slug": "plastic-bucket-with-lid-20l",
-    "image": "/products/plastic-bucket-20l.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Dustpan and Brush Set",
     "slug": "dustpan-and-brush-set",
     "image": "/products/dustpan-brush-set.jpg",
@@ -955,36 +675,6 @@ export const PRODUCTS: Product[] = [
     "slug": "yellow-duster-cloths-25-pack",
     "image": "/products/yellow-duster-cloths.jpg",
     "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Paper Drinking Straws 50 Pack",
-    "slug": "paper-drinking-straws-50-pack",
-    "image": "/products/paper-straws-100-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Wooden Coffee Stirrers Bulk Pack",
-    "slug": "wooden-coffee-stirrers-bulk-pack",
-    "image": "/products/wooden-coffee-stirrers.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Butter Paper Sheets Pack",
-    "slug": "butter-paper-sheets-pack",
-    "image": "/products/butter-paper-sheets.jpg",
-    "category": "Disposable Items",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": null,
@@ -1171,16 +861,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Bucket Set 3 Piece",
-    "slug": "bucket-set-3-piece",
-    "image": "/products/bucket-set-3-piece.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Bathroom Tiles Cleaner 500ml",
     "slug": "bathroom-tiles-cleaner-500ml",
     "image": "/products/bathroom-tiles-cleaner-500ml.jpg",
@@ -1231,26 +911,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Cotton Buds 200 Pack",
-    "slug": "cotton-buds-200-pack",
-    "image": "/products/cotton-buds-200-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Johnson's Baby Wipes 72 Pack",
-    "slug": "johnsons-baby-wipes-72-pack",
-    "image": "/products/johnsons-baby-wipes-72-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Johnson's",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Hand Sanitizer Gel 500ml",
     "slug": "hand-sanitizer-gel-500ml",
     "image": "/products/hand-sanitizer-gel-500ml.jpg",
@@ -1281,181 +941,11 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Plastic Spoons 100 Pack",
-    "slug": "plastic-spoons-100-pack",
-    "image": "/products/plastic-spoons-100-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Plastic Forks 100 Pack",
-    "slug": "plastic-forks-100-pack",
-    "image": "/products/plastic-forks-100-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Scented Garbage Bags 20 Pack",
     "slug": "scented-garbage-bags-20-pack",
     "image": "/products/scented-garbage-bags-20-pack.jpg",
     "category": "Disposable Items",
     "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Dove Original Beauty Bar 100g",
-    "slug": "dove-original-beauty-bar-100g",
-    "image": "/products/dove-original-beauty-bar-100g.jpg",
-    "category": "Personal Care",
-    "brand": "Dove",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Palmolive Naturals Soap 90g",
-    "slug": "palmolive-naturals-soap-90g",
-    "image": "/products/palmolive-naturals-soap-130g.jpg",
-    "category": "Personal Care",
-    "brand": "Palmolive",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Medicam Dental Cream 35g",
-    "slug": "medicam-dental-cream-35g",
-    "image": "/products/medicam-dental-cream-140g.jpg",
-    "category": "Personal Care",
-    "brand": "Medicam",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Dabur Miswak Toothpaste 170g",
-    "slug": "dabur-miswak-toothpaste-170g",
-    "image": "/products/dabur-miswak-toothpaste-170g.jpg",
-    "category": "Personal Care",
-    "brand": "Dabur",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Sensodyne Rapid Relief Toothpaste 75ml",
-    "slug": "sensodyne-rapid-relief-toothpaste-75ml",
-    "image": "/products/sensodyne-rapid-relief-toothpaste-100g.jpg",
-    "category": "Personal Care",
-    "brand": "Sensodyne",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Oral-B Soft Toothbrush",
-    "slug": "oral-b-soft-toothbrush",
-    "image": "/products/oral-b-soft-toothbrush.jpg",
-    "category": "Personal Care",
-    "brand": "Oral-B",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Nivea Soft Moisturizing Cream 200ml",
-    "slug": "nivea-soft-moisturizing-cream-200ml",
-    "image": "/products/nivea-soft-moisturizing-cream-200ml.jpg",
-    "category": "Personal Care",
-    "brand": "Nivea",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Vaseline Original Petroleum Jelly 100ml",
-    "slug": "vaseline-original-petroleum-jelly-100ml",
-    "image": "/products/vaseline-original-petroleum-jelly-100ml.jpg",
-    "category": "Personal Care",
-    "brand": "Vaseline",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Ponds Cold Cream 269g",
-    "slug": "ponds-cold-cream-269g",
-    "image": "/products/ponds-cold-cream-100ml.jpg",
-    "category": "Personal Care",
-    "brand": "Ponds",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Imperial Leather Classic Soap 125g",
-    "slug": "imperial-leather-classic-soap-125g",
-    "image": "/products/imperial-leather-classic-soap-125g.jpg",
-    "category": "Personal Care",
-    "brand": "Imperial Leather",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Rexona Men Deodorant Spray 150ml",
-    "slug": "rexona-men-deodorant-spray-150ml",
-    "image": "/products/rexona-men-deodorant-spray-150ml.jpg",
-    "category": "Personal Care",
-    "brand": "Rexona",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Fa Men Deodorant Spray 150ml",
-    "slug": "fa-men-deodorant-spray-150ml",
-    "image": "/products/fa-men-deodorant-spray-150ml.jpg",
-    "category": "Personal Care",
-    "brand": "Fa",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Nivea Men Deodorant Roll On 50ml",
-    "slug": "nivea-men-deodorant-roll-on-50ml",
-    "image": "/products/nivea-men-deodorant-roll-on-50ml.jpg",
-    "category": "Personal Care",
-    "brand": "Nivea Men",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Gillette Mach3 Razor",
-    "slug": "gillette-mach3-razor",
-    "image": "/products/gillette-mach3-razor.jpg",
-    "category": "Personal Care",
-    "brand": "Gillette",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Gillette Shaving Foam 200ml",
-    "slug": "gillette-shaving-foam-200ml",
-    "image": "/products/gillette-shaving-foam-200ml.jpg",
-    "category": "Personal Care",
-    "brand": "Gillette",
     "moq": "1 carton",
     "price": null,
     "inStock": true
@@ -1622,136 +1112,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Nivea Aloe and Hydration Body Lotion 200ml",
-    "slug": "nivea-aloe-hydration-body-lotion-200ml",
-    "image": "/products/nivea-body-lotion-200ml.jpg",
-    "category": "Personal Care",
-    "brand": "Nivea",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Vaseline Healthy White Complete 10 Body Lotion 400ml",
-    "slug": "vaseline-healthy-white-body-lotion-400ml",
-    "image": "/products/vaseline-healthy-white-lotion-400ml.jpg",
-    "category": "Personal Care",
-    "brand": "Vaseline",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Ponds White Beauty Fairness Cream 50g",
-    "slug": "ponds-white-beauty-fairness-cream-50g",
-    "image": "/products/ponds-white-beauty-cream-50g.jpg",
-    "category": "Personal Care",
-    "brand": "Ponds",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Dove Go Fresh Fresh Touch Soap 100g",
-    "slug": "dove-go-fresh-fresh-touch-soap-100g",
-    "image": "/products/dove-go-fresh-soap-100g.jpg",
-    "category": "Personal Care",
-    "brand": "Dove",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Lux Velvet Touch Soap 85g",
-    "slug": "lux-velvet-touch-soap-85g",
-    "image": "/products/lux-velvet-touch-soap-85g.jpg",
-    "category": "Personal Care",
-    "brand": "Lux",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Lifebuoy Cool Fresh Soap 100g",
-    "slug": "lifebuoy-cool-fresh-soap-100g",
-    "image": "/products/lifebuoy-cool-fresh-soap-100g.png",
-    "category": "Personal Care",
-    "brand": "Lifebuoy",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Safeguard Pure White Soap 175g",
-    "slug": "safeguard-pure-white-soap-175g",
-    "image": "/products/safeguard-pure-white-soap-175g.jpg",
-    "category": "Personal Care",
-    "brand": "Safeguard",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Colgate Active Salt Toothpaste 300g",
-    "slug": "colgate-active-salt-toothpaste-300g",
-    "image": "/products/colgate-active-salt-toothpaste-300g.jpg",
-    "category": "Personal Care",
-    "brand": "Colgate",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Closeup Triple Fresh Gel Menthol Fresh 50ml",
-    "slug": "closeup-triple-fresh-menthol-fresh-50ml",
-    "image": "/products/closeup-menthol-fresh-toothpaste-50ml.jpg",
-    "category": "Personal Care",
-    "brand": "Closeup",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Pepsodent Whitening Toothpaste 75g",
-    "slug": "pepsodent-whitening-toothpaste-75g",
-    "image": "/products/pepsodent-whitening-toothpaste-75g.jpg",
-    "category": "Personal Care",
-    "brand": "Pepsodent",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Head and Shoulders Cool Menthol Shampoo 360ml",
-    "slug": "head-and-shoulders-cool-menthol-shampoo-360ml",
-    "image": "/products/head-and-shoulders-cool-menthol-shampoo-360ml.jpg",
-    "category": "Personal Care",
-    "brand": "Head and Shoulders",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Sunsilk Thick and Long Shampoo 1L",
-    "slug": "sunsilk-thick-and-long-shampoo-1l",
-    "image": "/products/sunsilk-thick-long-shampoo-1l.jpg",
-    "category": "Personal Care",
-    "brand": "Sunsilk",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Gillette Guard Razor 1 plus 6 Pack",
-    "slug": "gillette-guard-razor-1-plus-6-pack",
-    "image": "/products/gillette-guard-razor-1pc.jpg",
-    "category": "Personal Care",
-    "brand": "Gillette",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Rose Petal Tulip Tissues 160 Sheets",
     "slug": "rose-petal-tulip-tissues-160-sheets",
     "image": "/products/rose-petal-tulip-tissues-160.jpg",
@@ -1832,46 +1192,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Hand Scrub Nail Brush",
-    "slug": "hand-scrub-nail-brush",
-    "image": "/products/hand-scrub-nail-brush.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Plastic Soap Dish",
-    "slug": "plastic-soap-dish",
-    "image": "/products/plastic-soap-dish.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Plastic Bath Stool",
-    "slug": "plastic-bath-stool",
-    "image": "/products/plastic-bath-stool.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Plastic Bath Mug 1.5L",
-    "slug": "plastic-bath-mug-1-5l",
-    "image": "/products/plastic-bath-mug-1-5l.jpg",
-    "category": "Washroom Supplies",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Wall Mounted Soap Dispenser 1000ml",
     "slug": "wall-mounted-soap-dispenser-1000ml",
     "image": "/products/wall-mounted-soap-dispenser-1000ml.jpg",
@@ -1882,39 +1202,9 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Plastic Cups 100 Pack",
-    "slug": "plastic-cups-100-pack",
-    "image": "/products/plastic-cups-100-pack.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Kraft Paper Shopping Bags 50 Pack",
-    "slug": "kraft-paper-shopping-bags-50-pack",
-    "image": "/products/kraft-paper-shopping-bags-50-pack.webp",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Disposable Plastic Aprons 100 Pack",
     "slug": "disposable-plastic-aprons-100-pack",
     "image": "/products/disposable-plastic-aprons-100-pack.png",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Cupcake Baking Liners 100 Pack",
-    "slug": "cupcake-baking-liners-100-pack",
-    "image": "/products/cupcake-baking-liners-100-pack.jpg",
     "category": "Disposable Items",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
@@ -1932,40 +1222,10 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Disposable Plastic Table Cover",
-    "slug": "disposable-plastic-table-cover",
-    "image": "/products/disposable-plastic-table-cover.jpg",
-    "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
     "name": "Disposable Shoe Covers 100 Pack",
     "slug": "disposable-shoe-covers-100-pack",
     "image": "/products/disposable-shoe-covers-100-pack.webp",
     "category": "Disposable Items",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Cotton Balls 100 Pack",
-    "slug": "cotton-balls-100-pack",
-    "image": "/products/cotton-balls-100-pack.jpg",
-    "category": "Personal Care",
-    "brand": "Pak Multilinks",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  },
-  {
-    "name": "Toothbrush Holder Plastic",
-    "slug": "toothbrush-holder-plastic",
-    "image": "/products/plastic-toothbrush-holder.webp",
-    "category": "Washroom Supplies",
     "brand": "Pak Multilinks",
     "moq": "1 carton",
     "price": null,
@@ -1992,17 +1252,6 @@ export const PRODUCTS: Product[] = [
     "inStock": true
   },
   {
-    "name": "Dettol Cool Soap 125g",
-    "slug": "dettol-cool-soap-125g",
-    "image": "/products/dettol-cool-soap-125g.jpg",
-    "category": "Personal Care",
-    "brand": "Dettol",
-    "moq": "1 carton",
-    "price": null,
-    "inStock": true
-  }
-,
-  {
     "name": "Pedal Dustbin 10L",
     "slug": "pedal-dustbin-10l",
     "image": "/products/pedal-dustbin-10l.jpg",
@@ -2017,8 +1266,7 @@ export const CATEGORIES = [
   { name: "Tissue & Paper Wholesale", slug: "tissue-paper", description: "Facial tissues, toilet rolls, napkins, kitchen towels and hand towels in bulk cartons." },
   { name: "Washroom Supplies", slug: "washroom-supplies", description: "Mops, wipers, brushes, cloths and washroom essentials for commercial spaces." },
   { name: "Cleaning Products", slug: "cleaning-products", description: "Floor cleaners, glass cleaners, phenyl, bleach, detergents and dishwash supplies." },
-  { name: "Personal Care", slug: "personal-care", description: "Hand wash, sanitizers, antiseptics, wet wipes, gloves and masks." },
-  { name: "Disposable Items", slug: "disposable-items", description: "Cups, plates, cutlery, containers, foil, cling film and garbage bags." },
+  { name: "Disposable Items", slug: "disposable-items", description: "Garbage bags, gloves, masks, aprons, sanitizers and disposable hygiene essentials." }
 ];
 
 export function getProduct(slug: string): Product | undefined {

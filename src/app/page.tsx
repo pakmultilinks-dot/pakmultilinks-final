@@ -40,13 +40,12 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 py-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Find what you need</p>
         <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2 font-serif-head">Shop by Category</h2>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {CATEGORIES.slice(0, 5).map((c) => {
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {CATEGORIES.map((c) => {
             const catImages: Record<string, string> = {
               "Tissue & Paper Wholesale": "/products/1083fd45-8b0f-4208-8af7-e30a14eed5a1.jpg",
               "Washroom Supplies": "/products/19138fec-d08c-4773-8718-2b84e24831ec.jpg",
               "Cleaning Products": "/products/118712e4-11a6-451d-83ff-89823a258a5c.jpg",
-              "Personal Care": "/products/00b9062b-d381-4473-a4ee-9e48823632bd.jpg",
               "Disposable Items": "/products/35ee928a-1f93-408c-997e-e88e41e76988.jpg",
             };
             return (
@@ -137,7 +136,7 @@ export default function Home() {
               <Image src="/images/deal-cleaning-combo.jpg" alt="Cleaning Combo Deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
             </Link>
             <Link href="/deals" className="rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_16px_50px_rgba(17,75,47,0.2)] transition-all hover:-translate-y-1 group block bg-white">
-              <Image src="/images/deal-personal-care.jpg" alt="Personal Care Bundle deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
+              <Image src="/images/deal-personal-care.jpg" alt="Office Hygiene Bundle deal" width={1200} height={600} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]" />
             </Link>
           </div>
           <div className="text-center mt-10">

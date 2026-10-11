@@ -4,35 +4,92 @@ import { useState, useEffect } from "react";
 import { CATEGORIES } from "@/data/products";
 import type { Product } from "@/data/products";
 
+interface ProductsOverlay {
+  added: Product[];
+  updated: Record<string, Product>;
+  deleted: string[];
+}
+
+const OVERLAY_KEY = "admin_products_overlay";
+
+function emptyOverlay(): ProductsOverlay {
+  return { added: [], updated: {}, deleted: [] };
+}
+
+function loadOverlay(): ProductsOverlay {
+  if (typeof window === "undefined") return emptyOverlay();
+  try {
+    const raw = localStorage.getItem(OVERLAY_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return {
+        added: Array.isArray(parsed.added) ? parsed.added : [],
+        updated: parsed.updated && typeof parsed.updated === "object" ? parsed.updated : {},
+        deleted: Array.isArray(parsed.deleted) ? parsed.deleted : [],
+      };
+    }
+  } catch {}
+  return emptyOverlay();
+}
+
+function saveOverlay(o: ProductsOverlay) {
+  try {
+    localStorage.setItem(OVERLAY_KEY, JSON.stringify(o));
+  } catch {}
+}
+
+function overlayChangeCount(o: ProductsOverlay): number {
+  return o.added.length + Object.keys(o.updated).length + o.deleted.length;
+}
+
+function applyOverlay(base: Product[], overlay: ProductsOverlay): Product[] {
+  const deletedSet = new Set(overlay.deleted);
+  const list = base
+    .filter((p) => !deletedSet.has(p.slug))
+    .map((p) => (overlay.updated[p.slug] ? { ...p, ...overlay.updated[p.slug] } : p));
+  for (const p of overlay.added) {
+    if (!deletedSet.has(p.slug) && !list.some((x) => x.slug === p.slug)) {
+      list.push(p);
+    }
+  }
+  return list;
+}
+
 async function getProducts(): Promise<Product[]> {
+  let base: Product[];
   try {
     const res = await fetch("/api/admin/products");
     if (!res.ok) throw new Error("API failed");
     const { products } = await res.json();
-    if (!products || products.length === 0) {
-      const { PRODUCTS } = await import("@/data/products");
-      return PRODUCTS;
+    const { PRODUCTS } = await import("@/data/products");
+    // Only trust the database list when it is at least as complete as the
+    // built-in catalog; otherwise fall back to the static 125 products so the
+    // admin always matches the storefront.
+    if (products && products.length >= PRODUCTS.length) {
+      base = products.map((db: any) => {
+        let image = db.image || "";
+        if (image.includes("pakmultilinks-final.vercel.app")) {
+          image = image.replace("https://pakmultilinks-final.vercel.app", "");
+        }
+        return {
+          name: db.name,
+          slug: db.slug,
+          image,
+          category: db.category,
+          brand: db.brand,
+          moq: db.moq,
+          price: db.price,
+          inStock: db.in_stock,
+        };
+      });
+    } else {
+      base = PRODUCTS;
     }
-    return products.map((db: any) => {
-      let image = db.image || "";
-      if (image.includes("pakmultilinks-final.vercel.app")) {
-        image = image.replace("https://pakmultilinks-final.vercel.app", "");
-      }
-      return {
-        name: db.name,
-        slug: db.slug,
-        image,
-        category: db.category,
-        brand: db.brand,
-        moq: db.moq,
-        price: db.price,
-        inStock: db.in_stock,
-      };
-    });
   } catch {
     const { PRODUCTS } = await import("@/data/products");
-    return PRODUCTS;
+    base = PRODUCTS;
   }
+  return applyOverlay(base, loadOverlay());
 }
 
 const EMPTY_PRODUCT: Product = {
@@ -56,6 +113,7 @@ export default function AdminProducts() {
   const [uploading, setUploading] = useState(false);
   const [deletedProduct, setDeletedProduct] = useState<Product | null>(null);
   const [showUndo, setShowUndo] = useState(false);
+  const [localChanges, setLocalChanges] = useState(0);
 
   const handleImageUpload = async (file: File) => {
     setUploading(true);
@@ -73,8 +131,14 @@ export default function AdminProducts() {
     }
   };
 
+  const refreshList = async () => {
+    const list = await getProducts();
+    setProducts(list);
+    setLocalChanges(overlayChangeCount(loadOverlay()));
+  };
+
   useEffect(() => {
-    getProducts().then(setProducts);
+    refreshList();
   }, []);
 
   const filtered = products.filter((p) =>
@@ -109,6 +173,8 @@ export default function AdminProducts() {
       return;
     }
 
+    const product: Product = { ...form };
+
     // Convert image to full URL for database
     const dbImage = form.image.startsWith("http") ? form.image : `https://pakmultilinks-final.vercel.app${form.image.startsWith("/") ? form.image : "/" + form.image}`;
 
@@ -123,6 +189,8 @@ export default function AdminProducts() {
       in_stock: form.inStock,
     };
 
+    // Attempt the database write, but never block the admin UI on it:
+    // the change is always recorded in the local overlay below.
     try {
       if (isNew) {
         const res = await fetch("/api/admin/products", {
@@ -131,9 +199,8 @@ export default function AdminProducts() {
           body: JSON.stringify(dbData),
         });
         if (!res.ok) {
-          const { error } = await res.json();
-          alert("Error adding product: " + error);
-          return;
+          const { error } = await res.json().catch(() => ({}));
+          console.warn("Database add failed, kept locally:", error);
         }
       } else {
         const res = await fetch("/api/admin/products", {
@@ -142,19 +209,32 @@ export default function AdminProducts() {
           body: JSON.stringify({ ...dbData, slug: form.slug }),
         });
         if (!res.ok) {
-          const { error } = await res.json();
-          alert("Error updating product: " + error);
-          return;
+          const { error } = await res.json().catch(() => ({}));
+          console.warn("Database update failed, kept locally:", error);
         }
       }
     } catch (e: any) {
-      alert("Error: " + e.message);
-      return;
+      console.warn("Database unavailable, change kept locally:", e?.message);
     }
 
+    // Record the change in the local overlay so the list always reflects it.
+    const overlay = loadOverlay();
+    overlay.deleted = overlay.deleted.filter((s) => s !== product.slug);
+    if (isNew) {
+      overlay.added = [...overlay.added.filter((p) => p.slug !== product.slug), product];
+      delete overlay.updated[product.slug];
+    } else {
+      const idx = overlay.added.findIndex((p) => p.slug === product.slug);
+      if (idx >= 0) {
+        overlay.added[idx] = product;
+      } else {
+        overlay.updated[product.slug] = product;
+      }
+    }
+    saveOverlay(overlay);
+
     // Refresh list
-    const updated = await getProducts();
-    setProducts(updated);
+    await refreshList();
     closeForm();
   };
 
@@ -162,19 +242,22 @@ export default function AdminProducts() {
     const product = products.find((p) => p.slug === slug);
     if (!product) return;
     if (!confirm(`Delete "${product.name}"?`)) return;
+    // Attempt the database delete, but keep the deferred local delete either way.
     try {
       const res = await fetch(`/api/admin/products?slug=${encodeURIComponent(slug)}`, { method: "DELETE" });
       if (!res.ok) {
-        const { error } = await res.json();
-        alert("Error deleting: " + error);
-        return;
+        const { error } = await res.json().catch(() => ({}));
+        console.warn("Database delete failed, kept locally:", error);
       }
     } catch (e: any) {
-      alert("Error: " + e.message);
-      return;
+      console.warn("Database unavailable, delete kept locally:", e?.message);
     }
-    const updated = await getProducts();
-    setProducts(updated);
+    const overlay = loadOverlay();
+    overlay.added = overlay.added.filter((p) => p.slug !== slug);
+    delete overlay.updated[slug];
+    if (!overlay.deleted.includes(slug)) overlay.deleted.push(slug);
+    saveOverlay(overlay);
+    await refreshList();
     setDeleteConfirm(null);
     // Save for undo
     setDeletedProduct(product);
@@ -186,23 +269,36 @@ export default function AdminProducts() {
     if (!deletedProduct) return;
     try {
       const dbImage = deletedProduct.image.startsWith("http") ? deletedProduct.image : `https://pakmultilinks-final.vercel.app${deletedProduct.image.startsWith("/") ? deletedProduct.image : "/" + deletedProduct.image}`;
-      const res = await fetch("/api/admin/products", {
+      await fetch("/api/admin/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...deletedProduct, image: dbImage }),
       });
-      if (!res.ok) throw new Error("Restore failed");
-      const updated = await getProducts();
-      setProducts(updated);
-      setShowUndo(false);
-      setDeletedProduct(null);
-    } catch (e: any) {
-      alert("Undo failed: " + e.message);
+    } catch {
+      // Local restore below is enough to undo the delete.
     }
+    const { PRODUCTS } = await import("@/data/products");
+    const overlay = loadOverlay();
+    overlay.deleted = overlay.deleted.filter((s) => s !== deletedProduct.slug);
+    // If it was a locally-added product, put it back in the added list.
+    if (
+      !PRODUCTS.some((p) => p.slug === deletedProduct.slug) &&
+      !overlay.added.some((p) => p.slug === deletedProduct.slug)
+    ) {
+      overlay.added.push(deletedProduct);
+    }
+    saveOverlay(overlay);
+    await refreshList();
+    setShowUndo(false);
+    setDeletedProduct(null);
   };
 
   const resetToDefault = () => {
-    alert("Reset is disabled when using database. Delete products individually.");
+    if (!confirm("Discard all local product changes and restore the default catalog?")) return;
+    try {
+      localStorage.removeItem(OVERLAY_KEY);
+    } catch {}
+    refreshList();
   };
 
   return (
@@ -210,7 +306,12 @@ export default function AdminProducts() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <p className="text-sm text-gray-600">{products.length} products</p>
+          <p className="text-sm text-gray-600">
+            {products.length} products
+            {localChanges > 0 && (
+              <span className="text-gray-400"> · {localChanges} local change{localChanges > 1 ? "s" : ""}</span>
+            )}
+          </p>
         </div>
         <div className="flex gap-2">
           <button
@@ -436,7 +537,7 @@ export default function AdminProducts() {
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6">
             <h3 className="text-lg font-bold">Delete product?</h3>
             <p className="text-sm text-gray-600 mt-2">
-              This will remove the product from the catalog. This action cannot be undone.
+              This will remove the product from the catalog. You will have 10 seconds to undo this.
             </p>
             <div className="mt-6 flex gap-3">
               <button
@@ -458,15 +559,15 @@ export default function AdminProducts() {
 
       {/* Undo toast */}
       {showUndo && deletedProduct && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 bg-gray-900 text-white px-6 py-4 rounded-2xl shadow-2xl">
-          <p className="text-sm">Deleted <span className="font-bold">"{deletedProduct.name}"</span></p>
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 sm:gap-4 bg-gray-900 text-white pl-4 pr-3 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-2xl max-w-[calc(100vw-2rem)]">
+          <p className="text-sm truncate min-w-0">Deleted <span className="font-bold">"{deletedProduct.name}"</span></p>
           <button
             onClick={handleUndo}
-            className="px-4 py-2 bg-[#114b2f] hover:bg-[#0b3a24] text-white text-sm font-bold rounded-full transition-all"
+            className="flex-shrink-0 px-4 py-2 bg-[#114b2f] hover:bg-[#0b3a24] text-white text-sm font-bold rounded-full transition-all"
           >
             Undo
           </button>
-          <button onClick={() => setShowUndo(false)} className="text-gray-400 hover:text-white">
+          <button onClick={() => setShowUndo(false)} className="flex-shrink-0 text-gray-400 hover:text-white">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>

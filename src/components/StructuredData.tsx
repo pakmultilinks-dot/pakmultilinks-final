@@ -33,7 +33,7 @@ export default function StructuredData() {
       },
     ],
     sameAs: [
-      "https://facebook.com/pakmultilinks",
+      "https://www.facebook.com/profile.php?id=61594928463773",
       "https://instagram.com/pakmultilinks",
       "https://linkedin.com/company/pakmultilinks",
     ],
@@ -56,7 +56,7 @@ export default function StructuredData() {
       addressCountry: "PK",
     },
     sameAs: [
-      "https://facebook.com/pakmultilinks",
+      "https://www.facebook.com/profile.php?id=61594928463773",
       "https://instagram.com/pakmultilinks",
       "https://linkedin.com/company/pakmultilinks",
     ],

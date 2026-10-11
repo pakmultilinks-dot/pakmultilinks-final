@@ -17,7 +17,7 @@ export default function StoreChrome({ children }: { children: React.ReactNode })
   return (
     <>
       <Header />
-      <div className="pb-28 lg:pb-0">
+      <div className="pb-[calc(7rem+env(safe-area-inset-bottom))] lg:pb-0">
         <main className="min-h-[60vh]">{children}</main>
         <Footer />
       </div>

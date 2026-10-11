@@ -32,6 +32,16 @@ export default function ShopClient() {
     return list;
   }, [q, cat, sort]);
 
+  // Category options derived from the SAME products array as the results,
+  // so dropdown counts can never disagree with the rendered result set.
+  const categoryOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const p of PRODUCTS) counts.set(p.category, (counts.get(p.category) ?? 0) + 1);
+    const known = CATEGORIES.map((c) => c.name);
+    const extra = [...counts.keys()].filter((n) => !known.includes(n)).sort();
+    return [...known, ...extra].map((name) => ({ name, count: counts.get(name) ?? 0 }));
+  }, [PRODUCTS]);
+
   return (
     <>
       <p className="text-xs uppercase tracking-[0.15em] text-gray-500">Professional hygiene supplies</p>
@@ -40,7 +50,7 @@ export default function ShopClient() {
       </h1>
       <p className="text-sm text-gray-600 mt-2">
         {cat
-          ? `Browse ${filtered.length} wholesale ${cat.toLowerCase()} products supplied in cartons.`
+          ? `Browse ${filtered.length} wholesale ${cat.toLowerCase().replace(" wholesale", "")} supplied in cartons.`
           : "Browse wholesale hygiene products supplied in cartons. Packing and pricing are confirmed before fulfilment."}
       </p>
       <div className="mt-6 flex flex-col md:flex-row gap-3">
@@ -53,8 +63,8 @@ export default function ShopClient() {
         />
         <select name="category" value={cat} onChange={(e) => setCat(e.target.value)} className="border border-gray-300 rounded-full px-4 py-2.5 text-sm bg-white focus:outline-none focus:border-[#114b2f]">
           <option value="">All categories</option>
-          {CATEGORIES.map((c) => (
-            <option key={c.slug} value={c.name}>{c.name} ({PRODUCTS.filter((p) => p.category === c.name).length})</option>
+          {categoryOptions.map((c) => (
+            <option key={c.name} value={c.name}>{c.name} ({c.count})</option>
           ))}
         </select>
         <select name="sort" value={sort} onChange={(e) => setSort(e.target.value)} className="border border-gray-300 rounded-full px-4 py-2.5 text-sm bg-white focus:outline-none focus:border-[#114b2f]">

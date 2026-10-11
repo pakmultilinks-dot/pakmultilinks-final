@@ -37,7 +37,10 @@ export function useProducts() {
       .eq("in_stock", true)
       .order("name")
       .then(({ data, error }: { data: DBProduct[] | null; error: any }) => {
-        if (!error && data && data.length > 0) {
+        // Only trust DB data if it has at least as many products as the static catalog.
+        // This prevents stale DB data (e.g. removed household items) from overriding
+        // the curated static catalog.
+        if (!error && data && data.length >= STATIC_PRODUCTS.length) {
           setProducts(data.map(toProduct));
         }
         setLoading(false);
@@ -57,7 +60,8 @@ export async function getProducts(): Promise<Product[]> {
       .select("*")
       .eq("in_stock", true)
       .order("name");
-    if (error || !data || data.length === 0) return STATIC_PRODUCTS;
+    // Only trust DB if it has at least as many products as static catalog
+    if (error || !data || data.length < STATIC_PRODUCTS.length) return STATIC_PRODUCTS;
     return (data as DBProduct[]).map(toProduct);
   } catch {
     return STATIC_PRODUCTS;

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Shop Wholesale Products | Pak Multilinks Hygiene Lahore",
-  description: "Browse 200 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
+  description: "Browse 125 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
   openGraph: {
     title: "Shop Wholesale Products | Pak Multilinks Hygiene Lahore",
     url: "https://pakmultilinks.com/shop",

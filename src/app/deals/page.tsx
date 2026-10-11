@@ -33,8 +33,8 @@ const PROMO_DEALS = [
   },
   {
     image: "/images/deal-personal-care.jpg",
-    alt: "Personal Care Bundle - daily essentials for the family",
-    href: "/shop?category=Personal%20Care",
+    alt: "Office Hygiene Bundle - complete workplace hygiene essentials",
+    href: "/shop?category=Washroom%20Supplies",
   },
   {
     image: "/images/deal-kitchen.jpg",

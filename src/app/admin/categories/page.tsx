@@ -15,9 +15,21 @@ function getCategories(): Category[] {
   if (typeof window === "undefined") return CATEGORIES;
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) return JSON.parse(stored);
+    if (stored) {
+      const parsed: Category[] = JSON.parse(stored);
+      const builtInSlugs = new Set(CATEGORIES.map((c) => c.slug));
+      // Built-in categories are authoritative: this drops any stale stored
+      // entries (e.g. the removed "Personal Care") while keeping the admin's
+      // own custom categories.
+      const custom = parsed.filter((c) => c && c.slug && !builtInSlugs.has(c.slug));
+      return [...CATEGORIES, ...custom];
+    }
   } catch {}
   return CATEGORIES;
+}
+
+function isBuiltIn(slug: string): boolean {
+  return CATEGORIES.some((c) => c.slug === slug);
 }
 
 export default function AdminCategories() {
@@ -85,16 +97,23 @@ export default function AdminCategories() {
 
       <div className="mt-6 space-y-3">
         {categories.map((c) => (
-          <div key={c.slug} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex justify-between items-start">
-            <div>
-              <h3 className="font-semibold">{c.name}</h3>
+          <div key={c.slug} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex justify-between items-start gap-4">
+            <div className="min-w-0">
+              <h3 className="font-semibold flex items-center gap-2 flex-wrap">
+                {c.name}
+                {isBuiltIn(c.slug) && (
+                  <span className="text-[11px] font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">Built-in</span>
+                )}
+              </h3>
               <p className="text-xs text-gray-500 mt-0.5">/{c.slug}</p>
               <p className="text-sm text-gray-600 mt-2">{c.description}</p>
             </div>
-            <div className="flex gap-2 flex-shrink-0">
-              <button onClick={() => openEdit(c)} className="px-3 py-1.5 text-sm bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100">Edit</button>
-              <button onClick={() => setDeleteConfirm(c.slug)} className="px-3 py-1.5 text-sm bg-red-50 text-red-700 rounded-lg hover:bg-red-100">Delete</button>
-            </div>
+            {!isBuiltIn(c.slug) && (
+              <div className="flex gap-2 flex-shrink-0">
+                <button onClick={() => openEdit(c)} className="px-3 py-1.5 text-sm bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100">Edit</button>
+                <button onClick={() => setDeleteConfirm(c.slug)} className="px-3 py-1.5 text-sm bg-red-50 text-red-700 rounded-lg hover:bg-red-100">Delete</button>
+              </div>
+            )}
           </div>
         ))}
       </div>

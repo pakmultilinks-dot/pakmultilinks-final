@@ -14,7 +14,6 @@ const COLLECTIONS = [
   "Tissue & Paper Wholesale",
   "Washroom Supplies",
   "Cleaning Products",
-  "Personal Care",
   "Disposable Items",
 ];
 
@@ -52,7 +51,7 @@ export default function Footer() {
             <li>Shop No LG-9, Rehman Tower Main Market Gulberg II, Lahore</li>
           </ul>
           <div className="flex gap-3 mt-4">
-            <a href="https://facebook.com/pakmultilinks" target="_blank" rel="noopener" aria-label="Facebook" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61594928463773" target="_blank" rel="noopener" aria-label="Facebook" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
             <a href="https://instagram.com/pakmultilinks" target="_blank" rel="noopener" aria-label="Instagram" className="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors">

@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { CONTACT, DEFAULT_WA_MESSAGE } from "@/data/contact";
 
 const BENEFITS = [
   {
@@ -68,7 +69,7 @@ export default function AccountPage() {
           ))}
           <div className="bg-[#e8f3ec] rounded-2xl p-5 text-sm text-[#114b2f]">
             <p className="font-semibold">Prefer WhatsApp?</p>
-            <a href="https://wa.me/${CONTACT.zoher.waNumber}" className="font-bold underline underline-offset-2">Message us directly</a>
+            <a href={CONTACT.zoher.waLink(DEFAULT_WA_MESSAGE)} target="_blank" rel="noopener" className="font-bold underline underline-offset-2">Message us directly</a>
           </div>
         </div>
 
