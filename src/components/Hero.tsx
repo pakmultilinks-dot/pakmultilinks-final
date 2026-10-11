@@ -87,7 +87,7 @@ export default function Hero() {
             )}
             {/* Readability gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/10 sm:from-white/90 sm:via-white/60 sm:to-transparent pointer-events-none" />
-            <div className="absolute inset-0 flex items-center pt-16">
+            <div className="absolute inset-0 flex items-center pt-16 pb-12">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
                 <div key={`${i}-${animKey}`} className="max-w-xl bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-5 sm:p-0">
                   <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
@@ -141,7 +141,7 @@ export default function Hero() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
       </button>
 
-      <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/20 backdrop-blur-sm rounded-full px-3 py-1.5">
+      <div className="absolute bottom-4 sm:bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center bg-black/20 backdrop-blur-sm rounded-full px-3 py-1.5">
         {SLIDES.map((_, i) => (
           <button
             key={i}
