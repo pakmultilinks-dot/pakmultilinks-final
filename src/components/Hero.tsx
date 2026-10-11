@@ -85,8 +85,8 @@ export default function Hero() {
               />
             </div>
             )}
-            {/* Readability gradient overlay - stronger on mobile for text clarity */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/20 sm:bg-gradient-to-r sm:from-white/95 sm:via-white/75 sm:to-white/10 pointer-events-none" />
+            {/* Readability overlay - ALWAYS light on mobile for consistent white look */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/70 sm:bg-gradient-to-r sm:from-white/95 sm:via-white/75 sm:to-white/10 pointer-events-none" />
             <div className="relative px-4 sm:px-8 pt-8 sm:pt-16 pb-24 sm:pb-20 min-h-[480px] sm:min-h-[470px] lg:min-h-[500px] flex items-end sm:items-center">
               <div className="max-w-7xl mx-auto w-full">
                 <div key={`${i}-${animKey}`} className="max-w-xl">
