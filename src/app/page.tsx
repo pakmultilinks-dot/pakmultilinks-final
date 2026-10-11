@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import MobileHero from "@/components/MobileHero";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import { PRODUCTS, CATEGORIES } from "@/data/products";
@@ -50,6 +51,9 @@ export default function Home() {
     <>
       <div className="hidden md:block">
         <Hero />
+      </div>
+      <div className="md:hidden">
+        <MobileHero />
       </div>
 
       {/* Trusted partners */}
