@@ -57,16 +57,16 @@ export default function Home() {
       </div>
 
       {/* Trusted partners */}
-      <section className="py-10 bg-[#f7faf8] border-b border-gray-100">
-        <p className="text-center text-[11px] uppercase tracking-[0.18em] text-gray-500 font-bold">Our Trusted Partners</p>
-        <div className="max-w-5xl mx-auto px-4 mt-6">
-          <div className="grid grid-cols-2 gap-4">
+      <section className="py-12 bg-[#f7faf8]">
+        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {PARTNERS.map((p) => (
-              <div key={p.name} className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg p-3">
-                <div className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shrink-0">
-                  <Image src={p.logo} alt={p.name} width={48} height={48} className="w-full h-full object-cover" />
+              <div key={p.name} className="flex flex-col items-center gap-3">
+                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
+                  <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
                 </div>
-                <p className="text-[13px] font-semibold text-gray-800 leading-tight">{p.name}</p>
+                <p className="text-sm font-medium text-gray-700 text-center leading-tight">{p.name}</p>
               </div>
             ))}
           </div>
