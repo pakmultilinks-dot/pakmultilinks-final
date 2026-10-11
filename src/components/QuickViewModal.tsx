@@ -19,9 +19,11 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
       // Lock body scroll
       const originalOverflow = document.body.style.overflow;
       const originalPosition = document.body.style.position;
+      const scrollY = window.scrollY;
       document.body.style.overflow = "hidden";
       // Prevent iOS bounce
       document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
       document.body.style.width = "100%";
 
       const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -29,7 +31,9 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
       return () => {
         document.body.style.overflow = originalOverflow;
         document.body.style.position = originalPosition;
+        document.body.style.top = "";
         document.body.style.width = "";
+        window.scrollTo(0, scrollY);
         document.removeEventListener("keydown", h);
       };
     }
@@ -70,9 +74,9 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
             <div className="mt-5 flex items-center gap-3">
               <span className="text-sm font-medium">Qty:</span>
               <div className="flex items-center border border-gray-300 rounded-full">
-                <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease quantity" className="w-9 h-9 hover:bg-gray-100 rounded-l-full">-</button>
+                <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease quantity" className="w-11 h-11 hover:bg-gray-100 rounded-l-full">-</button>
                 <span className="w-8 text-center font-semibold text-sm">{qty}</span>
-                <button onClick={() => setQty(qty + 1)} aria-label="Increase quantity" className="w-9 h-9 hover:bg-gray-100 rounded-r-full">+</button>
+                <button onClick={() => setQty(qty + 1)} aria-label="Increase quantity" className="w-11 h-11 hover:bg-gray-100 rounded-r-full">+</button>
               </div>
             </div>
             <div className="mt-5 flex flex-col gap-2.5">

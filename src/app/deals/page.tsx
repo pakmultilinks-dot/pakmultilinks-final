@@ -11,7 +11,7 @@ const PROMO_DEALS = [
   {
     image: "/images/deal-family-starter.jpg",
     alt: "Family Starter Pack - essential cleaning products with real product photos",
-    href: "/shop?search=family",
+    href: "/shop?q=family",
   },
   {
     image: "/images/deal-tissue-mega.jpg",

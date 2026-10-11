@@ -17,14 +17,14 @@ export default function ProductDetail({ product, related }: { product: Product; 
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-[#114b2f]">Home</Link>
-        <span className="mx-2">/</span>
-        <Link href="/shop" className="hover:text-[#114b2f]">Shop</Link>
-        <span className="mx-2">/</span>
-        <Link href={`/shop?category=${encodeURIComponent(product.category)}`} className="hover:text-[#114b2f]">{product.category}</Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-900 font-medium">{product.name}</span>
+      <nav className="text-sm text-gray-500 mb-6 flex items-center overflow-hidden">
+        <Link href="/" className="hover:text-[#114b2f] shrink-0">Home</Link>
+        <span className="mx-2 shrink-0">/</span>
+        <Link href="/shop" className="hover:text-[#114b2f] shrink-0">Shop</Link>
+        <span className="mx-2 shrink-0">/</span>
+        <Link href={`/shop?category=${encodeURIComponent(product.category)}`} className="hover:text-[#114b2f] shrink-0 hidden sm:inline">{product.category}</Link>
+        <span className="mx-2 shrink-0 hidden sm:inline">/</span>
+        <span className="text-gray-900 font-medium truncate">{product.name}</span>
       </nav>
 
       <div className="grid md:grid-cols-2 gap-10">
@@ -40,9 +40,9 @@ export default function ProductDetail({ product, related }: { product: Product; 
           <div className="mt-6 flex items-center gap-3">
             <span className="text-sm font-medium">Cartons:</span>
             <div className="flex items-center border border-gray-300 rounded-full">
-              <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease" className="w-10 h-10 text-lg hover:bg-gray-100 rounded-l-full">-</button>
+              <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Decrease" className="w-12 h-12 text-lg hover:bg-gray-100 rounded-l-full">-</button>
               <span className="w-10 text-center font-semibold">{qty}</span>
-              <button onClick={() => setQty(qty + 1)} aria-label="Increase" className="w-10 h-10 text-lg hover:bg-gray-100 rounded-r-full">+</button>
+              <button onClick={() => setQty(qty + 1)} aria-label="Increase" className="w-12 h-12 text-lg hover:bg-gray-100 rounded-r-full">+</button>
             </div>
           </div>
 

@@ -72,7 +72,7 @@ export default function Hero() {
           className={i === idx ? "relative" : "hidden"}
           aria-hidden={i !== idx}
         >
-          <div className="relative w-full h-[480px] sm:h-[450px] lg:h-[500px] overflow-hidden">
+          <div className="relative w-full min-h-[480px] sm:h-[450px] lg:h-[500px] overflow-hidden flex">
             {i === idx && (
             <div key={`img-${i}-${animKey}`} className="absolute inset-0">
               <Image

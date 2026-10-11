@@ -69,8 +69,8 @@ export default function Header() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
 
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={400} height={112} className="h-16 sm:h-20 w-auto" priority />
+          <Link href="/" className="flex items-center gap-2 shrink-0 min-w-0">
+            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene - Corporate Supplies" width={400} height={112} className="h-11 sm:h-16 lg:h-20 w-auto" priority />
           </Link>
 
           {/* Search */}

@@ -40,9 +40,9 @@ export default function CartDrawer() {
                 <p className="text-sm font-semibold truncate">{product.name}</p>
                 <p className="text-xs text-gray-500 mt-0.5">{qty} carton{qty > 1 ? "s" : ""} &middot; Quoted after review</p>
                 <div className="mt-2 flex items-center gap-2">
-                  <button onClick={() => setQty(product.slug, qty - 1)} aria-label="Decrease quantity" className="w-7 h-7 border rounded-full text-sm hover:bg-gray-100">-</button>
+                  <button onClick={() => setQty(product.slug, qty - 1)} aria-label="Decrease quantity" className="w-9 h-9 border rounded-full text-sm hover:bg-gray-100">-</button>
                   <span className="text-sm font-semibold w-6 text-center">{qty}</span>
-                  <button onClick={() => setQty(product.slug, qty + 1)} aria-label="Increase quantity" className="w-7 h-7 border rounded-full text-sm hover:bg-gray-100">+</button>
+                  <button onClick={() => setQty(product.slug, qty + 1)} aria-label="Increase quantity" className="w-9 h-9 border rounded-full text-sm hover:bg-gray-100">+</button>
                   <button onClick={() => remove(product.slug)} className="ml-auto text-xs text-red-600 hover:underline">Remove</button>
                 </div>
               </div>

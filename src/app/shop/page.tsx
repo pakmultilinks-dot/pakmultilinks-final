@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Shop All Products",
-  description: "Browse 66 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
+  description: "Browse 200 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
 };
 
 // Server-rendered product grid for SEO and no-JS fallback
