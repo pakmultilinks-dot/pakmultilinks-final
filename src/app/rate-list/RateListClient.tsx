@@ -4,37 +4,37 @@ import { useState } from "react";
 import Image from "next/image";
 
 const RATES: { name: string; spec: string; rate: string; image: string }[] = [
-  { name: "FRESCO Body Spray Deo", spec: "175ml / 6 fragrances", rate: "Rs 550", image: "/rate-images/p1-3.jpg" },
-  { name: "AIR ENERGY Manual Air Freshener", spec: "300ml", rate: "Rs 295", image: "/rate-images/p1-4.jpg" },
-  { name: "FRESCO Manual Air Freshener", spec: "300ml", rate: "Rs 390", image: "/rate-images/p1-5.jpg" },
-  { name: "FRESCO Premium Aerosol", spec: "250ml / auto dispenser", rate: "Rs 575", image: "/rate-images/p1-6.jpg" },
-  { name: "FRESCO Aerosol Refill Premium", spec: "300ml / auto dispenser", rate: "Rs 525", image: "/rate-images/p1-7.jpg" },
-  { name: "AIR ENERGY Aerosol Refill", spec: "300ml / auto dispenser", rate: "Rs 460", image: "/rate-images/p1-8.jpg" },
-  { name: "FRESCO Air Freshener Dispenser", spec: "Empty / battery operated", rate: "Rs 2,400", image: "/rate-images/p1-9.jpg" },
-  { name: "INSECTOGUARD Auto Flying Insect Killer", spec: "250ml / odorless", rate: "Rs 2,000", image: "/rate-images/p1-10.jpg" },
-  { name: "SHINEWELL Car Polish", spec: "400ml", rate: "Rs 525", image: "/rate-images/p2-3.jpg" },
-  { name: "SHINEWELL Furniture & Leather Polish", spec: "400ml", rate: "Rs 525", image: "/rate-images/p2-4.jpg" },
-  { name: "FRESCO Dish Wash Liquid", spec: "500ml / lemon", rate: "Rs 235", image: "/rate-images/p2-5.jpg" },
-  { name: "GERMICURE Toilet Cleaner", spec: "500ml", rate: "Rs 190", image: "/rate-images/p2-6.jpg" },
-  { name: "GERMICURE Perfumed Phenyl", spec: "2.75 litre", rate: "Rs 220", image: "/rate-images/p2-7.jpg" },
-  { name: "GERMICURE Hand Wash Liquid", spec: "500ml", rate: "Rs 230", image: "/rate-images/p2-8.jpg" },
-  { name: "FRESCO Hand Wash Liquid", spec: "500ml", rate: "Rs 325", image: "/rate-images/p2-9.jpg" },
-  { name: "FRESCO Manual Soap Dispenser AR-800", spec: "800ml", rate: "Rs 1,900", image: "/rate-images/p4-3.jpg" },
-  { name: "FRESCO Auto Soap/Sanitizer Dispenser V-410", spec: "600ml", rate: "Rs 4,400", image: "/rate-images/p4-4.jpg" },
-  { name: "FRESCO Auto Soap Dispenser PL-1510", spec: "600ml", rate: "Rs 8,800", image: "/rate-images/p4-5.jpg" },
-  { name: "Auto Hand Dryer (Plastic Body)", spec: "1500 watts", rate: "Rs 14,750", image: "/rate-images/p4-6.jpg" },
-  { name: "FRESCO Heavy Duty Hand Dryer V-182", spec: "1350 watts", rate: "Rs 35,000", image: "/rate-images/p4-7.jpg" },
-  { name: "FRESCO Jet Hand Dryer K2201", spec: "1900 watts", rate: "Rs 72,000", image: "/rate-images/p4-8.jpg" },
-  { name: "GERMICURE 3-Ply Face Mask", spec: "Box of 50", rate: "Rs 180", image: "/rate-images/p4-9.jpg" },
-  { name: "SICURA Paper Coffee Cups", spec: "8oz / 240ml / 1,000 per carton", rate: "Rs 6,400", image: "/rate-images/p4-10.jpg" },
-  { name: "SICURA Paper Cups", spec: "6oz / 180ml / 2,000 per carton", rate: "Rs 6,200", image: "/rate-images/p5-3.jpg" },
-  { name: "SOFTEX Pop-Up Tissue", spec: "150 sheets / 2 ply", rate: "Rs 210", image: "/rate-images/p5-4.jpg" },
-  { name: "GLAD Pop-Up Tissue", spec: "150 sheets / 2 ply", rate: "Rs 160", image: "/rate-images/p5-5.jpg" },
-  { name: "SUPER SOFT Box Perfumed Tissue", spec: "100 sheets / 2 ply", rate: "Rs 220", image: "/rate-images/p5-6.jpg" },
-  { name: "SUPER SOFT Mini Soft Pack", spec: "150 sheets / 2 ply", rate: "Rs 195", image: "/rate-images/p5-7.jpg" },
-  { name: "SUPER SOFT Non-Perfumed Tissue", spec: "275 sheets / 2 ply", rate: "Rs 380", image: "/rate-images/p5-8.jpg" },
-  { name: "SUPER SOFT Perfumed Soft Tissue", spec: "275 sheets / 2 ply", rate: "Rs 395", image: "/rate-images/p5-9.jpg" },
-  { name: "SOFTEX Multi Color Tissue Pack", spec: "150 sheets / 2 ply", rate: "Rs 260", image: "/rate-images/p5-10.jpg" },
+  { name: "FRESCO Body Spray Deo", spec: "175ml / 6 fragrances", rate: "Rs 550", image: "/rate-images-hd/p1-1.jpg" },
+  { name: "AIR ENERGY Manual Air Freshener", spec: "300ml", rate: "Rs 295", image: "/rate-images-hd/p1-2.jpg" },
+  { name: "FRESCO Manual Air Freshener", spec: "300ml", rate: "Rs 390", image: "/rate-images-hd/p1-3.jpg" },
+  { name: "FRESCO Premium Aerosol", spec: "250ml / auto dispenser", rate: "Rs 575", image: "/rate-images-hd/p1-4.jpg" },
+  { name: "FRESCO Aerosol Refill Premium", spec: "300ml / auto dispenser", rate: "Rs 525", image: "/rate-images-hd/p1-5.jpg" },
+  { name: "AIR ENERGY Aerosol Refill", spec: "300ml / auto dispenser", rate: "Rs 460", image: "/rate-images-hd/p1-6.jpg" },
+  { name: "FRESCO Air Freshener Dispenser", spec: "Empty / battery operated", rate: "Rs 2,400", image: "/rate-images-hd/p1-7.jpg" },
+  { name: "INSECTOGUARD Auto Flying Insect Killer", spec: "250ml / odorless", rate: "Rs 2,000", image: "/rate-images-hd/p1-8.jpg" },
+  { name: "SHINEWELL Car Polish", spec: "400ml", rate: "Rs 525", image: "/rate-images-hd/p2-1.jpg" },
+  { name: "SHINEWELL Furniture & Leather Polish", spec: "400ml", rate: "Rs 525", image: "/rate-images-hd/p2-2.jpg" },
+  { name: "FRESCO Dish Wash Liquid", spec: "500ml / lemon", rate: "Rs 235", image: "/rate-images-hd/p2-3.jpg" },
+  { name: "GERMICURE Toilet Cleaner", spec: "500ml", rate: "Rs 190", image: "/rate-images-hd/p2-4.jpg" },
+  { name: "GERMICURE Perfumed Phenyl", spec: "2.75 litre", rate: "Rs 220", image: "/rate-images-hd/p2-5.jpg" },
+  { name: "GERMICURE Hand Wash Liquid", spec: "500ml", rate: "Rs 230", image: "/rate-images-hd/p2-6.jpg" },
+  { name: "FRESCO Hand Wash Liquid", spec: "500ml", rate: "Rs 325", image: "/rate-images-hd/p2-7.jpg" },
+  { name: "FRESCO Manual Soap Dispenser AR-800", spec: "800ml", rate: "Rs 1,900", image: "/rate-images-hd/p4-1.jpg" },
+  { name: "FRESCO Auto Soap/Sanitizer Dispenser V-410", spec: "600ml", rate: "Rs 4,400", image: "/rate-images-hd/p4-2.jpg" },
+  { name: "FRESCO Auto Soap Dispenser PL-1510", spec: "600ml", rate: "Rs 8,800", image: "/rate-images-hd/p4-3.jpg" },
+  { name: "Auto Hand Dryer (Plastic Body)", spec: "1500 watts", rate: "Rs 14,750", image: "/rate-images-hd/p4-4.jpg" },
+  { name: "FRESCO Heavy Duty Hand Dryer V-182", spec: "1350 watts", rate: "Rs 35,000", image: "/rate-images-hd/p4-5.jpg" },
+  { name: "FRESCO Jet Hand Dryer K2201", spec: "1900 watts", rate: "Rs 72,000", image: "/rate-images-hd/p4-6.jpg" },
+  { name: "GERMICURE 3-Ply Face Mask", spec: "Box of 50", rate: "Rs 180", image: "/rate-images-hd/p4-7.jpg" },
+  { name: "SICURA Paper Coffee Cups", spec: "8oz / 240ml / 1,000 per carton", rate: "Rs 6,400", image: "/rate-images-hd/p4-8.jpg" },
+  { name: "SICURA Paper Cups", spec: "6oz / 180ml / 2,000 per carton", rate: "Rs 6,200", image: "/rate-images-hd/p5-1.jpg" },
+  { name: "SOFTEX Pop-Up Tissue", spec: "150 sheets / 2 ply", rate: "Rs 210", image: "/rate-images-hd/p5-2.jpg" },
+  { name: "GLAD Pop-Up Tissue", spec: "150 sheets / 2 ply", rate: "Rs 160", image: "/rate-images-hd/p5-3.jpg" },
+  { name: "SUPER SOFT Box Perfumed Tissue", spec: "100 sheets / 2 ply", rate: "Rs 220", image: "/rate-images-hd/p5-4.jpg" },
+  { name: "SUPER SOFT Mini Soft Pack", spec: "150 sheets / 2 ply", rate: "Rs 195", image: "/rate-images-hd/p5-5.jpg" },
+  { name: "SUPER SOFT Non-Perfumed Tissue", spec: "275 sheets / 2 ply", rate: "Rs 380", image: "/rate-images-hd/p5-6.jpg" },
+  { name: "SUPER SOFT Perfumed Soft Tissue", spec: "275 sheets / 2 ply", rate: "Rs 395", image: "/rate-images-hd/p5-7.jpg" },
+  { name: "SOFTEX Multi Color Tissue Pack", spec: "150 sheets / 2 ply", rate: "Rs 260", image: "/rate-images-hd/p5-8.jpg" },
 ];
 
 export default function RateListClient() {
@@ -125,23 +125,22 @@ export default function RateListClient() {
           onClick={() => setLightbox(null)}
         >
           <div
-            className="relative bg-white rounded-2xl max-w-lg w-full p-6"
+            className="relative bg-white rounded-2xl max-w-md w-full p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full p-2.5"
+              className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 rounded-full p-2.5 z-10"
               aria-label="Close"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
-            <div className="aspect-square bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
-              <Image
+            <div className="bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center min-h-[200px]">
+              <img
                 src={lightbox.image}
                 alt={lightbox.name}
-                width={500}
-                height={500}
-                className="w-full h-full object-contain p-4"
+                className="max-w-full h-auto"
+                style={{ maxHeight: "50vh" }}
               />
             </div>
             <p className="text-center font-semibold mt-4">{lightbox.name}</p>
