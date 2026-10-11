@@ -43,15 +43,50 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     offers: {
       "@type": "Offer",
       url: `https://pakmultilinks.com/product/${product.slug}`,
-      priceCurrency: "PKR",
       availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "PKR",
+      },
       seller: { "@type": "Organization", name: "Pak Multilinks Hygiene", url: "https://pakmultilinks.com" },
     },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://pakmultilinks.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Shop",
+        item: "https://pakmultilinks.com/shop",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.category,
+        item: `https://pakmultilinks.com/shop?category=${encodeURIComponent(product.category)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: product.name,
+        item: `https://pakmultilinks.com/product/${product.slug}`,
+      },
+    ],
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <ProductDetail product={product} related={related} />
     </>
   );

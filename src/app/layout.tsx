@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Pak Multilinks Hygiene",
   },
   description:
-    "Pak Multilinks Hygiene is Lahore's trusted wholesale supplier of tissue, hygiene and cleaning products by the carton. Serving offices, schools, clinics, restaurants and businesses across Pakistan since day one. Your Hygiene Partner.",
+    "Wholesale tissue, hygiene and cleaning supplies by the carton in Lahore, Pakistan. Trusted supplier for offices, schools, clinics and restaurants.",
   keywords: [
     "wholesale tissue Lahore",
     "hygiene supplies Pakistan",

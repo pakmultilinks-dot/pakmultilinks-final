@@ -5,8 +5,16 @@ import { PRODUCTS } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Shop All Products",
+  title: "Shop Wholesale Products | Pak Multilinks Hygiene Lahore",
   description: "Browse 200 wholesale hygiene products. Tissue, cleaning supplies, washroom essentials by the carton in Lahore.",
+  openGraph: {
+    title: "Shop Wholesale Products | Pak Multilinks Hygiene Lahore",
+    url: "https://pakmultilinks.com/shop",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/shop",
+  }
 };
 
 // Server-rendered product grid for SEO and no-JS fallback

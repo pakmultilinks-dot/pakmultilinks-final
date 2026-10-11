@@ -3,6 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Corporate Orders | Pak Multilinks Hygiene",
   description: "Bulk hygiene supply for offices, schools, clinics, restaurants. Get wholesale quotations within one working day.",
+  openGraph: {
+    title: "Corporate Orders | Pak Multilinks Hygiene",
+    url: "https://pakmultilinks.com/corporate-orders",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/corporate-orders",
+  }
 };
 
 const STEPS = [

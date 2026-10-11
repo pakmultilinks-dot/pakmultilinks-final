@@ -32,7 +32,11 @@ export default function StructuredData() {
         availableLanguage: ["en", "ur"],
       },
     ],
-    sameAs: [],
+    sameAs: [
+      "https://facebook.com/pakmultilinks",
+      "https://instagram.com/pakmultilinks",
+      "https://linkedin.com/company/pakmultilinks",
+    ],
   };
 
   const localBusiness = {
@@ -51,7 +55,11 @@ export default function StructuredData() {
       addressLocality: "Lahore",
       addressCountry: "PK",
     },
-    sameAs: [],
+    sameAs: [
+      "https://facebook.com/pakmultilinks",
+      "https://instagram.com/pakmultilinks",
+      "https://linkedin.com/company/pakmultilinks",
+    ],
   };
 
   const website = {

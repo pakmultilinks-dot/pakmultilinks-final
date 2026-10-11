@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | Pak Multilinks Hygiene",
   description: "Terms of service for Pak Multilinks Hygiene.",
+  openGraph: {
+    title: "Terms of Service | Pak Multilinks Hygiene",
+    url: "https://pakmultilinks.com/terms",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/terms",
+  }
 };
 
 export default function TermsOfService() {

@@ -5,6 +5,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Deals & Value Packs | Pak Multilinks Hygiene",
   description: "Wholesale deals and value packs on trusted hygiene brands. Family packs, combo deals and bulk offers.",
+  openGraph: {
+    title: "Deals & Value Packs | Pak Multilinks Hygiene",
+    url: "https://pakmultilinks.com/deals",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/deals",
+  }
 };
 
 const PROMO_DEALS = [

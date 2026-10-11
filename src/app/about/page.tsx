@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Pak Multilinks Hygiene Lahore",
   description: "Pak Multilinks Hygiene - your wholesale hygiene partner in Lahore. Supplying offices, schools, clinics and businesses with quality essentials.",
+  openGraph: {
+    title: "About Us | Pak Multilinks Hygiene Lahore",
+    url: "https://pakmultilinks.com/about",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/about",
+  }
 };
 
 const STATS = [

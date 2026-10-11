@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | Pak Multilinks Hygiene",
   description: "Privacy policy for Pak Multilinks Hygiene.",
+  openGraph: {
+    title: "Privacy Policy | Pak Multilinks Hygiene",
+    url: "https://pakmultilinks.com/privacy",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://pakmultilinks.com/privacy",
+  }
 };
 
 export default function PrivacyPolicy() {
