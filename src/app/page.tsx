@@ -189,8 +189,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="text-center mt-8">
-            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#2fa84f] hover:bg-[#268a41] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base min-h-[52px]">
-              View All 4 Deals
+            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#2fa84f] hover:bg-[#268a41] text-white font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base min-h-[52px]">
+              View All 6 Deals
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
           </div>

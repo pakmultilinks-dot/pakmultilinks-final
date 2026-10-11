@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 
 const PROMO_DEALS = [
   {
+    image: "/images/deal-family-starter.jpg",
+    alt: "Family Starter Pack - essential cleaning products",
+    href: "/shop",
+  },
+  {
     image: "/images/deal-tissue-mega.jpg",
     alt: "Tissue Mega Deal - buy by the carton, save more",
     href: "/shop?category=Tissue%20%26%20Paper%20Wholesale",
@@ -27,14 +32,19 @@ const PROMO_DEALS = [
     href: "/shop?category=Cleaning%20Products",
   },
   {
-    image: "/images/deal-washroom.jpg",
-    alt: "Washroom Refresh Kit - deep clean for your washroom",
+    image: "/images/deal-personal-care.jpg",
+    alt: "Office Hygiene Bundle - complete workplace hygiene essentials",
     href: "/shop?category=Washroom%20Supplies",
   },
   {
     image: "/images/deal-kitchen.jpg",
     alt: "Disposable Essentials Pack - must-haves for every business",
     href: "/shop?category=Disposable%20Items",
+  },
+  {
+    image: "/images/deal-washroom.jpg",
+    alt: "Washroom Refresh Kit - deep clean for your washroom",
+    href: "/shop?category=Washroom%20Supplies",
   },
 ];
 
