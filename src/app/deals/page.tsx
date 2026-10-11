@@ -17,11 +17,6 @@ export const metadata: Metadata = {
 
 const PROMO_DEALS = [
   {
-    image: "/images/deal-family-starter.jpg",
-    alt: "Family Starter Pack - essential cleaning products with real product photos",
-    href: "/shop?q=family",
-  },
-  {
     image: "/images/deal-tissue-mega.jpg",
     alt: "Tissue Mega Deal - buy by the carton, save more",
     href: "/shop?category=Tissue%20%26%20Paper%20Wholesale",
@@ -32,19 +27,14 @@ const PROMO_DEALS = [
     href: "/shop?category=Cleaning%20Products",
   },
   {
-    image: "/images/deal-personal-care.jpg",
-    alt: "Office Hygiene Bundle - complete workplace hygiene essentials",
+    image: "/images/deal-washroom.jpg",
+    alt: "Washroom Refresh Kit - deep clean for your washroom",
     href: "/shop?category=Washroom%20Supplies",
   },
   {
     image: "/images/deal-kitchen.jpg",
-    alt: "Kitchen Essentials Pack - must-haves for every kitchen",
+    alt: "Disposable Essentials Pack - must-haves for every business",
     href: "/shop?category=Disposable%20Items",
-  },
-  {
-    image: "/images/deal-washroom.jpg",
-    alt: "Washroom Refresh Kit - deep clean for your washroom",
-    href: "/shop?category=Washroom%20Supplies",
   },
 ];
 
@@ -81,7 +71,7 @@ export default function DealsPage() {
       <div className="mt-12 text-center">
         <Link
           href="/shop"
-          className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#4ad80a] hover:bg-[#3db009] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#2fa84f] hover:bg-[#268a41] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg"
         >
           Shop All Products
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

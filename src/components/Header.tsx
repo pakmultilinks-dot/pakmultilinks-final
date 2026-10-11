@@ -95,7 +95,7 @@ export default function Header() {
               placeholder="Search products, categories..."
               className="w-full border border-gray-300 rounded-full pl-5 pr-12 py-2.5 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-1 focus:ring-[#114b2f]"
             />
-            <button type="submit" aria-label="Search" className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#4ad80a] text-[#0b3a24] rounded-full p-2 hover:bg-[#3db009]">
+            <button type="submit" aria-label="Search" className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#2fa84f] text-[#0b3a24] rounded-full p-2 hover:bg-[#268a41]">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
             {suggest.length > 0 && (
@@ -117,7 +117,7 @@ export default function Header() {
             <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="hidden min-[430px]:block md:hidden p-2 rounded-full hover:bg-gray-100">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
-            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#4ad80a] text-[#0b3a24] hover:bg-[#3db009]">
+            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#2fa84f] text-[#0b3a24] hover:bg-[#268a41]">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
               {count > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
@@ -186,7 +186,7 @@ export default function Header() {
             {navLink("/about", "About Us")}
             {navLink("/contact", "Contact")}
             </div>
-            <Link href="/request-quote" className="ml-2 my-2 px-5 py-2.5 bg-gradient-to-r from-[#4ad80a] to-[#3db009] text-[#0b3a24] text-sm font-bold rounded-full hover:shadow-[0_8px_20px_rgba(63,194,12,0.3)] hover:scale-105 transition-all whitespace-nowrap shrink-0">Get a quote</Link>
+            <Link href="/request-quote" className="ml-2 my-2 px-5 py-2.5 bg-gradient-to-r from-[#2fa84f] to-[#268a41] text-[#0b3a24] text-sm font-bold rounded-full hover:shadow-[0_8px_20px_rgba(63,194,12,0.3)] hover:scale-105 transition-all whitespace-nowrap shrink-0">Get a quote</Link>
           </div>
         </nav>
       </header>
@@ -272,7 +272,7 @@ export default function Header() {
             <Link
               href="/request-quote"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center min-h-[52px] px-5 py-3 bg-[#4ad80a] text-[#0b3a24] text-[15px] font-bold rounded-full hover:bg-[#3db009] transition-colors shadow-lg"
+              className="flex items-center justify-center min-h-[52px] px-5 py-3 bg-[#2fa84f] text-[#0b3a24] text-[15px] font-bold rounded-full hover:bg-[#268a41] transition-colors shadow-lg"
             >
               Request bulk quote
             </Link>

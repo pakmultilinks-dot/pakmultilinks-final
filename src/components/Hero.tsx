@@ -91,7 +91,7 @@ export default function Hero() {
               <div className="max-w-7xl mx-auto w-full">
                 <div key={`${i}-${animKey}`} className="max-w-xl">
                   <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
-                    <span className="w-1.5 h-1.5 bg-[#4ad80a] rounded-full animate-pulse" />
+                    <span className="w-1.5 h-1.5 bg-[#2fa84f] rounded-full animate-pulse" />
                     {s.eyebrow}
                   </p>
                   <h2 className="hero-anim hero-delay-2 font-display mt-4 text-[26px] sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0b3a24] leading-[1.12] tracking-tight">
@@ -103,14 +103,14 @@ export default function Hero() {
                   <div className="hero-anim hero-delay-4 mt-5 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#4ad80a] text-[#0b3a24] font-bold rounded-full transition-all hover:scale-[1.02] hover:bg-[#3db009] hover:shadow-[0_12px_30px_rgba(74,216,10,0.35)] shadow-lg text-[16px] w-full sm:w-auto min-h-[52px]"
+                      className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#2fa84f] text-[#0b3a24] font-bold rounded-full transition-all hover:scale-[1.02] hover:bg-[#268a41] hover:shadow-[0_12px_30px_rgba(74,216,10,0.35)] shadow-lg text-[16px] w-full sm:w-auto min-h-[52px]"
                     >
                       {s.primaryCta.label}
                       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-gray-50 text-[#0b3a24] font-bold rounded-full border-2 border-[#4ad80a]/50 hover:border-[#4ad80a] transition-all text-[16px] shadow-sm w-full sm:w-auto min-h-[52px]"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-gray-50 text-[#0b3a24] font-bold rounded-full border-2 border-[#2fa84f]/50 hover:border-[#2fa84f] transition-all text-[16px] shadow-sm w-full sm:w-auto min-h-[52px]"
                     >
                       {s.secondaryCta.label}
                     </Link>

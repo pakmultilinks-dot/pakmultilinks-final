@@ -82,7 +82,7 @@ export default function QuickViewModal({ product, onClose }: { product: Product 
             <div className="mt-5 flex flex-col gap-2.5">
               <button
                 onClick={() => { add(product, qty); onClose(); setDrawerOpen(true); }}
-                className="w-full bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full py-3 hover:bg-[#3db009]"
+                className="w-full bg-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3 hover:bg-[#268a41]"
               >
                 Add to Cart
               </button>

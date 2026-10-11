@@ -103,7 +103,7 @@ export default function RequestQuotePage() {
           <p className="mt-2 text-xs text-gray-500">Available products include: {PRODUCTS.slice(0, 8).map((p) => p.name).join(", ")}, and {PRODUCTS.length - 8} more.</p>
         </div>
 
-        <button type="submit" className="w-full bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#3db009] text-lg">
+        <button type="submit" className="w-full bg-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#268a41] text-lg">
           Send quote request
         </button>
         <p className="text-xs text-gray-500 text-center">This opens WhatsApp with your request pre-filled. No account needed.</p>
