@@ -12,6 +12,30 @@ const FEATURED = [
   "black-garbage-bags",
 ];
 
+const FEATURES = [
+  {
+    title: "Supplied by the carton",
+    desc: "Bulk packing for businesses of every size.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+    ),
+  },
+  {
+    title: "Business orders welcome",
+    desc: "Send quantities, get a quotation within a day.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
+    ),
+  },
+  {
+    title: "A person to talk to",
+    desc: "Call or WhatsApp Zoher Ahmed directly.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    ),
+  },
+];
+
 export default function Home() {
   const featured = FEATURED.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean);
 
@@ -21,15 +45,16 @@ export default function Home() {
 
       {/* Feature strip */}
       <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          {[
-            ["Supplied by the carton", "Bulk packing for businesses of every size."],
-            ["Business orders welcome", "Send quantities, get a quotation within a day."],
-            ["A person to talk to", "Call or WhatsApp Zoher Ahmed directly."],
-          ].map(([t, d]) => (
-            <div key={t} className="px-4">
-              <p className="font-bold text-[#114b2f]">{t}</p>
-              <p className="text-sm text-gray-600 mt-1">{d}</p>
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4">
+          {FEATURES.map((f) => (
+            <div key={f.title} className="flex items-start gap-4 px-2 sm:px-4 sm:flex-col sm:items-center sm:text-center">
+              <span className="shrink-0 w-12 h-12 rounded-2xl bg-[#4ad80a]/15 text-[#0b3a24] flex items-center justify-center">
+                {f.icon}
+              </span>
+              <div>
+                <p className="font-bold text-[#114b2f] text-[15px] sm:text-base">{f.title}</p>
+                <p className="text-sm text-gray-600 mt-1 leading-relaxed">{f.desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -37,9 +62,9 @@ export default function Home() {
 
       <Reveal>
 {/* Shop by category */}
-      <section className="max-w-7xl mx-auto px-4 py-14">
+      <section className="max-w-7xl mx-auto px-4 py-16 sm:py-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Find what you need</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2 font-serif-head">Shop by Category</h2>
+        <h2 className="text-[26px] sm:text-3xl font-bold text-center mt-2 font-serif-head">Shop by Category</h2>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
           {CATEGORIES.map((c) => {
             const catImages: Record<string, string> = {
@@ -59,11 +84,11 @@ export default function Home() {
                   src={catImages[c.name] || "/products/1083fd45-8b0f-4208-8af7-e30a14eed5a1.jpg"}
                   alt={c.name}
                   loading="lazy"
-                  className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-4">
-                <p className="font-bold text-[#114b2f] text-sm sm:text-base leading-tight">{c.name}</p>
+                <p className="font-bold text-[#114b2f] text-[15px] sm:text-base leading-snug">{c.name}</p>
                 <p className="mt-2 text-xs text-gray-600 line-clamp-2 hidden sm:block">{c.description}</p>
                 <span className="inline-block mt-3 text-xs font-semibold text-[#114b2f] underline underline-offset-2">Browse →</span>
               </div>
@@ -76,14 +101,14 @@ export default function Home() {
       </Reveal>
       <Reveal>
 {/* From our collection */}
-      <section className="max-w-7xl mx-auto px-4 pb-14">
+      <section className="max-w-7xl mx-auto px-4 py-16 sm:py-14">
         <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">For your everyday spaces</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mt-2 font-serif-head">From Our Collection</h2>
+        <h2 className="text-[26px] sm:text-3xl font-bold text-center mt-2 font-serif-head">From Our Collection</h2>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {featured.map((p) => p && <ProductCard key={p.slug} product={p} />)}
         </div>
-        <div className="text-center mt-8">
-          <Link href="/shop" className="inline-block px-8 py-3 bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">
+        <div className="text-center mt-10">
+          <Link href="/shop" className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[52px] bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009] text-base">
             Shop all {PRODUCTS.length} products
           </Link>
         </div>
@@ -150,42 +175,25 @@ export default function Home() {
 
       </Reveal>
       <Reveal>
-{/* Product list */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center font-serif-head">Our Products</h2>
+{/* Our Products */}
+      <section className="max-w-7xl mx-auto px-4 py-16 sm:py-14">
+        <p className="text-xs uppercase tracking-[0.15em] text-gray-500 text-center">Browse the range</p>
+        <h2 className="text-[26px] sm:text-3xl font-bold text-center mt-2 font-serif-head">Our Products</h2>
         <p className="text-center text-gray-600 text-sm mt-2">Quality products &middot; Best value &middot; Wholesale orders available</p>
-        <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#114b2f] text-white">
-                  <th className="text-left px-5 py-4 font-semibold">Product</th>
-                  <th className="text-left px-5 py-4 font-semibold hidden sm:table-cell">Category</th>
-                  <th className="text-center px-5 py-4 font-semibold">MOQ</th>
-                </tr>
-              </thead>
-              <tbody>
-                {PRODUCTS.slice(0, 20).map((p, i) => (
-                  <tr key={p.slug} className={`border-t border-gray-100 hover:bg-[#f7faf8] ${i % 2 === 1 ? "bg-gray-50/50" : ""}`}>
-                    <td className="px-5 py-3.5">
-                      <Link href={`/product/${p.slug}`} className="font-medium text-gray-900 hover:text-[#114b2f]">
-                        {p.name}
-                      </Link>
-                      <p className="text-xs text-gray-500 sm:hidden mt-0.5">{p.category}</p>
-                    </td>
-                    <td className="px-5 py-3.5 text-gray-600 hidden sm:table-cell">{p.category}</td>
-                    <td className="px-5 py-3.5 text-center text-gray-600">{p.moq}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="px-5 py-4 bg-[#f7faf8] border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products.</p>
-            <div className="flex gap-3">
-              <Link href="/shop" className="text-sm font-semibold text-[#114b2f] hover:underline">View all products</Link>
-              <Link href="/request-quote" className="text-sm font-semibold bg-[#4ad80a] text-[#0b3a24] px-5 py-2 rounded-full hover:bg-[#3db009]">Get bulk quote</Link>
-            </div>
+        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {PRODUCTS.slice(0, 20).map((p) => (
+            <ProductCard key={p.slug} product={p} />
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products.</p>
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link href="/shop" className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[52px] bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009] text-base">
+              View all products
+            </Link>
+            <Link href="/request-quote" className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 min-h-[52px] text-base font-semibold text-[#114b2f] border-2 border-[#114b2f]/20 rounded-full hover:border-[#114b2f]/40 hover:bg-[#114b2f]/5">
+              Get bulk quote
+            </Link>
           </div>
         </div>
       </section></Reveal>
