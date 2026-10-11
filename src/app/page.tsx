@@ -182,22 +182,13 @@ export default function Home() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
           </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { title: "Tissue Mega Deal", desc: "Buy by the carton, save more", href: "/shop?category=Tissue%20%26%20Paper%20Wholesale" },
-              { title: "Cleaning Combo", desc: "Complete facility care pack", href: "/shop?category=Cleaning%20Products" },
-              { title: "Washroom Kit", desc: "Deep clean for washrooms", href: "/shop?category=Washroom%20Supplies" },
-              { title: "Disposable Pack", desc: "Essentials for business", href: "/shop?category=Disposable%20Items" },
-            ].map((d) => (
-              <Link key={d.title} href={d.href} className="group bg-[#f7faf8] border border-gray-200 rounded-lg p-5 hover:border-[#2fa84f] hover:shadow-md transition-all">
-                <p className="font-bold text-[#0b3a24] text-[15px]">{d.title}</p>
-                <p className="text-sm text-gray-600 mt-1">{d.desc}</p>
-                <span className="inline-flex items-center gap-1 text-[#2fa84f] text-sm font-semibold mt-3 group-hover:gap-2 transition-all">
-                  Shop now
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </span>
-              </Link>
-            ))}
+          <div className="mt-8 grid grid-cols-1 gap-6 max-w-3xl mx-auto">
+            <Link href="/deals" className="block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <Image src="/images/deal-rose-petal-popup.jpg" alt="Rose Petal Pop-Up Tissue - Best Seller" width={1200} height={800} sizes="(max-width: 768px) 100vw, 700px" className="w-full h-auto" />
+            </Link>
+            <Link href="/deals" className="block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <Image src="/images/deal-maxob-8plus2.jpg" alt="Rose Petal Maxob 8+2 Offer" width={1200} height={800} sizes="(max-width: 768px) 100vw, 700px" className="w-full h-auto" />
+            </Link>
           </div>
         </div>
       </section>

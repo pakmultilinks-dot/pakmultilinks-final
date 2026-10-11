@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Deals & Value Packs | Pak Multilinks Hygiene",
-  description: "Wholesale deals and value packs on trusted hygiene brands. Family packs, combo deals and bulk offers.",
+  description: "Wholesale deals and value packs on trusted hygiene brands. Bulk offers for businesses.",
   openGraph: {
     title: "Deals & Value Packs | Pak Multilinks Hygiene",
     url: "https://pakmultilinks.com/deals",
@@ -16,24 +17,14 @@ export const metadata: Metadata = {
 
 const PROMO_DEALS = [
   {
-    title: "Tissue Mega Deal",
-    desc: "Buy by the carton, save more on facial tissues, toilet rolls and napkins.",
-    href: "/shop?category=Tissue%20%26%20Paper%20Wholesale",
+    image: "/images/deal-rose-petal-popup.jpg",
+    alt: "Rose Petal Pop-Up Tissue - Best Seller, Ultra Soft, 24 boxes per carton",
+    href: "/shop?q=rose+petal+pop-up",
   },
   {
-    title: "Cleaning Combo Deal",
-    desc: "Complete facility care pack with detergents, disinfectants and tools.",
-    href: "/shop?category=Cleaning%20Products",
-  },
-  {
-    title: "Washroom Refresh Kit",
-    desc: "Deep clean essentials for commercial washrooms.",
-    href: "/shop?category=Washroom%20Supplies",
-  },
-  {
-    title: "Disposable Essentials Pack",
-    desc: "Garbage bags, gloves and other must-haves for every business.",
-    href: "/shop?category=Disposable%20Items",
+    image: "/images/deal-maxob-8plus2.jpg",
+    alt: "Rose Petal Maxob Tissue 8+2 Offer - Save Rs. 260, value pack for homes and businesses",
+    href: "/shop?q=maxob",
   },
 ];
 
@@ -46,20 +37,21 @@ export default function DealsPage() {
         Curated bundles with real product photos at wholesale value.
       </p>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="mt-10 grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {PROMO_DEALS.map((deal) => (
           <Link
-            key={deal.title}
+            key={deal.image}
             href={deal.href}
-            className="group block bg-white border border-gray-200 rounded-lg p-6 hover:border-[#2fa84f] hover:shadow-md transition-all"
+            className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-white"
           >
-            <p className="text-[11px] uppercase tracking-[0.18em] text-[#2fa84f] font-bold">Limited Time</p>
-            <h3 className="text-xl font-bold text-[#0b3a24] mt-2">{deal.title}</h3>
-            <p className="text-gray-600 mt-2 text-[15px] leading-relaxed">{deal.desc}</p>
-            <span className="inline-flex items-center gap-2 text-[#114b2f] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
-              Shop this deal
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
+            <Image
+              src={deal.image}
+              alt={deal.alt}
+              width={1200}
+              height={800}
+              sizes="(max-width: 768px) 100vw, 800px"
+              className="w-full h-auto"
+            />
           </Link>
         ))}
       </div>
