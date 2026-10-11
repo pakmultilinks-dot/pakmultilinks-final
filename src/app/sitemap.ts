@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "", priority: 1.0, changeFrequency: "weekly" as const, lastModified: CATALOG_UPDATED },
     { url: "/shop", priority: 0.9, changeFrequency: "weekly" as const, lastModified: CATALOG_UPDATED },
     { url: "/deals", priority: 0.8, changeFrequency: "weekly" as const, lastModified: CATALOG_UPDATED },
+    { url: "/rate-list", priority: 0.8, changeFrequency: "weekly" as const, lastModified: CATALOG_UPDATED },
     { url: "/corporate-orders", priority: 0.8, changeFrequency: "monthly" as const, lastModified: new Date("2026-10-01") },
     { url: "/request-quote", priority: 0.7, changeFrequency: "monthly" as const, lastModified: new Date("2026-10-01") },
     { url: "/about", priority: 0.6, changeFrequency: "monthly" as const, lastModified: new Date("2026-10-01") },

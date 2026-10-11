@@ -168,6 +168,7 @@ export default function Header() {
             </div>
             {navLink("/corporate-orders", "Corporate Orders")}
             {navLink("/deals", "Deals")}
+            {navLink("/rate-list", "Rate List")}
             {navLink("/about", "About Us")}
             {navLink("/contact", "Contact")}
             </div>
@@ -192,7 +193,7 @@ export default function Header() {
             </form>
             <nav className="px-2 pb-6">
               {[
-                ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Corporate Orders", "/corporate-orders"],
+                ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Rate List", "/rate-list"], ["Corporate Orders", "/corporate-orders"],
                 ["About Us", "/about"], ["Contact", "/contact"],
               ].map(([label, href]) => {
                 const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
