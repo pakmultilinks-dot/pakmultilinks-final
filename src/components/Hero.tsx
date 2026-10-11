@@ -85,8 +85,8 @@ export default function Hero() {
               />
             </div>
             )}
-            {/* Animated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent sm:from-white/40 sm:via-transparent pointer-events-none" />
+            {/* Readability gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/10 sm:from-white/90 sm:via-white/60 sm:to-transparent pointer-events-none" />
             <div className="absolute inset-0 flex items-center pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full">
                 <div key={`${i}-${animKey}`} className="max-w-xl bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-5 sm:p-0">
