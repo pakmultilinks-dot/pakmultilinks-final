@@ -85,32 +85,32 @@ export default function Hero() {
               />
             </div>
             )}
-            {/* Readability gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/10 sm:from-white/90 sm:via-white/60 sm:to-transparent pointer-events-none" />
-            <div className="relative px-4 sm:px-8 pt-14 sm:pt-16 pb-28 sm:pb-20 min-h-[560px] sm:min-h-[470px] lg:min-h-[500px] flex items-center">
+            {/* Readability gradient overlay - stronger on mobile for text clarity */}
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/20 sm:bg-gradient-to-r sm:from-white/95 sm:via-white/75 sm:to-white/10 pointer-events-none" />
+            <div className="relative px-4 sm:px-8 pt-8 sm:pt-16 pb-24 sm:pb-20 min-h-[480px] sm:min-h-[470px] lg:min-h-[500px] flex items-end sm:items-center">
               <div className="max-w-7xl mx-auto w-full">
-                <div key={`${i}-${animKey}`} className="max-w-xl bg-white/85 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none rounded-2xl sm:rounded-none p-5 sm:p-0">
-                  <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
-                    <span className="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse" />
+                <div key={`${i}-${animKey}`} className="max-w-xl">
+                  <p className="hero-anim hero-delay-1 inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.18em] text-white font-bold bg-[#114b2f] px-4 py-2 rounded-full shadow-lg">
+                    <span className="w-1.5 h-1.5 bg-[#4ad80a] rounded-full animate-pulse" />
                     {s.eyebrow}
                   </p>
-                  <h2 className="hero-anim hero-delay-2 font-display mt-5 text-[28px] sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0b3a24] leading-[1.08] tracking-tight">
+                  <h2 className="hero-anim hero-delay-2 font-display mt-4 text-[26px] sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0b3a24] leading-[1.12] tracking-tight">
                     {s.title}
                   </h2>
-                  <p className="hero-anim hero-delay-3 mt-4 text-[15px] sm:text-lg text-gray-600 leading-relaxed max-w-lg font-normal">
+                  <p className="hero-anim hero-delay-3 mt-3 text-[14px] sm:text-lg text-gray-700 leading-relaxed max-w-lg font-normal">
                     {s.subtitle}
                   </p>
-                  <div className="hero-anim hero-delay-4 mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+                  <div className="hero-anim hero-delay-4 mt-5 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-3">
                     <Link
                       href={s.primaryCta.href}
-                      className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#3fc20c] text-[#0b3a24] font-bold rounded-full transition-all hover:scale-[1.04] hover:bg-[#35a80a] hover:shadow-[0_12px_30px_rgba(63,194,12,0.35)] shadow-lg text-[15px] w-full sm:w-auto"
+                      className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-[#4ad80a] text-[#0b3a24] font-bold rounded-full transition-all hover:scale-[1.02] hover:bg-[#3db009] hover:shadow-[0_12px_30px_rgba(74,216,10,0.35)] shadow-lg text-[16px] w-full sm:w-auto min-h-[52px]"
                     >
                       {s.primaryCta.label}
                       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </Link>
                     <Link
                       href={s.secondaryCta.href}
-                      className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white hover:bg-gray-50 text-[#0b3a24] font-bold rounded-full border-2 border-[#3fc20c]/40 hover:border-[#3fc20c] transition-all hover:scale-[1.04] text-[15px] shadow-sm w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white hover:bg-gray-50 text-[#0b3a24] font-bold rounded-full border-2 border-[#4ad80a]/50 hover:border-[#4ad80a] transition-all text-[16px] shadow-sm w-full sm:w-auto min-h-[52px]"
                     >
                       {s.secondaryCta.label}
                     </Link>

@@ -20,7 +20,7 @@ export default function CartPage() {
       <div className="max-w-3xl mx-auto px-4 py-20 text-center">
         <h1 className="text-3xl font-bold">Your cart is empty</h1>
         <p className="text-gray-600 mt-3">Add products by the carton to get started.</p>
-        <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full hover:bg-[#35a80a]">Browse products</Link>
+        <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">Browse products</Link>
       </div>
     );
   }
@@ -54,7 +54,7 @@ export default function CartPage() {
         <p className="text-sm text-gray-600">Pricing is quoted after review of your quantities. Our team confirms packing and final rates before fulfilment.</p>
         <div className="mt-4 flex flex-col sm:flex-row gap-3">
           <a href={`https://wa.me/${CONTACT.zoher.waNumber}?text=${waText}`} target="_blank" rel="noopener" className="flex-1 text-center bg-[#25D366] text-white font-semibold rounded-full py-3.5 hover:bg-[#1eb856]">Order on WhatsApp</a>
-          <Link href="/request-quote" className="flex-1 text-center bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#35a80a]">Request bulk quote</Link>
+          <Link href="/request-quote" className="flex-1 text-center bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full py-3.5 hover:bg-[#3db009]">Request bulk quote</Link>
         </div>
       </div>
     </div>

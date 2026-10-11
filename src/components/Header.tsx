@@ -48,6 +48,20 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", h);
   }, []);
 
+  // Lock body scroll + close menu on Escape while the mobile drawer is open
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   useEffect(() => {
     if (q.trim().length < 2) { setSuggest([]); return; }
     const needle = q.toLowerCase();
@@ -81,7 +95,7 @@ export default function Header() {
               placeholder="Search products, categories..."
               className="w-full border border-gray-300 rounded-full pl-5 pr-12 py-2.5 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-1 focus:ring-[#114b2f]"
             />
-            <button type="submit" aria-label="Search" className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#3fc20c] text-[#0b3a24] rounded-full p-2 hover:bg-[#35a80a]">
+            <button type="submit" aria-label="Search" className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#4ad80a] text-[#0b3a24] rounded-full p-2 hover:bg-[#3db009]">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
             {suggest.length > 0 && (
@@ -103,7 +117,7 @@ export default function Header() {
             <button onClick={() => setMobileOpen(true)} aria-label="Search products" className="hidden min-[430px]:block md:hidden p-2 rounded-full hover:bg-gray-100">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
-            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#3fc20c] text-[#0b3a24] hover:bg-[#35a80a]">
+            <button onClick={() => setDrawerOpen(true)} aria-label="Open cart" className="relative p-2 rounded-full bg-[#4ad80a] text-[#0b3a24] hover:bg-[#3db009]">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
               {count > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 bg-amber-500 text-white text-[10px] font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1">{count}</span>
@@ -172,44 +186,96 @@ export default function Header() {
             {navLink("/about", "About Us")}
             {navLink("/contact", "Contact")}
             </div>
-            <Link href="/request-quote" className="ml-2 my-2 px-5 py-2.5 bg-gradient-to-r from-[#3fc20c] to-[#35a80a] text-[#0b3a24] text-sm font-bold rounded-full hover:shadow-[0_8px_20px_rgba(63,194,12,0.3)] hover:scale-105 transition-all whitespace-nowrap shrink-0">Get a quote</Link>
+            <Link href="/request-quote" className="ml-2 my-2 px-5 py-2.5 bg-gradient-to-r from-[#4ad80a] to-[#3db009] text-[#0b3a24] text-sm font-bold rounded-full hover:shadow-[0_8px_20px_rgba(63,194,12,0.3)] hover:scale-105 transition-all whitespace-nowrap shrink-0">Get a quote</Link>
           </div>
         </nav>
       </header>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-xl overflow-y-auto">
-            <div className="p-4 flex items-center justify-between border-b">
-              <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={220} height={60} className="h-12 w-auto" />
-              <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="p-2">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-              </button>
-            </div>
-            <form onSubmit={(e) => { submitSearch(e); setMobileOpen(false); }} className="p-4">
-              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search products..." className="w-full border border-gray-300 rounded-full px-4 py-2.5 text-sm focus:outline-none focus:border-[#114b2f]" />
-            </form>
-            <nav className="px-2 pb-6">
-              {[
-                ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Rate List", "/rate-list"], ["Corporate Orders", "/corporate-orders"],
-                ["About Us", "/about"], ["Contact", "/contact"],
-              ].map(([label, href]) => {
-                const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
-                return (
-                  <Link key={href} href={href} onClick={() => setMobileOpen(false)} className={`block px-4 py-3 text-sm font-semibold border-b border-gray-100 ${active ? "text-[#114b2f] bg-[#e8f3ec]" : "text-gray-700 hover:text-[#114b2f]"}`}>{label}</Link>
-                );
-              })}
-              <p className="px-4 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">Collections</p>
-              {CATEGORIES.map((c) => (
-                <Link key={c.slug} href={`/shop?category=${encodeURIComponent(c.name)}`} onClick={() => setMobileOpen(false)} className="block px-6 py-2.5 text-sm text-gray-700 hover:text-[#114b2f]">{c.name}</Link>
-              ))}
-              <Link href="/request-quote" onClick={() => setMobileOpen(false)} className="block mx-4 mt-4 text-center px-5 py-3 bg-[#3fc20c] text-[#0b3a24] text-sm font-semibold rounded-full hover:bg-[#35a80a]">Request bulk quote</Link>
-            </nav>
+      {/* Mobile menu - animated drawer, always mounted for smooth slide-in */}
+      <div
+        className={`fixed inset-0 z-50 lg:hidden ${mobileOpen ? "" : "pointer-events-none"}`}
+        aria-hidden={!mobileOpen}
+      >
+        {/* Backdrop - fades in, closes menu on tap */}
+        <div
+          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+            mobileOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setMobileOpen(false)}
+        />
+        {/* Panel - slides in from the left */}
+        <aside
+          role="dialog"
+          aria-label="Mobile menu"
+          className={`absolute left-0 top-0 bottom-0 w-[85vw] max-w-[320px] bg-white shadow-xl overflow-y-auto transition-transform duration-300 ease-out ${
+            mobileOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          {/* Menu header */}
+          <div className="flex items-center justify-between pl-4 pr-2 py-3 border-b border-gray-100">
+            <Image src="/images/logo.jpg" alt="Pak Multilinks Hygiene" width={220} height={60} className="h-12 w-auto shrink-0" />
+            <button
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+              className="p-3 mr-1 rounded-full text-gray-700 hover:bg-gray-100 transition-colors"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
           </div>
-        </div>
-      )}
+          {/* Search - full width */}
+          <form
+            onSubmit={(e) => { submitSearch(e); setMobileOpen(false); }}
+            className="px-4 py-4 border-b border-gray-100"
+          >
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search products..."
+              aria-label="Search products"
+              className="w-full min-h-[48px] border border-gray-300 rounded-full px-5 text-sm focus:outline-none focus:border-[#114b2f] focus:ring-1 focus:ring-[#114b2f]"
+            />
+          </form>
+          {/* Nav links - min 48px touch targets, never clipped */}
+          <nav className="pt-2 pb-8">
+            {[
+              ["Home", "/"], ["Shop", "/shop"], ["Deals", "/deals"], ["Rate List", "/rate-list"], ["Corporate Orders", "/corporate-orders"],
+              ["About Us", "/about"], ["Contact", "/contact"],
+            ].map(([label, href]) => {
+              const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`flex items-center min-h-[48px] px-5 py-3 text-[15px] font-semibold whitespace-nowrap transition-colors ${
+                    active ? "text-[#114b2f] bg-[#e8f3ec]" : "text-gray-700 hover:text-[#114b2f] hover:bg-gray-50"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+            <p className="px-5 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">Collections</p>
+            {CATEGORIES.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/shop?category=${encodeURIComponent(c.name)}`}
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center min-h-[48px] px-8 py-3 text-sm text-gray-700 whitespace-nowrap hover:text-[#114b2f] hover:bg-gray-50 transition-colors"
+              >
+                {c.name}
+              </Link>
+            ))}
+            <Link
+              href="/request-quote"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center min-h-[48px] mx-4 mt-4 px-5 py-3 bg-[#4ad80a] text-[#0b3a24] text-sm font-semibold rounded-full hover:bg-[#3db009] transition-colors"
+            >
+              Request bulk quote
+            </Link>
+          </nav>
+        </aside>
+      </div>
     </>
   );
 }

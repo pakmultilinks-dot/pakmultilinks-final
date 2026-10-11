@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, ReactNode } from "react";
 import type { Product } from "@/data/products";
+import { PRODUCTS } from "@/data/products";
 
 export interface CartItem {
   product: Product;
@@ -28,7 +29,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const raw = localStorage.getItem("pm-cart");
-      if (raw) setItems(JSON.parse(raw));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        // Remove cart items for products no longer in the catalog
+        const validSlugs = new Set(PRODUCTS.map((p) => p.slug));
+        const cleaned = Array.isArray(parsed) ? parsed.filter((item: any) => validSlugs.has(item.slug)) : [];
+        setItems(cleaned);
+        if (cleaned.length !== parsed.length) {
+          localStorage.setItem("pm-cart", JSON.stringify(cleaned));
+        }
+      }
     } catch {}
   }, []);
 

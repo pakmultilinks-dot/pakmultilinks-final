@@ -83,7 +83,7 @@ export default function Home() {
           {featured.map((p) => p && <ProductCard key={p.slug} product={p} />)}
         </div>
         <div className="text-center mt-8">
-          <Link href="/shop" className="inline-block px-8 py-3 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full hover:bg-[#35a80a]">
+          <Link href="/shop" className="inline-block px-8 py-3 bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">
             Shop all {PRODUCTS.length} products
           </Link>
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
             <p className="mt-4 text-gray-600 text-sm leading-7 max-w-md">
               From offices and restaurants to schools and clinics, we help you arrange the everyday supplies your team needs. Send us your quantities for a quotation.
             </p>
-            <Link href="/corporate-orders" className="inline-block mt-6 px-7 py-3 bg-[#3fc20c] text-[#0b3a24] font-semibold rounded-full hover:bg-[#35a80a]">
+            <Link href="/corporate-orders" className="inline-block mt-6 px-7 py-3 bg-[#4ad80a] text-[#0b3a24] font-semibold rounded-full hover:bg-[#3db009]">
               Explore business supply
             </Link>
           </div>
@@ -140,7 +140,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="text-center mt-10">
-            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#3fc20c] hover:bg-[#35a80a] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base">
+            <Link href="/deals" className="inline-flex items-center gap-2 px-8 py-4 bg-[#4ad80a] hover:bg-[#3db009] text-[#0b3a24] font-semibold rounded-full transition-all hover:scale-105 shadow-lg text-base">
               View All 6 Deals
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
@@ -184,7 +184,7 @@ export default function Home() {
             <p className="text-xs text-gray-500">Showing 20 of {PRODUCTS.length} products.</p>
             <div className="flex gap-3">
               <Link href="/shop" className="text-sm font-semibold text-[#114b2f] hover:underline">View all products</Link>
-              <Link href="/request-quote" className="text-sm font-semibold bg-[#3fc20c] text-[#0b3a24] px-5 py-2 rounded-full hover:bg-[#35a80a]">Get bulk quote</Link>
+              <Link href="/request-quote" className="text-sm font-semibold bg-[#4ad80a] text-[#0b3a24] px-5 py-2 rounded-full hover:bg-[#3db009]">Get bulk quote</Link>
             </div>
           </div>
         </div>
