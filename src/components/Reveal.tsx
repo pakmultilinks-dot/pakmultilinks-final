@@ -17,17 +17,23 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Fallback: show after 1.5s even if observer doesn't fire
+    const fallback = setTimeout(() => setVisible(true), 1500);
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
+          clearTimeout(fallback);
           obs.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 
   return (
