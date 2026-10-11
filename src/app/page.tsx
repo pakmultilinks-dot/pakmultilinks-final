@@ -53,31 +53,31 @@ export default function Home() {
       </div>
 
       {/* Mobile welcome - compact header for mobile only */}
-      <section className="md:hidden bg-white px-4 pt-6 pb-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-[#114b2f] font-semibold">Wholesale Hygiene Supply</p>
-        <h1 className="text-2xl font-bold text-[#0b3a24] mt-2 leading-tight">Corporate Hygiene Products by the Carton</h1>
-        <p className="text-sm text-gray-600 mt-2">Tissues, cleaning & washroom supplies for offices, schools and clinics across Lahore.</p>
-        <div className="flex gap-3 mt-4">
-          <Link href="/shop" className="flex-1 text-center bg-[#2fa84f] text-[#0b3a24] font-semibold rounded-full py-3.5 min-h-[52px] flex items-center justify-center">
+      <section className="md:hidden bg-white px-4 pt-8 pb-6 border-b border-gray-100">
+        <p className="text-[11px] uppercase tracking-[0.18em] text-[#114b2f] font-bold">Wholesale Hygiene Supply</p>
+        <h1 className="text-[28px] font-bold text-[#0b3a24] mt-3 leading-[1.15] tracking-tight">Corporate Hygiene Products by the Carton</h1>
+        <p className="text-[15px] text-gray-600 mt-3 leading-relaxed">Tissues, cleaning and washroom supplies for offices, schools and clinics across Lahore.</p>
+        <div className="flex gap-3 mt-5">
+          <Link href="/shop" className="flex-1 text-center bg-[#2fa84f] text-white font-semibold rounded-lg py-3.5 min-h-[52px] flex items-center justify-center text-[15px]">
             Shop Products
           </Link>
-          <Link href="/request-quote" className="flex-1 text-center border-2 border-[#114b2f] text-[#114b2f] font-semibold rounded-full py-3.5 min-h-[52px] flex items-center justify-center">
+          <Link href="/request-quote" className="flex-1 text-center border border-[#114b2f] text-[#114b2f] font-semibold rounded-lg py-3.5 min-h-[52px] flex items-center justify-center text-[15px]">
             Get Bulk Quote
           </Link>
         </div>
       </section>
 
       {/* Trusted partners */}
-      <section className="py-12 bg-[#f7faf8]">
-        <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 font-serif-head">Our Trusted Partners</h2>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-10 bg-[#f7faf8] border-b border-gray-100">
+        <p className="text-center text-[11px] uppercase tracking-[0.18em] text-gray-500 font-bold">Our Trusted Partners</p>
+        <div className="max-w-5xl mx-auto px-4 mt-6">
+          <div className="grid grid-cols-2 gap-4">
             {PARTNERS.map((p) => (
-              <div key={p.name} className="flex flex-col items-center gap-3">
-                <div className="w-24 h-24 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden">
-                  <Image src={p.logo} alt={p.name} width={96} height={96} className="w-full h-full object-cover" />
+              <div key={p.name} className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg p-3">
+                <div className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden shrink-0">
+                  <Image src={p.logo} alt={p.name} width={48} height={48} className="w-full h-full object-cover" />
                 </div>
-                <p className="text-sm font-medium text-gray-700 text-center leading-tight">{p.name}</p>
+                <p className="text-[13px] font-semibold text-gray-800 leading-tight">{p.name}</p>
               </div>
             ))}
           </div>
