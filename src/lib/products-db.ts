@@ -1,69 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSupabase, isSupabaseConfigured, DBProduct } from "@/lib/supabase";
 import { PRODUCTS as STATIC_PRODUCTS, type Product } from "@/data/products";
-
-// Convert DB product to app Product type
-function toProduct(db: DBProduct): Product {
-  // Extract relative path from full URL for local images
-  let image = db.image;
-  if (image.includes("pakmultilinks-final.vercel.app")) {
-    image = image.replace("https://pakmultilinks-final.vercel.app", "");
-  }
-  return {
-    name: db.name,
-    slug: db.slug,
-    image,
-    category: db.category,
-    brand: db.brand,
-    moq: db.moq,
-    price: db.price,
-    inStock: db.in_stock,
-  };
-}
 
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>(STATIC_PRODUCTS);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const client = getSupabase();
-    if (!client) return;
+    let cancelled = false;
     setLoading(true);
-    client
-      .from("products")
-      .select("*")
-      .eq("in_stock", true)
-      .order("name")
-      .then(({ data, error }: { data: DBProduct[] | null; error: any }) => {
-        // Only trust DB data if it has at least as many products as the static catalog.
-        // This prevents stale DB data (e.g. removed household items) from overriding
-        // the curated static catalog.
-        if (!error && data && data.length >= STATIC_PRODUCTS.length) {
-          setProducts(data.map(toProduct));
+    // Fetch from the cached edge API instead of hitting Supabase directly
+    // from every visitor's browser. The API caches for 1 hour.
+    fetch("/api/products")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((json) => {
+        if (!cancelled && json && Array.isArray(json.products) && json.products.length >= STATIC_PRODUCTS.length) {
+          setProducts(json.products);
         }
-        setLoading(false);
+        if (!cancelled) setLoading(false);
+      })
+      .catch(() => {
+        if (!cancelled) setLoading(false);
       });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { products, loading };
-}
-
-// Sync fetch for server components (falls back to static)
-export async function getProducts(): Promise<Product[]> {
-  const client = getSupabase();
-  if (!client) return STATIC_PRODUCTS;
-  try {
-    const { data, error } = await client
-      .from("products")
-      .select("*")
-      .eq("in_stock", true)
-      .order("name");
-    // Only trust DB if it has at least as many products as static catalog
-    if (error || !data || data.length < STATIC_PRODUCTS.length) return STATIC_PRODUCTS;
-    return (data as DBProduct[]).map(toProduct);
-  } catch {
-    return STATIC_PRODUCTS;
-  }
 }
