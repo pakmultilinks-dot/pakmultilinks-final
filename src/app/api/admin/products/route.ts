@@ -10,7 +10,10 @@ function getServiceClient() {
 // GET /api/admin/products - list all products
 export async function GET() {
   const supabase = getServiceClient();
-  const { data, error } = await supabase.from("products").select("*").order("name");
+  const { data, error } = await supabase
+    .from("products")
+    .select("id,name,slug,image,category,brand,moq,price,in_stock,description")
+    .order("name");
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ products: data });
 }
